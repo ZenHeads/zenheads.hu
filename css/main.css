@@ -1,0 +1,252 @@
+@font-face {
+    font-family: din;
+    src: url(PFDinTextPro-Regular.ttf);
+}
+@font-face {
+    font-family: din-light;
+    src: url(PFDinTextPro-Light.ttf);
+}
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #FAFAFA;
+	font-family: din;
+	font-size: 16px;
+	line-height: 24px;
+	color: #001A2F;
+}
+.clearfix:before,
+.clearfix:after {
+	display: table;
+	content: " ";
+}
+.clearfix,
+.clearfix:after {
+	clear: both;
+}
+.box {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.align-center {
+	text-align: center;
+}
+.blue-bg {
+	background-color: #001A2F;
+	color: #EEE;
+}
+.grey-bg {
+	background-color: #EEE;
+}
+
+/* Top header */
+
+#wrapper {
+	width: 1440px; /*75%*/
+	margin: 0 auto;
+	padding-top: 60px;
+	background-color: #FFF;
+}
+#top-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 500;
+}
+#inner-header {
+	height: 60px;
+	padding: 18px 120px;
+	margin: 0 auto;
+	width: 1440px;
+	font-size: 18px;
+	-webkit-box-shadow: 0 4px 4px -4px #000000;
+   	-moz-box-shadow: 0 4px 4px -4px #000000;
+    box-shadow: 0 4px 4px -4px #000000;
+    background-color: #FFF;
+}
+#site-name {
+	text-transform: uppercase;
+	float: left;
+}
+#navbar {
+	float: right;
+	text-transform: lowercase;
+}
+a.menu-item, a.menu-item:active, a.menu-item:focus, a.menu-item:visited {
+	color: inherit;
+	outline: none;
+	text-decoration: none;
+	margin-right: 10px;
+}
+.section {
+	padding: 72px 120px 82px;
+}
+.section > .heading {
+	width: 100%;
+	text-align: center;
+	font-size: 24px;
+	text-transform: uppercase;
+	padding-bottom: 52px;
+	border-bottom: 2px solid;
+}
+
+/* First section: header */
+
+#wrapper-header {
+	width: 100%;
+	padding: 70px 120px 92px;
+	height: 550px;
+	background: url(../img/img_header.png) no-repeat;
+}
+#logo {
+	width: 282px;
+	height: 148px;
+	margin: 0 auto 60px;
+}
+#logo img {
+	max-width: 100%;
+}
+#site-heading {
+	width: 100%;
+	height: 48px;
+	color: #FF4B34;
+	font-family: din-light;
+	font-size: 48px;
+	line-height: 48px;
+	text-transform: uppercase;
+	padding-bottom: 55px;
+	border-bottom: 2px solid #001A2F;
+	margin-bottom: 48px;
+}
+#site-text {
+	font-size: 18px;
+}
+
+/* Second section: featured-products */
+
+#product-list {
+	margin-right: -52px;
+}
+#product-list .product {
+	float: left;
+	width: 365px;
+	height: 365px;
+	margin: 52px 52px 0 0;
+}
+#product-list .product img {
+	width: 100%;
+	max-width: 100%;
+}
+#product-list .product img:hover {
+	cursor: pointer;
+}
+#display-product .product {
+	width: 100%;
+	padding: 0;
+	max-height: 0;
+	overflow: hidden;
+	opacity: 0;
+	/* animated hide */
+	-webkit-transition: max-height 1s ease-out, padding 1s ease-out, opacity 1s ease-in;
+	-moz-transition: max-height 1s ease-out, padding 1s ease-out, opacity 1s ease-in;
+	-ms-transition: max-height 1s ease-out, padding 1s ease-out, opacity 1s ease-in;
+	-o-transition: max-height 1s ease-out, padding 1s ease-out, opacity 1s ease-in;
+	transition:  max-height 1s ease-out, padding 1s ease-out, opacity 1s ease-in;
+}
+#display-product .product.show-product {
+	border-bottom: 2px solid #EEE;
+	padding: 52px 0;
+	max-height: 100em;
+	opacity: 1;
+	/* animated display */
+	-webkit-transition: max-height 5s ease-in-out 1s, padding 2s ease-in-out 1s, opacity 3s ease-in 1s;
+	-moz-transition: max-height 5s ease-in-out 1s, padding 2s ease-in-out 1s, opacity 3s ease-in 1s;
+	-ms-transition: max-height 5s ease-in-out 1s, padding 2s ease-in-out 1s, opacity 3s ease-in 1s;
+	-o-transition: max-height 5s ease-in-out 1s, padding 2s ease-in-out 1s, opacity 3s ease-in 1s;
+	transition:  max-height 5s ease-in-out 1s, padding 2s ease-in-out 1s, opacity 3s ease-in 1s;
+}
+#display-product .product .img-holder {
+	width: 782px;
+	height: 524px;
+	float: left;
+	margin-right: 52px;
+}
+#display-product .product .description {
+	width: 366px;
+	float: left;
+	min-height: 524px;
+	position: relative;
+}
+#display-product .product .description .heading {
+	text-transform: uppercase;
+	font-size: 16px;
+	margin-bottom: 40px;
+}
+#display-product .product .description .text {
+	margin-bottom: 52px;
+}
+#display-product .product .description .thumbnails-holder {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.thumbnails-holder img.thumbnail {
+	width: 52px;
+	height: 52px;
+	float: left;
+	margin-right: 52px;
+}
+
+/* Third section: our philosophy */
+
+#our-philosophy .inner-container{
+	margin-right: -52px;
+}
+#our-philosophy .tab {
+	width: 261px;
+	float: left;
+	margin: 52px 52px 0 0;
+}
+#our-philosophy .tab > img {
+	max-width: 100%;
+	width: 100%;
+}
+#our-philosophy .tab > .text {
+	margin-top: 42px;
+}
+
+/* Fourth section: questions */
+
+#questions .text {
+	margin: 52px 0;
+	font-size: 18px;
+}
+#questions #contact-button {
+	width: 366px;
+	height: 67px;
+	line-height: 67px;
+	font-size: 24px;
+	text-transform: uppercase;
+	background: url(../img/bg_contact.png) no-repeat;
+	margin: 0 auto;
+}
+
+/* Fifth section: footer */
+
+#footer .heading a {
+	display: inline-block;
+	height: 52px;
+	width: 52px;
+}
+#footer .heading a + a {
+	margin-left: 144px;
+}
+#footer .heading a img {
+	max-width: 52px;
+	max-height: 52px;
+}
+#footer .text {
+	margin-top: 52px;
+}
