@@ -1,0 +1,129 @@
+.section > .sub-heading {
+	margin-top: 52px;
+	text-align: center;
+}
+.label {
+	text-align: center;
+	text-transform: uppercase;
+}
+
+/* work */
+
+#work .inner-container .tab {
+	width: 50%;
+	float: left;
+	margin-top: 52px;
+	font-size: 18px;
+	display: table;
+	height: 72px;
+}
+#work .inner-container .tab > div {
+	display: table-cell;
+	vertical-align: middle;
+}
+#work .inner-container .tab:nth-child(2n+1) .text {
+	padding-right: 26px;
+}
+#work .inner-container .tab:nth-child(2n) {
+	padding-left: 26px;
+}
+#work .inner-container .tab:nth-child(2n) .text-holder {
+	padding: 0 15px;
+	text-transform: uppercase;
+}
+
+/* tools */
+
+#tools .inner-container {
+	margin-right: -53px;
+	margin-left: -1px; /* 2px-lel szelesebb a 6 db negyzet, mint a teruelt */
+}
+#tools .tab {
+	width: 157px;
+	float: left;
+	margin: 52px 52px 0 0;
+}
+#tools .tab:nth-child(6n+7) {
+	clear: both;
+}
+#tools .tab .img-holder {
+	width: 157px;
+	height: 164px;
+	margin-bottom: 42px;
+}
+
+/* partners, team */
+
+#partners .inner-container,
+#our-team .inner-container{
+	margin-right: -52px;
+}
+#partners .tab,
+#our-team .tab {
+	width: 261px;
+	float: left;
+	margin: 52px 52px 0 0;
+}
+#partners .tab:nth-child(4n+5),
+#our-team .tab:nth-child(4n+5) {
+	clear: both;
+}
+#partners .tab .img-holder,
+#our-team .tab .img-holder {
+	width: 261px;
+	height: 261px;
+	margin-bottom: 42px;
+}
+.tab .img-holder > img {
+	max-width: 100%;
+	width: 100%;
+}
+
+/* map */
+
+#map {
+	height: 550px;
+	position: relative;
+}
+#map:before {
+	width: 100%;
+	height: 50%;
+	background: linear-gradient(#001A2F, transparent);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+}
+#map .heading {
+	position: relative;
+	z-index: 5;
+}
+#map-container {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+}
+
+#relax {
+	height: 986px;
+	background: url(../img/img_relax.png);
+	position: relative;
+}
+#relax:before {
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(#EEE, transparent);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+}
+#relax .heading {
+	position: relative;
+	z-index: 5;
+}

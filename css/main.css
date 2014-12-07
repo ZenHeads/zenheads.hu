@@ -37,6 +37,7 @@ body {
 }
 .grey-bg {
 	background-color: #EEE;
+	color: #001A2F;
 }
 .rounded {
 	position: relative;
@@ -132,7 +133,7 @@ a.menu-item, a.menu-item:active, a.menu-item:focus, a.menu-item:visited {
 	border-bottom: 2px solid;
 }
 
-/* First section: header */
+/* header */
 
 #wrapper-header {
 	width: 100%;
@@ -152,48 +153,6 @@ a.menu-item, a.menu-item:active, a.menu-item:focus, a.menu-item:visited {
 	height: 550px;
 	background: url(../img/img_header_bg.png);
 	opacity: 1;
-}
-#wrapper-header .blurred {
-	position: absolute;
-	z-index: 2;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	opacity: 1;
-	background: url(../img/img_header_blurred.png);
-}
-.animated .content,
-.animated .blurred {
-	opacity: 0 !important;
-}
-.forward .content {
-	transition: opacity 1s ease-in-out;
-	-moz-transition: opacity 1s ease-in-out;
-	-webkit-transition: opacity 1s ease-in-out;
-	-o-transition: opacity 1s ease-in-out;
-	-ms-transition: opacity 1s ease-in-out;
-}
-.forward .blurred {
-	transition: opacity 1s ease-in 1s;
-	-moz-transition: opacity 1s ease-in 1s;
-	-webkit-transition: opacity 1s ease-in 1s;
-	-o-transition: opacity 1s ease-in 1s;
-	-ms-transition: opacity 1s ease-in 1s;
-}
-.backward .content {
-	transition: opacity 1s ease-in-out 1s;
-	-moz-transition: opacity 1s ease-in-out 1s;
-	-webkit-transition: opacity 1s ease-in-out 1s;
-	-o-transition: opacity 1s ease-in-out 1s;
-	-ms-transition: opacity 1s ease-in-out 1s;
-}
-.backward .blurred {
-	transition: opacity 1s ease-in;
-	-moz-transition: opacity 1s ease-in;
-	-webkit-transition: opacity 1s ease-in;
-	-o-transition: opacity 1s ease-in;
-	-ms-transition: opacity 1s ease-in;
 }
 #logo {
 	width: 282px;
@@ -219,115 +178,13 @@ a.menu-item, a.menu-item:active, a.menu-item:focus, a.menu-item:visited {
 	font-size: 18px;
 }
 
-/* Second section: featured-products */
+/* contact */
 
-#product-list {
-	margin-right: -52px;
-}
-#product-list .product {
-	float: left;
-	width: 365px;
-	height: 365px;
-	margin: 52px 52px 0 0;
-}
-#product-list .product img {
-	width: 100%;
-	max-width: 100%;
-}
-#product-list .product img:hover {
-	cursor: pointer;
-}
-#display-product .product {
-	width: 100%;
-	padding: 0;
-	max-height: 0;
-	overflow: hidden;
-	opacity: 0;
-	/* animated hide */
-	-webkit-transition: max-height 1s ease-out, padding 1s ease-out, opacity 1s ease-in;
-	-moz-transition: max-height 1s ease-out, padding 1s ease-out, opacity 1s ease-in;
-	-ms-transition: max-height 1s ease-out, padding 1s ease-out, opacity 1s ease-in;
-	-o-transition: max-height 1s ease-out, padding 1s ease-out, opacity 1s ease-in;
-	transition:  max-height 1s ease-out, padding 1s ease-out, opacity 1s ease-in;
-}
-#display-product .product.show-product {
-	border-bottom: 2px solid #EEE;
-	padding: 52px 0;
-	max-height: 100em;
-	opacity: 1;
-	/* animated display */
-	-webkit-transition: max-height 5s ease-in-out 1s, padding 2s ease-in-out 1s, opacity 3s ease-in 1s;
-	-moz-transition: max-height 5s ease-in-out 1s, padding 2s ease-in-out 1s, opacity 3s ease-in 1s;
-	-ms-transition: max-height 5s ease-in-out 1s, padding 2s ease-in-out 1s, opacity 3s ease-in 1s;
-	-o-transition: max-height 5s ease-in-out 1s, padding 2s ease-in-out 1s, opacity 3s ease-in 1s;
-	transition:  max-height 5s ease-in-out 1s, padding 2s ease-in-out 1s, opacity 3s ease-in 1s;
-}
-#display-product .product .img-holder {
-	width: 782px;
-	height: 524px;
-	float: left;
-	margin-right: 52px;
-}
-#display-product .product .description {
-	width: 366px;
-	float: left;
-	min-height: 524px;
-	position: relative;
-}
-#display-product .product .description .heading {
-	text-transform: uppercase;
-	font-size: 16px;
-	margin-bottom: 40px;
-}
-#display-product .product .description .text {
-	margin-bottom: 52px;
-}
-#display-product .product .description .thumbnails-holder {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-}
-.thumbnails-holder .thumbnail-img-holder {
-	width: 52px;
-	height: 52px;
-	float: left;
-	margin-right: 52px;
-}
-.thumbnails-holder .thumbnail-img-holder > img {
-	max-width: 100%;
-}
-
-/* Third section: our philosophy */
-
-#our-philosophy .inner-container{
-	margin-right: -52px;
-}
-#our-philosophy .tab {
-	width: 261px;
-	float: left;
-	margin: 52px 52px 0 0;
-}
-#our-philosophy .tab .img-holder {
-	width: 261px;
-	height: 261px;
-	background-color: #58c2da;
-}
-#our-philosophy .tab .img-holder > img {
-	max-width: 100%;
-	width: 100%;
-}
-#our-philosophy .tab > .text {
-	margin-top: 42px;
-}
-
-/* Fourth section: questions */
-
-#questions .text {
+#contact .text {
 	margin: 52px 0;
 	font-size: 18px;
 }
-#questions #contact-button {
+#contact #contact-button {
 	width: 366px;
 	height: 67px;
 	line-height: 67px;
@@ -337,7 +194,7 @@ a.menu-item, a.menu-item:active, a.menu-item:focus, a.menu-item:visited {
 	margin: 0 auto;
 }
 
-/* Fifth section: footer */
+/* footer */
 
 #footer .heading a {
 	display: inline-block;
