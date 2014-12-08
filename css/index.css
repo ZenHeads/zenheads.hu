@@ -8,7 +8,9 @@
 	bottom: 0;
 	opacity: 1;
 	background: url(../img/img_header_blurred.png);
+	background-size: cover;
 }
+/*
 .animated .content,
 .animated .blurred {
 	opacity: 0 !important;
@@ -41,6 +43,8 @@
 	-o-transition: opacity 1s ease-in;
 	-ms-transition: opacity 1s ease-in;
 }
+*/
+
 /* featured-products */
 
 #product-list {
@@ -62,30 +66,44 @@
 #product-list .product img:hover {
 	cursor: pointer;
 }
+#display-product {
+	height: 0;
+	padding: 0;
+	overflow: hidden;
+	position: relative;
+}
+#display-product.show {
+	border-bottom: 2px solid #EEE;
+	height: 524px;
+	padding: 52px 0;
+	transition: height 0.1s ease-out;
+	-webkit-transition: height 0.1s ease-out, padding 0.1s ease-out;
+	-moz-transition: height 0.1s ease-out, padding 0.1s ease-out;
+	-o-transition: height 0.1s ease-out, padding 0.1s ease-out;
+	-ms-transition: height 0.1s ease-out, padding 0.1s ease-out;
+}
 #display-product .product {
 	width: 100%;
-	padding: 0;
-	max-height: 0;
-	overflow: hidden;
+	position: absolute;
+	top: 52px;
+	left: 0;
+	right: 0;
 	opacity: 0;
 	/* animated hide */
-	-webkit-transition: max-height 1s ease-out, padding 1s ease-out, opacity 1s ease-in;
-	-moz-transition: max-height 1s ease-out, padding 1s ease-out, opacity 1s ease-in;
-	-ms-transition: max-height 1s ease-out, padding 1s ease-out, opacity 1s ease-in;
-	-o-transition: max-height 1s ease-out, padding 1s ease-out, opacity 1s ease-in;
-	transition:  max-height 1s ease-out, padding 1s ease-out, opacity 1s ease-in;
+	-webkit-transition: opacity 0.2s ease-in;
+	-moz-transition: opacity 0.2s ease-in;
+	-ms-transition: opacity 0.2s ease-in;
+	-o-transition: opacity 0.2s ease-in;
+	transition:  opacity 0.2s ease-in;
 }
 #display-product .product.show-product {
-	border-bottom: 2px solid #EEE;
-	padding: 52px 0;
-	max-height: 100em;
 	opacity: 1;
 	/* animated display */
-	-webkit-transition: max-height 5s ease-in-out 1s, padding 2s ease-in-out 1s, opacity 3s ease-in 1s;
-	-moz-transition: max-height 5s ease-in-out 1s, padding 2s ease-in-out 1s, opacity 3s ease-in 1s;
-	-ms-transition: max-height 5s ease-in-out 1s, padding 2s ease-in-out 1s, opacity 3s ease-in 1s;
-	-o-transition: max-height 5s ease-in-out 1s, padding 2s ease-in-out 1s, opacity 3s ease-in 1s;
-	transition:  max-height 5s ease-in-out 1s, padding 2s ease-in-out 1s, opacity 3s ease-in 1s;
+	-webkit-transition: opacity 0.2s ease-in 0.1s;
+	-moz-transition: opacity 0.2s ease-in 0.1s;
+	-ms-transition: opacity 0.2s ease-in 0.1s;
+	-o-transition: opacity 0.2s ease-in 0.1s;
+	transition: opacity 0.2s ease-in 0.1s;
 }
 #display-product .product .img-holder {
 	width: 782px;

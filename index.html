@@ -22,9 +22,9 @@
 			</div>
 		</div>
 	</div>
-	<div id="wrapper">
-		<div id="wrapper-header" class="clearfix box">
-			<div class="content box">
+	<div id="wrapper-header" class="clearfix box">
+		<div class="content">
+			<div class="inner-content box">
 				<div id="logo">
 					<img alt="ZenHeads logo" src="img/logo_zenheads.png"/>
 				</div>
@@ -35,9 +35,11 @@
 					you name it - we've got the right person for it.
 				</div>
 			</div>
-			<div class="blurred"></div>
 		</div>
-		<div id="featured-products" class="section clearfix box blue-bg">
+		<div class="blurred"></div>
+	</div>
+	<div class="section blue-bg">
+		<div id="featured-products" class="inner-section clearfix box">
 			<div class="heading">featured products</div>
 			<div id="display-product">
 				<div id="product-1" class="product clearfix">
@@ -154,7 +156,9 @@
 				<div class="product rounded rounded-blue"><img src="img/product/img_s_oszkar.png" alt="#product-5"/></div>
 			</div>
 		</div>
-		<div id="our-philosophy" class="section clearfix box grey-bg">
+	</div>
+	<div class="section grey-bg">
+		<div id="our-philosophy" class="inner-section clearfix box">
 			<div class="heading">our philosophy</div>
 			<div class="inner-container box clearfix">
 				<div class="tab">
@@ -175,12 +179,16 @@
 				</div>
 			</div>
 		</div>
-		<div id="contact" class="section clearfix box blue-bg">
+	</div>
+	<div class="section blue-bg">
+		<div id="contact" class="inner-section clearfix box">
 			<div class="heading">we know you have questions.</div>
 			<div class="text align-center">You know, we have answers.</div>
 			<div id="contact-button" class="align-center rounded rounded-blue">contact us now!</div>
 		</div>
-		<div id="footer" class="section clearfix box grey-bg">
+	</div>
+	<div class="section grey-bg">
+		<div id="footer" class="inner-section clearfix box">
 			<div class="heading">
 				<a href="#"><img src="img/icn_twitter.png" alt="Twitter" /></a>
 				<a href="#"><img src="img/icn_github.png" alt="GitHub" /></a>
@@ -188,15 +196,13 @@
 			</div>
 			<div class="text align-center">Copyright &copy; ZENHEADS 2014.</div>
 		</div>
-	
-	
 	</div>
 	<script>
 	$(document).ready( function() {
 		
 		// display product
 		$("#product-list .product img").on("click", function() {
-			
+			if(!$("#display-product").hasClass("show")) $("#display-product").addClass("show");
 			$(".show-product").removeClass("show-product");
 			$($(this).attr("alt")).addClass("show-product");
 			
@@ -205,6 +211,7 @@
 		/**************************************************
 		********       header image animation      ********
 		**************************************************/
+		/*
 		var timeout = 2000; // animation duration - full time of transition in CSS (2sec)
 		
 		$(window).bind('mousewheel DOMMouseScroll', function (e) {
@@ -243,9 +250,45 @@
 				return false; //disable mousewheel scrolling
 			}
 			
-		});
+		}); */
 		
-		
+		function headerAnimation() {
+			var animationScrollY = 400;
+			
+			var content = $("#wrapper-header");
+			var body = $("body");
+			var blurred = $(".blurred");
+			var distanceY = $(document).scrollTop();
+			
+			var opacity;
+			
+			if(distanceY < animationScrollY) {
+				// fake scroll effect
+				body.css("padding-top", distanceY+60+"px");
+				
+				if(distanceY == 0){
+					$("#wrapper-header > .content").css("opacity",1);
+					blurred.css("opacity",1);
+				}
+				if(distanceY > 0){
+					// fade content
+					if(distanceY < (animationScrollY/2)) {
+						opacity = 1-(2 * (distanceY / animationScrollY));
+						$("#wrapper-header > .content").css("opacity",opacity);
+					}
+					// fade blurred image
+					if(distanceY > (animationScrollY/2)) {
+						opacity = 1-(2 * ((distanceY-animationScrollY/2) / animationScrollY));
+						blurred.css("opacity",opacity);
+					}
+				}
+			} else {
+				$("#wrapper-header > .content").css("opacity",0);
+				blurred.css("opacity",0);
+			}
+		}
+		// calling animation on scrolling
+		$(window).scroll(headerAnimation);
 		
 	} );
 	</script>
