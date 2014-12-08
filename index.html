@@ -211,46 +211,6 @@
 		/**************************************************
 		********       header image animation      ********
 		**************************************************/
-		/*
-		var timeout = 2000; // animation duration - full time of transition in CSS (2sec)
-		
-		$(window).bind('mousewheel DOMMouseScroll', function (e) {
-			// e.originalEvent.detail for Firefox
-			// e.originalEvent.wheelDelta for IE, Safari, Chrome
-			var enableHighlight = e.originalEvent.detail ? (e.originalEvent.detail > 0) : (e.originalEvent.wheelDelta < 0); // detect scrollDown
-			var enableHide = e.originalEvent.detail ? (e.originalEvent.detail < 0) : (e.originalEvent.wheelDelta > 0); // detect scrollUp
-			// check if any animation is still active
-			if($("#wrapper-header").hasClass("forward") || $("#wrapper-header").hasClass("backward")) { 
-				return false; //disable mousewheel scrolling
-			}
-
-			// highlight if no active animation and mousewheel scrolling down
-			if(!$("#wrapper-header").hasClass("animated") && !$("#wrapper-header").hasClass("backward") && !$("#wrapper-header").hasClass("forward") && enableHighlight) {
-				$("#wrapper-header").addClass("animated");
-				$("#wrapper-header").addClass("forward");
-				setTimeout(function(){
-					if($("#wrapper-header").hasClass("forward")) {
-						$("#wrapper-header").removeClass("forward");
-					}
-				},timeout);
-				return false; //disable mousewheel scrolling
-			}
-			
-			// hide if no active animation and on top and mousewheel scrolling up
-			if($(window).scrollTop()==0 && !$("#wrapper-header").hasClass("backward") && !$("#wrapper-header").hasClass("forward") && $("#wrapper-header").hasClass("animated") && enableHide) {
-				movedFromTop = false;
-				
-				$("#wrapper-header").addClass("backward");
-				$("#wrapper-header").removeClass("animated");
-				setTimeout(function(){
-					if($("#wrapper-header").hasClass("backward")) {
-						$("#wrapper-header").removeClass("backward");
-					}
-				},timeout);
-				return false; //disable mousewheel scrolling
-			}
-			
-		}); */
 		
 		function headerAnimation() {
 			var animationScrollY = 400;
@@ -282,6 +242,8 @@
 						blurred.css("opacity",opacity);
 					}
 				}
+				// floating text to top
+				$("#wrapper-header > .content > .inner-content").css("top",-distanceY);
 			} else {
 				$("#wrapper-header > .content").css("opacity",0);
 				blurred.css("opacity",0);
