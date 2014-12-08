@@ -36,6 +36,7 @@
 				</div>
 			</div>
 		</div>
+		<div class="grey-layer"></div>
 		<div class="blurred"></div>
 	</div>
 	<div class="section blue-bg">
@@ -218,7 +219,8 @@
 			var content = $("#wrapper-header");
 			var body = $("body");
 			var blurred = $(".blurred");
-			var distanceY = $(document).scrollTop();
+			var greyLayer = $(".grey-layer");
+			var distanceY = $(window).scrollTop();
 			
 			var opacity;
 			
@@ -227,14 +229,14 @@
 				body.css("padding-top", distanceY+60+"px");
 				
 				if(distanceY == 0){
-					$("#wrapper-header > .content").css("opacity",1);
+					greyLayer.css("opacity",1);
 					blurred.css("opacity",1);
 				}
 				if(distanceY > 0){
 					// fade content
 					if(distanceY < (animationScrollY/2)) {
 						opacity = 1-(2 * (distanceY / animationScrollY));
-						$("#wrapper-header > .content").css("opacity",opacity);
+						greyLayer.css("opacity",opacity);
 					}
 					// fade blurred image
 					if(distanceY > (animationScrollY/2)) {
@@ -242,13 +244,38 @@
 						blurred.css("opacity",opacity);
 					}
 				}
-				// floating text to top
-				$("#wrapper-header > .content > .inner-content").css("top",-distanceY);
 			} else {
-				$("#wrapper-header > .content").css("opacity",0);
+				greyLayer.css("opacity",0);
 				blurred.css("opacity",0);
 			}
+			
+			// floating text to top
+			$("#wrapper-header > .content > .inner-content").css("top",-1.25*distanceY);
+			// fade content
+			dynamixFade($("#logo"), distanceY);
+			dynamixFade($("#site-heading"), distanceY);
+			dynamixFade($("#site-text"), distanceY);
 		}
+		
+		function dynamixFade(elem, scroll) {
+			var c = 60;
+			var opacity;
+			// top offset
+			var topOffset = elem.offset().top;
+			// height
+			var height = elem.height();
+			
+			if(scroll > topOffset-c){
+				// start to fadeOut
+				opacity = 1-1.5*(scroll+c-topOffset)/height;
+				opacity = opacity < 0 ? 0 : opacity;
+			}
+			if(scroll < c) opacity = 1;
+			if(scroll > topOffset+height-c) opacity = 0;
+			
+			elem.css("opacity", opacity);
+		}
+		
 		// calling animation on scrolling
 		$(window).scroll(headerAnimation);
 		
