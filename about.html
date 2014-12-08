@@ -6,7 +6,8 @@
 
 <link href="css/main.css" rel="stylesheet" type="text/css" />
 <link href="css/about.css" rel="stylesheet" type="text/css" />
-
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/header_animation.js"></script>
 </head>
 <body>
 	<div id="top-header">
@@ -35,6 +36,7 @@
 				</div>
 			</div>
 		</div>
+		<div class="grey-layer"></div>
 		<div class="blurred"></div>
 	</div>
 	<div class="section blue-bg">
@@ -230,5 +232,11 @@
 			<div class="text align-center">Copyright &copy; ZENHEADS 2014.</div>
 		</div>
 	</div>
+	<script>
+	$(document).ready( function() {
+		// calling animation on scrolling
+		$(window).scroll(headerAnimation);
+	});
+	</script>
 </body>
 </html>

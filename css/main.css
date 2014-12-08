@@ -194,6 +194,26 @@ a.menu-item, a.menu-item:active, a.menu-item:focus, a.menu-item:visited {
 	font-size: 18px;
 }
 
+/* header animation */
+
+#wrapper-header > .content {
+	overflow: hidden;
+}
+#wrapper-header > .content > .inner-content {
+	position: relative;
+}
+#wrapper-header .blurred {
+	position: absolute;
+	z-index: 2;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	opacity: 1;
+	background: url(../img/img_header_blurred.png);
+	background-size: cover;
+}
+
 /* contact */
 
 #contact .text {
