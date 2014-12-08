@@ -267,24 +267,24 @@
 				body.css("padding-top", distanceY+60+"px");
 				
 				if(distanceY == 0){
-					$("#wrapper-header > .content").css("opacity",1);
-					blurred.css("opacity",1);
+					$("#wrapper-header > .content").fadeTo("slow", 1, function() { $(this).css("opacity",1); });
+					blurred.fadeTo("slow", 1, function() { $(this).css("opacity",1); });
 				}
 				if(distanceY > 0){
 					// fade content
 					if(distanceY < (animationScrollY/2)) {
 						opacity = 1-(2 * (distanceY / animationScrollY));
-						$("#wrapper-header > .content").css("opacity",opacity);
+						$("#wrapper-header > .content").fadeTo("slow", opacity, function() { $(this).css("opacity",opacity); });
 					}
 					// fade blurred image
 					if(distanceY > (animationScrollY/2)) {
 						opacity = 1-(2 * ((distanceY-animationScrollY/2) / animationScrollY));
-						blurred.css("opacity",opacity);
+						blurred.fadeTo("slow", opacity, function() { $(this).css("opacity",opacity); });
 					}
 				}
 			} else {
-				$("#wrapper-header > .content").css("opacity",0);
-				blurred.css("opacity",0);
+				$("#wrapper-header > .content").fadeTo("slow", 0, function(){ $(this).css("opacity",0); });
+				blurred.fadeTo("slow", 0, function() { $(this).css("opacity",0); });
 			}
 		}
 		// calling animation on scrolling
