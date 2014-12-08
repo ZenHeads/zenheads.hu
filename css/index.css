@@ -10,7 +10,40 @@
 	background: url(../img/img_header_blurred.png);
 	background-size: cover;
 }
-
+/*
+.animated .content,
+.animated .blurred {
+	opacity: 0 !important;
+}
+.forward .content {
+	transition: opacity 1s ease-in-out;
+	-moz-transition: opacity 1s ease-in-out;
+	-webkit-transition: opacity 1s ease-in-out;
+	-o-transition: opacity 1s ease-in-out;
+	-ms-transition: opacity 1s ease-in-out;
+}
+.forward .blurred {
+	transition: opacity 1s ease-in 1s;
+	-moz-transition: opacity 1s ease-in 1s;
+	-webkit-transition: opacity 1s ease-in 1s;
+	-o-transition: opacity 1s ease-in 1s;
+	-ms-transition: opacity 1s ease-in 1s;
+}
+.backward .content {
+	transition: opacity 1s ease-in-out 1s;
+	-moz-transition: opacity 1s ease-in-out 1s;
+	-webkit-transition: opacity 1s ease-in-out 1s;
+	-o-transition: opacity 1s ease-in-out 1s;
+	-ms-transition: opacity 1s ease-in-out 1s;
+}
+.backward .blurred {
+	transition: opacity 1s ease-in;
+	-moz-transition: opacity 1s ease-in;
+	-webkit-transition: opacity 1s ease-in;
+	-o-transition: opacity 1s ease-in;
+	-ms-transition: opacity 1s ease-in;
+}
+*/
 
 /* featured-products */
 
