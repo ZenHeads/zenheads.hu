@@ -1,3 +1,9 @@
+#wrapper {
+	min-height: 3130px;
+}
+#inner-wrapper{
+	min-height: 3070px;
+}
 /* featured-products */
 
 #product-list {
