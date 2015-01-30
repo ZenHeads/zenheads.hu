@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<!-- CSS Section -->
+<link href="css/test.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div id="container">
+	<div id="top"></div>
+	
+	<div class="text" data-start="opacity:1;" data-480="opacity:1;" data-580="opacity:0;">
+		<h3>Valami szöveg A</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in nibh vitae orci finibus finibus. Pellentesque tempus ex nec gravida rutrum. Maecenas consectetur sapien neque, ac eleifend est feugiat eget. Praesent ac sapien varius, facilisis justo eleifend, placerat odio. Aenean at viverra diam. In consectetur vehicula dignissim. Curabitur congue ullamcorper velit et pellentesque. Duis dictum ipsum vitae ex mattis consequat. Cras semper, lectus eu iaculis euismod, quam enim gravida dolor, a tempus velit eros nec sem. Nam at urna iaculis, tincidunt augue quis, placerat tellus. </p>
+	</div>
+	<div class="text" data-start="opacity:0;" data-580="opacity:0;" data-680="opacity:1;" data-1280="opacity:1;" data-1380="opacity:0;">
+		<h3>Valami szöveg B</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in nibh vitae orci finibus finibus. Pellentesque tempus ex nec gravida rutrum. Maecenas consectetur sapien neque, ac eleifend est feugiat eget. Praesent ac sapien varius, facilisis justo eleifend, placerat odio. Aenean at viverra diam. In consectetur vehicula dignissim. Curabitur congue ullamcorper velit et pellentesque. Duis dictum ipsum vitae ex mattis consequat. Cras semper, lectus eu iaculis euismod, quam enim gravida dolor, a tempus velit eros nec sem. Nam at urna iaculis, tincidunt augue quis, placerat tellus. </p>
+	</div>
+	<div class="text" data-start="opacity:0;" data-1380="opacity:0;" data-1480="opacity:1;" data-2080="opacity:1;" data-2180="opacity:0;">
+		<h3>Valami szöveg C</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in nibh vitae orci finibus finibus. Pellentesque tempus ex nec gravida rutrum. Maecenas consectetur sapien neque, ac eleifend est feugiat eget. Praesent ac sapien varius, facilisis justo eleifend, placerat odio. Aenean at viverra diam. In consectetur vehicula dignissim. Curabitur congue ullamcorper velit et pellentesque. Duis dictum ipsum vitae ex mattis consequat. Cras semper, lectus eu iaculis euismod, quam enim gravida dolor, a tempus velit eros nec sem. Nam at urna iaculis, tincidunt augue quis, placerat tellus. </p>
+	</div>
+	
+	
+	<div id="inner-container" data-start="left:190px;top:-195px;" data-400="left:95px;top:-145px;"  data-800="left:95px;top:-145px;"  data-1200="left:5px;top:-95px;" data-1600="left:5px;top:-95px;">
+		
+		<!-- A mozaik -->
+		<div id="r1" class="page rotate">
+			<div class="label">Valami szöveg A</div>
+		</div>
+		
+		<!-- A és B közötti mozaik -->
+		<div id="r2" class="page" data-start="background:rgb(180,180,180);transform:rotate(45deg) rotateX(-180deg) skew(0deg);-moz-transform:rotate(45deg) rotateX(-180deg) skew(0deg);-webkit-transform:rotate(45deg) rotateX(-180deg) skew(0deg) translate3d(0,0,0);" data-200="background:rgb(180,180,180);transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);-moz-transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);-webkit-transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg) translate3d(0,0,0);" data-201="background:rgb(255,255,255);transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);-moz-transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);-webkit-transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg) translate3d(0,0,0));" data-400="background:rgb(255,255,255);transform: rotate(45deg) rotateX(-65deg) skew(-22.5deg);-moz-transform: rotate(45deg) rotateX(-65deg) skew(-22.5deg);-webkit-transform: rotate(45deg) rotateX(-65deg) skew(-22.5deg) translate3d(0,0,0);"></div>
+		
+		<!-- B mozaik -->
+		<div id="r3-fake" class="page" data-start="z-index:1;transform: rotate(45deg) rotateX(0deg) skew(0deg);-moz-transform: rotate(45deg) rotateX(0deg) skew(0deg);-webkit-transform: rotate(45deg) rotateX(0deg) skew(0deg);" data-200="z-index:1;transform: rotate(45deg) rotateX(90deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(90deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(90deg) skew(22.5deg);" data-201="z-index:4;transform: rotate(45deg) rotateX(90deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(90deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(90deg) skew(22.5deg);" data-400="z-index:4;transform: rotate(45deg) rotateX(115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(115deg) skew(22.5deg);" data-401="z-index:-1;transform: rotate(45deg) rotateX(115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(115deg) skew(22.5deg);"></div>
+		<div id="r3" class="page" data-start="z-index:-1;transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);" data-400="z-index:-1;transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);" data-401="z-index:5;transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);" data-402="z-index:5;transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);" data-800="z-index:5;transform:rotate(45deg) rotateX(0deg) skew(0deg);-moz-transform:rotate(45deg) rotateX(0deg) skew(0deg);-webkit-transform:rotate(45deg) rotateX(0deg) skew(0deg);">
+			<div class="label" data-start="opacity:0;" data-801="opacity:0;" data-802="opacity:1;" data-end="opacity:1;">Valami szöveg B</div>
+		</div>
+		
+		<!-- B és C közötti mozaik -->
+		<div id="r4" class="page" data-start="z-index:-1;background:rgb(180,180,180);transform: rotate(45deg) rotateX(-180deg) skew(0deg);-moz-transform: rotate(45deg) rotateX(-180deg) skew(0deg);-webkit-transform: rotate(45deg) rotateX(-180deg) skew(0deg);" data-800="z-index:-1;background:rgb(180,180,180);transform: rotate(45deg) rotateX(-180deg) skew(0deg);-moz-transform: rotate(45deg) rotateX(-180deg) skew(0deg);-webkit-transform: rotate(45deg) rotateX(-180deg) skew(0deg);" data-801="z-index:3;background:rgb(180,180,180);transform: rotate(45deg) rotateX(-180deg) skew(0deg);-moz-transform: rotate(45deg) rotateX(-180deg) skew(0deg);-webkit-transform: rotate(45deg) rotateX(-180deg) skew(0deg);" data-1000="z-index:3;background:rgb(180,180,180);transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);-moz-transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);-webkit-transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);" data-1001="z-index:3;background:rgb(255,255,255);transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);-moz-transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);-webkit-transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);" data-1200="z-index:3;transform: rotate(45deg) rotateX(-65deg) skew(-22.5deg);-moz-transform: rotate(45deg) rotateX(-65deg) skew(-22.5deg);-webkit-transform: rotate(45deg) rotateX(-65deg) skew(-22.5deg);"></div>
+		
+		<!-- C mozaik -->
+		<div id="r5-fake" class="page" data-start="z-index:-1;transform: rotate(45deg) rotateX(0deg) skew(0deg);-moz-transform: rotate(45deg) rotateX(0deg) skew(0deg);-webkit-transform: rotate(45deg) rotateX(0deg) skew(0deg);" data-801="z-index:-1;transform: rotate(45deg) rotateX(0deg) skew(0deg);-moz-transform: rotate(45deg) rotateX(0deg) skew(0deg);-webkit-transform: rotate(45deg) rotateX(0deg) skew(0deg);" data-802="z-index:2;transform: rotate(45deg) rotateX(0deg) skew(0deg);-moz-transform: rotate(45deg) rotateX(0deg) skew(0deg);-webkit-transform: rotate(45deg) rotateX(0deg) skew(0deg);" data-1000="z-index:2;transform: rotate(45deg) rotateX(90deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(90deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(90deg) skew(22.5deg);" data-1001="z-index:4;transform: rotate(45deg) rotateX(90deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(90deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(90deg) skew(22.5deg);" data-1200="z-index:4;transform: rotate(45deg) rotateX(115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(115deg) skew(22.5deg);" data-1201="z-index:-1;transform: rotate(45deg) rotateX(115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(115deg) skew(22.5deg);"></div>
+		<div id="r5" class="page rotate" data-start="z-index:-1;transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);" data-1200="z-index:-1;transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);" data-1201="z-index:3;transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);" data-1202="z-index:3;transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);" data-1600="z-index:3;transform: rotate(45deg) rotateX(0deg) skew(0deg);-moz-transform: rotate(45deg) rotateX(0deg) skew(0deg);-webkit-transform: rotate(45deg) rotateX(0deg) skew(0deg);">
+			<div class="label" data-start="opacity:0;" data-1601="opacity:0;" data-1602="opacity:1;" data-end="opacity:1;">Valami szöveg C</div>
+		</div>
+	
+	
+	
+	</div>
+	</div>
+
+
+<!-- JS Section -->
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script> 
+	<script type="text/javascript" src="js/jquery.simplr.smoothscroll.js"></script> 
+	<script type="text/javascript" src="js/skrollr.min.js"></script>
+	<script type="text/javascript">
+	/*$(function () {
+	    $.srSmoothscroll();
+	});*/
+	window.onload = function() {
+		skrollr.init({
+			forceHeight: true
+		});
+	}
+	$(document).scroll(function(){
+		$("#top").html($(window).scrollTop());
+		
+	});
+	$(function () {
+	    $.srSmoothscroll();
+	});
+	</script>
+</body>
+</html>
