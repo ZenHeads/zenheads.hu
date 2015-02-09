@@ -1,138 +1,255 @@
 body{
 	padding: 20px;
-	min-height: 4000px;
+	min-height: 8000px;
 }
 
-#container {
-	width: 500px;
+#r-container {
+	width: 1200px;
 	height: 500px;
 	position: fixed;
 	top:100px;
 	background: rgba(0,5,40,0.2);
 	left: 50%;
-	margin-left: -250px;
+	margin-left: -600px;
 	overflow:hidden;
 }
-#inner-container{
-	position:relative;
+#r-inner-container{
+	position:absolute;
 	width:100%;
 	height:100%;
 	background: #CCC;
+	top: -325px;
+	left: 900px;
 }
 
-#top {
-	position: absolute;
-	top:0;
-	left:0;
-	width:40px;
-	height:40px;
-	z-index:100;
-}
-
-.rotate {
+.r-rotate {
 	-webkit-transform:rotate(45deg);
 	-moz-transform:rotate(45deg);
 	-o-transform:rotate(45deg);
 	transform:rotate(45deg);
 }
-.page {
+.r-page {
 	width: 70px;
 	height: 70px;
 	background: grey;
 	position: absolute;
 	border-width: 1px;
 	border-style: solid;
-	border-color: #F00 #008000 #00F #FFA500;
-	 -webkit-perspective: 1000;
-	 -webkit-backface-visibility: hidden;
-	-webkit-transition-duration: 150ms;
-    
+	/*border-color: #F00 #008000 #00F #FFA500;*/
+	border-color: gray;
 }
-.label {
+.r-grey-bg{
+	background:#999;
+}
+.r-label{
 	position: absolute;
 	width: 160px;
 	text-transform: uppercase;
 	z-index: 1000;
-	transform: rotate(-45deg);
-	-moz-transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	left: 60px;
-	top: -35px;
 }
-.text {
+.r-text{
 	position: absolute;
 	top: 5px;
 	left: 5px;
 	width: 500px;
 	z-index:1000;
 	font-size:14px;
+	opacity: 0;
 }
-.text > h3 {
+.r-text-title {
 	font-size:16px;
 	text-transform: uppercase;
 }
+
+/* két elem közötti, valós ikon elemek */
+.r-transform-origin-100-100 {
+	-webkit-transform-origin: 100% 100%;
+	-moz-transform-origin: 100% 100%;
+	transform-origin: 100% 100%;
+}
+/* fake ikon elemek */
+.r-transform-origin-100-0 {
+	-webkit-transform-origin: 100% 0%;
+	-moz-transform-origin: 100% 0%;
+	transform-origin: 100% 0%;
+}
+
+
+/*****************
+***  ELEMENTS  ***
+******************/
+
 /* A */
-#r1{
+#elem1{
 	z-index:10;
 	background: url(../img/icon1.png);
-	-webkit-transform:rotate(45deg);
-	-moz-transform:rotate(45deg);
-	-o-transform:rotate(45deg);
-	transform:rotate(45deg);
 	top: 410px;
 	left: 20px;
 }
-
-/* A és B közötti */
-#r2{
-	z-index:2;
-	-webkit-transform-origin: 100% 100%;
-	-moz-transform-origin: 100% 100%;
-	transform-origin: 100% 100%;
-	background:#999;
-	top: 374px;
-	left: 36px;
-}
 /* B */
-#r3-fake{
-	-webkit-transform-origin: 100% 0%;
-	-moz-transform-origin: 100% 0%;
-	transform-origin: 100% 0%;
-	background: url(../img/icon2.png);
-	top: 446px;
-	left: 36px;
-}
-#r3{
-	-webkit-transform-origin: 100% 100%;
-	-moz-transform-origin: 100% 100%;
-	transform-origin: 100% 100%;
+#elem2{
 	background: url(../img/icon2.png);
 	top: 374px;
-	left: 77px;
-}
-/* B és C közötti */
-#r4{
-	-webkit-transform-origin: 100% 100%;
-	-moz-transform-origin: 100% 100%;
-	transform-origin: 100% 100%;
-	background:#999;
-	top: 324px;
-	left: 128px;
+	left: 78px;
+	transform-style: preserve-3d;
 }
 /* C */
-#r5-fake{
-	-webkit-transform-origin: 100% 0%;
-	-moz-transform-origin: 100% 0%;
-	transform-origin: 100% 0%;
-	background: url(../img/icon3.png);
-	top: 395px;
-	left: 129px;
-}
-#r5{
-	-webkit-transform-origin: 100% 100%;
-	-moz-transform-origin: 100% 100%;
-	transform-origin: 100% 100%;
+#elem3{
 	background: url(../img/icon3.png);
 	top: 324px;
 	left: 171px;
+	transform-style: preserve-3d;
+}
+/* D */
+#elem4{
+	background: url(../img/icon4.png);
+	top: 274px;
+	left: 265px;
+	transform-style: preserve-3d;
+}
+/* E */
+#elem5{
+	background: url(../img/icon5.png);
+	top: 224px;
+	left: 359px;
+	transform-style: preserve-3d;
+}
+/* F */
+#elem6{
+	background: url(../img/icon6.png);
+	top: 174px;
+	left: 453px;
+	transform-style: preserve-3d;
+}
+/* G */
+#elem7{
+	background: url(../img/icon7.png);
+	top: 124px;
+	left: 547px;
+	transform-style: preserve-3d;
+}
+/* H */
+#elem8{
+	background: url(../img/icon8.png);
+	top: 74px;
+	left: 641px;
+	transform-style: preserve-3d;
+}
+
+/* B */
+#elem2-fake{
+	background: url(../img/icon2.png);
+	top: 446px;
+	left: 35px;
+}
+/* C */
+#elem3-fake{
+	background: url(../img/icon3.png);
+	top: 396px;
+	left: 129px;
+}
+/* D */
+#elem4-fake{
+	background: url(../img/icon4.png);
+	top: 346px;
+	left: 222px;
+}
+/* E */
+#elem5-fake{
+	background: url(../img/icon5.png);
+	top: 296px;
+	left: 317px;
+}
+/* F */
+#elem6-fake{
+	background: url(../img/icon6.png);
+	top: 246px;
+	left: 410px;
+}
+/* G */
+#elem7-fake{
+	background: url(../img/icon7.png);
+	top: 196px;
+	left: 504px;
+}
+/* H */
+#elem8-fake{
+	background: url(../img/icon8.png);
+	top: 146px;
+	left: 598px;
+}
+
+
+
+/* A és B közötti */
+#middle-1{
+	top: 374px;
+	left: 35px;
+}
+/* B és C közötti */
+#middle-2{
+	top: 324px;
+	left: 129px;
+}
+/* C és D közötti */
+#middle-3{
+	top: 274px;
+	left: 222px;
+}
+/* D és E közötti */
+#middle-4{
+	top: 224px;
+	left: 317px;
+}
+/* E és F közötti */
+#middle-5{
+	top: 174px;
+	left: 410px;
+}
+/* F és G közötti */
+#middle-6{
+	top: 124px;
+	left: 504px;
+}
+/* G és H közötti */
+#middle-7{
+	top: 74px;
+	left: 598px;
+}
+
+
+/***************
+***  LABELS  ***
+****************/
+#elem1-label {
+	top: 470px;
+	left: 100px;
+}
+#elem2-label {
+	top: 420px;
+	left: 190px;
+}
+#elem3-label {
+	top: 370px;
+	left: 280px;
+}
+#elem4-label {
+	top: 320px;
+	left: 375px;
+}
+#elem5-label {
+	top: 270px;
+	left: 470px;
+}
+#elem6-label {
+	top: 220px;
+	left: 565px;
+}
+#elem7-label {
+	top: 170px;
+	left: 660px;
+}
+#elem8-label {
+	top: 120px;
+	left: 755px;
 }
