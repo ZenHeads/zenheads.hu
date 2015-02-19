@@ -1,0 +1,67 @@
+#wrapper {
+	min-height: 2862px;
+}
+#inner-wrapper{
+	min-height: 2802px;
+}
+#jobs {
+	color: #FAFAFA;
+}
+.inner-section > .sub-heading {
+	width: 100%;
+	text-align: center;
+	font-size: 24px;
+	text-transform: uppercase;
+	margin: 52px 0;
+	line-height: 52px;
+}
+#jobs > .sub-heading > span {
+	display: inline-block;
+	position: relative;
+}
+#jobs > .sub-heading > span:after {
+	content: "";
+	display: inline-block;
+	width: 52px;
+	height: 52px;
+	position: absolute;
+	right: -72px;
+	bottom: 0px;
+	background: url("../img/icon_hammer.png") no-repeat center center;
+}
+
+#jobs-button {
+	width: 366px;
+	height: 67px;
+	line-height: 67px;
+	font-size: 24px;
+	text-transform: uppercase;
+	background-color: #FAFAFA;
+	margin: 0 auto;
+	color: #ff4b32;
+}
+.section > .inner-section > .paragraph {
+	margin-bottom: 52px;
+}
+.section .paragraph > .title {
+	font-size: 24px;
+	line-height: 30px;
+	margin-bottom: 40px;
+}
+.section .paragraph > .description {
+	color: #001A2F;
+	font-size: 18px;
+	line-height: 20px;
+}
+.section .paragraph > .description > p + p {
+	margin-top: 20px;
+}
+.section .paragraph > .description > ul {
+	padding-left: 20px;
+}
+.section .paragraph > .description > ul > li {
+	line-height: 30px;
+}
+.section .paragraph > .description > ul > li + li {
+	margin-top: 20px;
+}

@@ -49,7 +49,7 @@ body {
 }
 .blue-bg {
 	background-color: #001A2F;
-	color: #EEE;
+	color: #FAFAFA;
 }
 .lightblue-bg {
 	background-color: #58C2DA;
@@ -272,7 +272,7 @@ a.menu-item, a.menu-item:active, a.menu-item:focus, a.menu-item:visited {
 	text-transform: uppercase;
 	background-color: #ff4b32;
 	margin: 0 auto;
-	color: #EEE;
+	color: #FAFAFA;
 }
 
 /* footer */
