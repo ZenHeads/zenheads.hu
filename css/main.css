@@ -51,8 +51,12 @@ body {
 	background-color: #001A2F;
 	color: #EEE;
 }
+.lightblue-bg {
+	background-color: #58C2DA;
+	color: #001A2F;
+}
 .grey-bg {
-	background-color: #EEE;
+	background-color: #fafafa;
 	color: #001A2F;
 }
 .rounded {
@@ -81,12 +85,12 @@ body {
 	bottom: 0;
 }
 .rounded-grey:before {
-	border-top-color: #EEE;
-	border-left-color: #EEE;
+	border-top-color: #fafafa;
+	border-left-color: #fafafa;
 }
 .rounded-grey:after {
-	border-right-color: #EEE;
-	border-bottom-color: #EEE;
+	border-right-color: #fafafa;
+	border-bottom-color: #fafafa;
 }
 .rounded-blue:before {
 	border-top-color: #001A2F;
@@ -96,8 +100,16 @@ body {
 	border-right-color: #001A2F;
 	border-bottom-color: #001A2F;
 }
+.rounded-lightblue:before {
+	border-top-color: #58c2da;
+	border-left-color: #58c2da;
+}
+.rounded-lightblue:after {
+	border-right-color: #58c2da;
+	border-bottom-color: #58c2da;
+}
 #sections {
-	top:550px;
+	top:685px;
 	position: absolute;
 	width: 100%;
 }
@@ -119,7 +131,7 @@ body {
 	background: url("../img/img_header.png");
 	background-size: cover;
 	width: 100%;
-	height: 550px;
+	height: 685px;
 }
 
 #top-header {
@@ -172,7 +184,7 @@ a.menu-item, a.menu-item:active, a.menu-item:focus, a.menu-item:visited {
 /* header */
 #wrapper-header {
 	width: 100%;
-	height: 550px;
+	height: 685px;
 	position: fixed;
 	top: 60px;
 }
@@ -184,7 +196,7 @@ a.menu-item, a.menu-item:active, a.menu-item:focus, a.menu-item:visited {
 	right: 0;
 	bottom: 0;
 	width: 100%;
-	height: 550px;
+	height: 685px;
 }
 #wrapper-header .grey-layer {
 	background: url(../img/img_header_bg.png);
@@ -202,8 +214,8 @@ a.menu-item, a.menu-item:active, a.menu-item:focus, a.menu-item:visited {
 	color: #001A2F;
 }
 #logo {
-	width: 282px;
-	height: 148px;
+	width: 103px;
+	height: 54px;
 	margin: 0 auto 60px;
 }
 #logo img {
@@ -211,11 +223,12 @@ a.menu-item, a.menu-item:active, a.menu-item:focus, a.menu-item:visited {
 }
 #site-heading {
 	width: 100%;
-	height: 48px;
+	height: 220px;
 	color: #FF4B34;
-	font-family: din-light;
-	font-size: 48px;
-	line-height: 48px;
+	font-family: din;
+	font-weight: bold;
+	font-size: 80px;
+	line-height: 110px;
 	text-transform: uppercase;
 	padding-bottom: 55px;
 	border-bottom: 2px solid #001A2F;
@@ -259,6 +272,7 @@ a.menu-item, a.menu-item:active, a.menu-item:focus, a.menu-item:visited {
 	text-transform: uppercase;
 	background-color: #ff4b32;
 	margin: 0 auto;
+	color: #EEE;
 }
 
 /* footer */

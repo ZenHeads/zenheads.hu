@@ -15,9 +15,9 @@
 			<div id="navbar">
 				<a href="index.html" class="menu-item">works</a>
 				<a href="#" class="menu-item">blog</a>
-				<a href="#" class="menu-item">contact</a>
+				<a href="#" onclick="loadContact();" class="menu-item">contact</a>
 				<a href="about.html" class="menu-item">about</a>
-				<a href="#" class="menu-item">jobs</a>
+				<a href="jobs.html" class="menu-item">jobs</a>
 			</div>
 		</div>
 	</div><!-- end of #top-header -->
@@ -36,7 +36,7 @@
 							<div id="logo" data-start="opacity:1;" data-70="opacity:0;">
 								<img alt="ZenHeads logo" src="img/logo_zenheads.png"/>
 							</div>
-							<div id="site-heading" class="align-center" data-start="opacity:1;" data-60="opacity:1;" data-120="opacity:0;">we build amazing digital products.</div>
+							<div id="site-heading" class="align-center" data-start="opacity:1;" data-60="opacity:1;" data-120="opacity:0;">we build amazing<br />digital products.</div>
 							<div id="site-text" class="align-center" data-start="opacity:1;" data-120="opacity:1;" data-180="opacity:0;">
 								Involved in the golden age of mobile development since 2008, we are a small but passionate<br />
 								team all about creating great products. Web service, mobile app,<br />
@@ -179,19 +179,19 @@
 						<div class="heading">our philosophy</div>
 						<div class="inner-container box clearfix">
 							<div class="tab">
-								<div class="img-holder rounded rounded-grey"><img src="img/img_feco.png" alt="image alt szöveg" /></div>
+								<div id="illu-target" class="img-holder"></div>
 								<div class="text align-center">We can help you lay solid business<br />foundations for your product;<br />whether you're launching fresh,<br />pivoting or re-branding.</div>
 							</div>
 							<div class="tab">
-								<div class="img-holder rounded rounded-grey"><img src="" alt="image alt szöveg" /></div>
+								<div id="illu-magnifingglass" class="img-holder"></div>
 								<div class="text align-center">We scrutinize everything from<br />your end-users prespective.<br />UX is not an empty phrase<br />we throw around.</div>
 							</div>
 							<div class="tab">
-								<div class="img-holder rounded rounded-grey"><img src="" alt="image alt szöveg" /></div>
+								<div id="illu-award" class="img-holder"></div>
 								<div class="text align-center">Every time we design from scratch,<br />it's another chance for us to wow;<br />and we don't beleive in<br />wasted chances!</div>
 							</div>
 							<div class="tab">
-								<div class="img-holder rounded rounded-grey"><img src="" alt="image alt szöveg" /></div>
+								<div id="illu-chart" class="img-holder"></div>
 								<div class="text align-center">Using cutting edge tools,<br />our development projects are<br />always under control.</div>
 							</div>
 						</div>
@@ -199,11 +199,11 @@
 				</div><!-- end of .section -->
 				
 				<!-- start of .section -->
-				<div class="section blue-bg">
+				<div class="section lightblue-bg">
 					<div id="contact" class="inner-section clearfix box">
 						<div class="heading">we know you have questions.</div>
 						<div class="text align-center">You know, we have answers.</div>
-						<div id="contact-button" class="align-center rounded rounded-blue">contact us now!</div>
+						<div id="contact-button" class="align-center rounded rounded-lightblue">contact us now!</div>
 					</div>
 				</div><!-- end of .section -->
 				
@@ -259,6 +259,13 @@
 			
 		} );
 	});
+	function loadContact() {
+		
+		$('html, body').animate({
+	        scrollTop: $("#contact").offset().top
+	    }, 500);
+	    return false;
+	}
 	</script>
 </body>
 </html>

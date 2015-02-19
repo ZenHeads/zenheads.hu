@@ -116,12 +116,20 @@
 #our-philosophy .tab .img-holder {
 	width: 261px;
 	height: 261px;
-	background-color: #58c2da;
 }
-#our-philosophy .tab .img-holder > img {
-	max-width: 100%;
-	width: 100%;
+#our-philosophy .tab #illu-target {
+	background: url("../img/illu_target.png") no-repeat center;
 }
+#our-philosophy .tab #illu-magnifingglass {
+	background: url("../img/illu_magnifingglass.png") no-repeat center;
+}
+#our-philosophy .tab #illu-award {
+	background: url("../img/illu_award.png") no-repeat center;
+}
+#our-philosophy .tab #illu-chart {
+	background: url("../img/illu_chart.png") no-repeat center;
+}
+
 #our-philosophy .tab > .text {
 	margin-top: 42px;
 }
