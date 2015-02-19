@@ -4,7 +4,7 @@
 #inner-wrapper{
 	min-height: 6300px;
 }
-.section > .sub-heading {
+.section .inner-section > .sub-heading {
 	margin-top: 52px;
 	text-align: center;
 }
@@ -12,7 +12,9 @@
 	text-align: center;
 	text-transform: uppercase;
 }
-
+#tools .tab .label, #partners .tab .label {
+	font-weight: bold;
+}
 /* work */
 
 #work .inner-container .tab {
@@ -57,6 +59,25 @@
 	height: 164px;
 	margin-bottom: 42px;
 }
+#tools #icn-editors {
+	background: url("../img/icn_editors.png") no-repeat center;
+}
+#tools #icn-languages {
+	background: url("../img/icn_languages.png") no-repeat center;
+}
+#tools #icn-analytics {
+	background: url("../img/icn_analytics.png") no-repeat center;
+}
+#tools #icn-bug {
+	background: url("../img/icn_bug.png") no-repeat center;
+}
+#tools #icn-devops {
+	background: url("../img/icn_devops.png") no-repeat center;
+}
+#tools #icn-distribution {
+	background: url("../img/icn_distribution.png") no-repeat center;
+}
+
 
 /* partners, team */
 
@@ -80,9 +101,15 @@
 	height: 261px;
 	margin-bottom: 42px;
 }
-.tab .img-holder > img {
-	max-width: 100%;
-	width: 100%;
+#partners .tab .img-holder{
+	background-repeat: no-repeat;
+	background-position: center ;
+}
+#partners .tab #partners-mk, #partners .tab #partners-xc, #partners .tab #partners-tb {
+	background-image: url("../img/partners_mk.png");
+}
+#partners .tab #partners-ak {
+	background-image: url("../img/img_adamkatyi.png");
 }
 
 /* map */
@@ -90,16 +117,23 @@
 #map {
 	height: 550px;
 	position: relative;
+	padding-top: 150px;
+	background-color: #E5E3DF; /* this from google maps */
+}
+#map > .inner-section {
+	margin: -150px auto 0;
+	padding-bottom: 0;
 }
 #map-layer {
 	width: 100%;
-	height: 50%;
+	height: 150px;
 	background: linear-gradient(#001A2F, transparent);
 	position: absolute;
-	top: 0;
+	top: 0px;
 	left: 0;
 	right: 0;
 	z-index: 2;
+	opacity: 0.5;
 }
 #map .inner-section {
 	position: relative;
@@ -107,11 +141,12 @@
 }
 #map-container {
 	position: absolute;
-	top: 0;
+	top: 148px;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	z-index: 1;
+	opacity: 0.8;
 }
 
 #relax {
