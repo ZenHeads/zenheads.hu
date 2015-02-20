@@ -1,8 +1,8 @@
 #wrapper {
-	min-height: 6360px;
+	min-height: 14560px;
 }
 #inner-wrapper{
-	min-height: 6300px;
+	min-height: 14500px;
 }
 .section .inner-section > .sub-heading {
 	margin-top: 52px;
@@ -16,7 +16,11 @@
 	font-weight: bold;
 }
 /* work */
-
+#work > .heading {
+	border-color: #FAFAFA;
+	position:relative;
+	z-index: 10;
+}
 #work .inner-container .tab {
 	width: 50%;
 	float: left;
@@ -135,6 +139,15 @@
 	z-index: 2;
 	opacity: 0.5;
 }
+#map-disable-control {
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index:450;
+	background-color: rgba(100, 100, 100, 0.1);
+}
 #map .inner-section {
 	position: relative;
 	z-index: 5;
@@ -168,4 +181,284 @@
 #relax .heading {
 	position: relative;
 	z-index: 5;
+}
+
+/**************************
+*****      RIBBON     *****
+***************************/
+#work-container {
+	position:relative;
+	height:8860px;
+	overflow: hidden;
+	z-index:7;
+}
+#work {
+	position: absolute;
+	width: 1440px;
+	left: 50%;
+	margin-left: -720px;
+	z-index:8;
+}
+#r-container {
+	width: 1200px;
+	height: 715px;
+	position: relative;
+	top: 40px;
+	left: 50%;
+	margin-left: -600px;
+	/*overflow:hidden;*/
+	z-index:9;
+}
+#r-inner-container{
+	position:absolute;
+	width:100%;
+	height:100%;
+	/*background: #58C2DA;*/
+	top: -325px;
+	left: 900px;
+	z-index:10;
+}
+#r-inner-container > div{
+	display:none;
+}
+
+.r-rotate {
+	-webkit-transform:rotate(45deg);
+	-moz-transform:rotate(45deg);
+	-o-transform:rotate(45deg);
+	transform:rotate(45deg);
+}
+.r-page {
+	width: 110px;
+	height: 110px;
+	background: grey;
+	position: absolute;
+	border-width: 1px;
+	border-style: solid;
+	/*border-color: #F00 #008000 #00F #FFA500;*/
+	border-color: gray;
+}
+.r-grey-bg{
+	background:#999;
+}
+.r-label{
+	position: absolute;
+	width: 160px;
+	text-transform: uppercase;
+	z-index: 400;
+}
+.r-text{
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 500px;
+	z-index:400;
+	font-size:14px;
+	opacity: 0;
+}
+.r-text > p {
+	color: #FAFAFA;
+}
+.r-text-title {
+	font-size:16px;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+/* két elem közötti, valós ikon elemek */
+.r-transform-origin-100-100 {
+	-webkit-transform-origin: 100% 100%;
+	-moz-transform-origin: 100% 100%;
+	transform-origin: 100% 100%;
+}
+/* fake ikon elemek */
+.r-transform-origin-100-0 {
+	-webkit-transform-origin: 100% 0%;
+	-moz-transform-origin: 100% 0%;
+	transform-origin: 100% 0%;
+}
+
+
+/*****************
+***  ELEMENTS  ***
+******************/
+
+/* A */
+#elem1{
+	z-index:35;
+	background: url(../img/icn_start.png) no-repeat center #eee;
+	top: 410px;
+	left: 20px;
+}
+/* B */
+#elem2{
+	background: url(../img/icn_specification.png) no-repeat center #eee;
+	top: 354px;
+	left: 109px;
+	transform-style: preserve-3d;
+}
+/* C */
+#elem3{
+	background: url(../img/icn_wireframeandux.png) no-repeat center #ff4b32;
+	top: 274px;
+	left: 254px;
+	transform-style: preserve-3d;
+		-webkit-transform-style: preserve-3d;
+}
+/* D */
+#elem4{
+	background: url(../img/icn_uiandgfx.png) no-repeat center #ff4b32;
+	top: 194px;
+	left: 398px;
+	transform-style: preserve-3d;
+}
+/* E */
+#elem5{
+	background: url(../img/icn_plan.png) no-repeat center #ff4b32;
+	top: 114px;
+	left: 543px;
+	transform-style: preserve-3d;
+}
+/* F */
+#elem6{
+	background: url(../img/icn_development.png) no-repeat center #001a2f;
+	top: 35px;
+	left: 688px;
+	transform-style: preserve-3d;
+}
+/* G */
+#elem7{
+	background: url(../img/icn_userfeedback.png) no-repeat center #001a2f;
+	top: -44px;
+	left: 833px;
+	transform-style: preserve-3d;
+}
+/* H */
+#elem8{
+	background: url(../img/icn_launch.png) no-repeat center #001a2f;
+	top: -123px;
+	left: 979px;
+	transform-style: preserve-3d;
+}
+
+/* B */
+#elem2-fake{
+	background: url(../img/icn_specification.png) no-repeat center #eee;
+	top: 466px;
+	left: 44px;
+}
+/* C */
+#elem3-fake{
+	background: url(../img/icn_wireframeandux.png) no-repeat center #ff4b32;
+	top: 386px;
+left: 187px;
+}
+/* D */
+#elem4-fake{
+	background: url(../img/icn_uiandgfx.png) no-repeat center #ff4b32;
+	top: 307px;
+	left: 333px;
+}
+/* E */
+#elem5-fake{
+	background: url(../img/icn_plan.png) no-repeat center #ff4b32;
+	top: 227px;
+	left: 477px;
+}
+/* F */
+#elem6-fake{
+	background: url(../img/icn_development.png) no-repeat center #001a2f;
+	top: 147px;
+	left: 622px;
+}
+/* G */
+#elem7-fake{
+	background: url(../img/icn_userfeedback.png) no-repeat center #001a2f;
+	top: 68px;
+	left: 767px;
+}
+/* H */
+#elem8-fake{
+	background: url(../img/icn_launch.png) no-repeat center #001a2f;
+	top: -11px;
+	left: 912px;
+}
+
+
+
+/* A és B közötti */
+#middle-1{
+	top: 354px;
+	left: 43px;
+}
+/* B és C közötti */
+#middle-2{
+	top: 274px;
+	left: 187px;
+}
+/* C és D közötti */
+#middle-3{
+	top: 195px;
+	left: 333px;
+}
+/* D és E közötti */
+#middle-4{
+	top: 115px;
+	left: 477px;
+}
+/* E és F közötti */
+#middle-5{
+	top: 35px;
+	left: 622px;
+}
+/* F és G közötti */
+#middle-6{
+	top: -43px;
+	left: 767px;
+}
+/* G és H közötti */
+#middle-7{
+	top: -123px;
+	left: 912px;
+}
+
+
+/***************
+***  LABELS  ***
+****************/
+#elem1-label {
+	top: 505px;
+	left: 140px;
+}
+#elem2-label {
+	top: 430px;
+	left: 280px;
+}
+#elem3-label {
+	top: 350px;
+	left: 430px;
+}
+#elem4-label {
+	top: 260px;
+	left: 580px;
+}
+#elem5-label {
+	top: 185px;
+	left: 715px;
+}
+#elem6-label {
+	top: 105px;
+	left: 860px;
+}
+#elem7-label {
+	top: 32px;
+	left: 1000px;
+}
+#elem8-label {
+	top: -50px;
+	left: 1150px;
+}
+#elem3-label, #elem4-label, #elem5-label, #elem6-label, #elem7-label {
+	color: #FAFAFA;
 }

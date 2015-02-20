@@ -53,68 +53,13 @@
 			<div id="sections">
 			
 				<!-- start of .section -->
-				<div class="section blue-bg">
-					<div id="work" class="inner-section clearfix box">
+				<div class="section lightblue-bg" id="work-container">
+					<div id="work" class="inner-section clearfix box" data-1084="position:absolute;top:0px;" data-1085="position:fixed;top:50px;" data-8924="position:fixed;top:50px;" data-8925="position:absolute;top:7832px;">
 						<div class="heading">how we work</div>
 						<div class="inner-container box clearfix">
-						<!--  OLD CONTENT
-							<div class="tab box">
-								<div class="text">We start by chatting with you - we want to understand what you need exactly</div>
-							</div>
-							<div class="tab box">
-								<div class="text-holder rounded rounded-blue grey-bg align-center">
-								getting it right from the beginning
-								</div>
-							</div>
-							<div class="tab box">
-								<div class="text">We create a technical specification based on our discussion and present it to you to agree on the scope</div>
-							</div>
-							<div class="tab box">
-								<div class="text-holder rounded rounded-blue grey-bg align-center">
-								you'll know exactly what you'll get
-								</div>
-							</div>
-							<div class="tab box">
-								<div class="text">After we agreed on the scope, we'll give you our estimated timeplan and costs</div>
-							</div>
-							<div class="tab box">
-								<div class="text-holder rounded rounded-blue grey-bg align-center">
-								see exactly what commitments both sides are getting into
-								</div>
-							</div>
-							<div class="tab box">
-								<div class="text">After the agreement is done, we start with the wireframe and UX design</div>
-							</div>
-							<div class="tab box">
-								<div class="text-holder rounded rounded-blue grey-bg align-center">
-								focusing on the
-								</div>
-							</div>
-							<div class="tab box">
-								<div class="text">After this is done we begin the graphics design process; you'll get several approaches and we will decide together which one to pick for the final product</div>
-							</div>
-							<div class="tab box">
-								<div class="text-holder rounded rounded-blue grey-bg align-center">
-								getting it right from the beginning
-								</div>
-							</div>
-							<div class="tab box">
-								<div class="text">After the design, the wireframe and the main UX issues are solved, we finally begin the development!</div>
-							</div>
-							<div class="tab box">
-								<div class="text-holder rounded rounded-blue grey-bg align-center">
-								you'll get weekly or bi_weekly test versions to see the progress yourself
-								</div>
-							</div>
-							<div class="tab box">
-								<div class="text">Finally, the product is ready to release but the journey is just starting! We are happy to support you throughout the whole lifecycle of your product with further iterations based on real user feedback</div>
-							</div>
-							<div class="tab box">
-								<div class="text-holder rounded rounded-blue grey-bg align-center">
-								getting it right from the beginning
-								</div>
-							</div>
-						-->
+							<!-- RIBBON -->
+							<div id="r-container"></div>
+						
 						</div>
 					</div>
 				</div><!-- end of .section -->
@@ -232,6 +177,7 @@
 						<div class="heading">our favourite places</div>
 					</div>
 					<div id="map-container" class="box grey-bg"></div>
+					<div id="map-disable-control"></div>
 				</div><!-- end of .section -->
 				
 				<!-- start of .section -->
@@ -273,7 +219,6 @@
 	</div><!-- end of #wrapper -->
 
 
-
 <!-- JS Section -->
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script> 
@@ -281,9 +226,9 @@
 	<script type="text/javascript" src="js/skrollr.min.js"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 	<script type="text/javascript">
-	$(function () {
+	/*$(function () {
 	    $.srSmoothscroll();
-	});
+	});*/
 	window.onload = function() {
 		skrollr.init({
 			forceHeight: false
@@ -325,7 +270,24 @@
 	}
 	$(document).ready(function(){
 		showMap();
+		$("#map-disable-control").click(function(){
+			$(this).hide();
+		});
+		$(document).click(function(e){
+			var container = $("#map");
+
+		    if (!container.is(e.target) // if the target of the click isn't the container...
+		        && container.has(e.target).length === 0) // ... nor a descendant of the container
+		    {
+		    	$("#map-disable-control").show();
+		    }
+		});
+	});
+	
+	$(window).scroll(function(){
+		$("#counter").text($(window).scrollTop());
 	});
 	</script>
+	<script type="text/javascript" src="js/ribbon.js"></script>
 </body>
 </html>
