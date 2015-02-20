@@ -210,16 +210,18 @@
 	z-index:9;
 }
 #r-inner-container{
-	position:absolute;
+	position:relative;
 	width:100%;
 	height:100%;
 	/*background: #58C2DA;*/
 	top: -325px;
 	left: 900px;
-	z-index:10;
 }
 #r-inner-container > div{
 	display:none;
+	/*transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	/*-webkit-backface-visibility: hidden;*/
 }
 
 .r-rotate {
@@ -232,11 +234,14 @@
 	width: 110px;
 	height: 110px;
 	background: grey;
-	position: absolute;
+	position: relative;
 	border-width: 1px;
 	border-style: solid;
 	/*border-color: #F00 #008000 #00F #FFA500;*/
 	border-color: gray;
+}
+.r-e-container {
+	position:relative;
 }
 .r-grey-bg{
 	background:#999;
@@ -294,94 +299,86 @@
 /* B */
 #elem2{
 	background: url(../img/icn_specification.png) no-repeat center #eee;
-	top: 354px;
+	top: 242px;
 	left: 109px;
-	transform-style: preserve-3d;
 }
 /* C */
 #elem3{
 	background: url(../img/icn_wireframeandux.png) no-repeat center #ff4b32;
-	top: 274px;
+	top: -173px;
 	left: 254px;
-	transform-style: preserve-3d;
-		-webkit-transform-style: preserve-3d;
 }
 /* D */
 #elem4{
 	background: url(../img/icn_uiandgfx.png) no-repeat center #ff4b32;
-	top: 194px;
+	top: -588px;
 	left: 398px;
-	transform-style: preserve-3d;
 }
 /* E */
 #elem5{
 	background: url(../img/icn_plan.png) no-repeat center #ff4b32;
-	top: 114px;
+	top: -1004px;
 	left: 543px;
-	transform-style: preserve-3d;
 }
 /* F */
 #elem6{
 	background: url(../img/icn_development.png) no-repeat center #001a2f;
-	top: 35px;
+	top: -1419px;
 	left: 688px;
-	transform-style: preserve-3d;
 }
 /* G */
 #elem7{
 	background: url(../img/icn_userfeedback.png) no-repeat center #001a2f;
-	top: -44px;
+	top: -1833px;
 	left: 833px;
-	transform-style: preserve-3d;
 }
 /* H */
 #elem8{
 	background: url(../img/icn_launch.png) no-repeat center #001a2f;
-	top: -123px;
+	top: -2248px;
 	left: 979px;
-	transform-style: preserve-3d;
 }
 
 /* B */
 #elem2-fake{
 	background: url(../img/icn_specification.png) no-repeat center #eee;
-	top: 466px;
+	top: 130px;
 	left: 44px;
 }
 /* C */
 #elem3-fake{
 	background: url(../img/icn_wireframeandux.png) no-repeat center #ff4b32;
-	top: 386px;
-left: 187px;
+	top: -284px;
+	left: 187px;
 }
 /* D */
 #elem4-fake{
 	background: url(../img/icn_uiandgfx.png) no-repeat center #ff4b32;
-	top: 307px;
+	top: -700px;
 	left: 333px;
 }
 /* E */
 #elem5-fake{
 	background: url(../img/icn_plan.png) no-repeat center #ff4b32;
-	top: 227px;
+	top: -1115px;
 	left: 477px;
 }
 /* F */
 #elem6-fake{
 	background: url(../img/icn_development.png) no-repeat center #001a2f;
-	top: 147px;
+	top: -1531px;
 	left: 622px;
 }
 /* G */
 #elem7-fake{
 	background: url(../img/icn_userfeedback.png) no-repeat center #001a2f;
-	top: 68px;
+	top: -1945px;
 	left: 767px;
 }
 /* H */
 #elem8-fake{
 	background: url(../img/icn_launch.png) no-repeat center #001a2f;
-	top: -11px;
+	top: -2360px;
 	left: 912px;
 }
 
@@ -389,37 +386,37 @@ left: 187px;
 
 /* A és B közötti */
 #middle-1{
-	top: 354px;
+	top: 130px;
 	left: 43px;
 }
 /* B és C közötti */
 #middle-2{
-	top: 274px;
+	top: -284px;
 	left: 187px;
 }
 /* C és D közötti */
 #middle-3{
-	top: 195px;
+	top: -700px;
 	left: 333px;
 }
 /* D és E közötti */
 #middle-4{
-	top: 115px;
+	top: -1115px;
 	left: 477px;
 }
 /* E és F közötti */
 #middle-5{
-	top: 35px;
+	top: -1531px;
 	left: 622px;
 }
 /* F és G közötti */
 #middle-6{
-	top: -43px;
+	top: -1945px;
 	left: 767px;
 }
 /* G és H közötti */
 #middle-7{
-	top: -123px;
+	top: -2360px;
 	left: 912px;
 }
 
