@@ -14,6 +14,7 @@ function createRibbonElement(index,container,innerContainer){
 	this.container = container;
 	this.innerContainer = innerContainer;
 	var element = document.createElement('div');
+	var elementContainer = document.createElement('div');
 	var textElement = document.createElement('div');
 	var labelElement = document.createElement('div');
 	var textTitle = document.createElement('div');
@@ -28,7 +29,8 @@ function createRibbonElement(index,container,innerContainer){
 	labelElement.className = "r-label";
 	labelElement.innerHTML = this.label; // label element data attributes
 	this.innerContainer.appendChild(labelElement);
-	this.innerContainer.appendChild(element);
+	elementContainer.appendChild(element);
+	this.innerContainer.appendChild(elementContainer);
 	/* text element */
 	textElement.className = "r-text";
 	textTitle.className = "r-text-title";
@@ -40,7 +42,7 @@ function createRibbonElement(index,container,innerContainer){
 	
 	if(index>0){
 		
-		zIndex = zIndex-index;
+		zIndex -= 1;
 		
 		var a = index*(2*ribbon.scrollDown+ribbon.moveDown)-ribbon.scrollDown+ribbon.startScroll;
 		var b = (index+1)*(2*ribbon.scrollDown+ribbon.moveDown)-ribbon.scrollDown+ribbon.startScroll;
@@ -60,40 +62,59 @@ function createRibbonElement(index,container,innerContainer){
 		/* element */
 		var d = (index-1)*(2*ribbon.scrollDown+ribbon.moveDown)+ribbon.moveDown+ribbon.startScroll;
 		element.className += " r-transform-origin-100-100";
-		element.setAttribute("data-"+d,"z-index:"+zIndex+";opacity:0;transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);");
-		element.setAttribute("data-"+(d+ribbon.scrollDown),"opacity:0;transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);");
-		element.setAttribute("data-"+(d+ribbon.scrollDown+1),"opacity:1;transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);");
-		element.setAttribute("data-"+(d+ribbon.scrollDown+2),"opacity:1;transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);");
-		element.setAttribute("data-"+(d+2*ribbon.scrollDown),"opacity:1;transform:rotate(45deg) rotateX(0deg) skew(0deg);-moz-transform:rotate(45deg) rotateX(0deg) skew(0deg);-webkit-transform:rotate(45deg) rotateX(0deg) skew(0deg);");
-		
+		element.style.zIndex = zIndex;
+		zIndex -= 1;
+		elementContainer.style.zIndex = zIndex;
+		elementContainer.className = "r-e-container";
+		element.setAttribute("data-"+d,"opacity:0;transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg) translate3d(0,0,0);");
+		element.setAttribute("data-"+(d+ribbon.scrollDown),"opacity:0;transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg) translate3d(0,0,0);");
+		element.setAttribute("data-"+(d+ribbon.scrollDown+1),"opacity:1;transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg) translate3d(0,0,0);");
+		element.setAttribute("data-"+(d+ribbon.scrollDown+2),"opacity:1;transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg) translate3d(0,0,0);");
+		element.setAttribute("data-"+(d+2*ribbon.scrollDown),"opacity:1;transform:rotate(45deg) rotateX(0deg) skew(0deg);-moz-transform:rotate(45deg) rotateX(0deg) skew(0deg);-webkit-transform:rotate(45deg) rotateX(0deg) skew(0deg) translate3d(0,0,0);");
+		zIndex -= 1;
 		
 		/* add middle element */
 		var middleElement = document.createElement('div');
+		var middleElementContainer = document.createElement('div');
+		middleElementContainer.className = "r-e-container";
 		middleElement.id = "middle-"+index;
 		middleElement.className = "r-page r-transform-origin-100-100 r-grey-bg";
 		/* add transformation to middle element */
-		middleElement.setAttribute("data-"+(d-1),"opacity:0;z-index:"+(zIndex-3)+";");
+		middleElement.style.zIndex = zIndex;
+		zIndex -= 1;
+		middleElementContainer.style.zIndex = zIndex;
+		middleElement.setAttribute("data-"+(d-1),"opacity:0;");
 		middleElement.setAttribute("data-"+d,"opacity:1;background:"+this.shadowColor+";transform:rotate(45deg) rotateX(-180deg) skew(0deg);-moz-transform:rotate(45deg) rotateX(-180deg) skew(0deg);-webkit-transform:rotate(45deg) rotateX(-180deg) skew(0deg) translate3d(0,0,0);");
 		// SZIN ELLENŐRZÉSE
 		middleElement.setAttribute("data-"+(d+ribbon.scrollDown/2),"opacity:1;background:"+this.shadowColor+";transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);-moz-transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);-webkit-transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg) translate3d(0,0,0);");
 		// SZIN ELLENŐRZÉSE
-		middleElement.setAttribute("data-"+(d+ribbon.scrollDown/2+1),"opacity:1;background:"+this.color+";transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);-moz-transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);-webkit-transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg) translate3d(0,0,0));");
-		middleElement.setAttribute("data-"+(d+ribbon.scrollDown),"background:"+this.color+";transform: rotate(45deg) rotateX(-65deg) skew(-22.5deg);-moz-transform: rotate(45deg) rotateX(-65deg) skew(-22.5deg);-webkit-transform: rotate(45deg) rotateX(-65deg) skew(-22.5deg) translate3d(0,0,0);");
-		this.innerContainer.appendChild(middleElement);
+		middleElement.setAttribute("data-"+(d+ribbon.scrollDown/2+1),"opacity:0;background:"+this.color+";transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);-moz-transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);-webkit-transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg) translate3d(0,0,0);");
+		middleElement.setAttribute("data-"+(d+ribbon.scrollDown-1),"opacity:0;background:"+this.color+";transform: rotate(45deg) rotateX(-65deg) skew(-22.5deg);-moz-transform: rotate(45deg) rotateX(-65deg) skew(-22.5deg);-webkit-transform: rotate(45deg) rotateX(-65deg) skew(-22.5deg) translate3d(0,0,0);");
+		middleElement.setAttribute("data-"+(d+ribbon.scrollDown),"opacity:1;background:"+this.color+";transform: rotate(45deg) rotateX(-65deg) skew(-22.5deg);-moz-transform: rotate(45deg) rotateX(-65deg) skew(-22.5deg);-webkit-transform: rotate(45deg) rotateX(-65deg) skew(-22.5deg) translate3d(0,0,0);");
+		middleElementContainer.appendChild(middleElement);
+		this.innerContainer.appendChild(middleElementContainer);
+		zIndex -= 1;
 		
 		/* add fake element */
 		var fakeElement = document.createElement('div');
+		var fakeElementContainer = document.createElement('div');
+		fakeElementContainer.className = "r-e-container";
 		fakeElement.id = this.id+"-fake";
 		fakeElement.className = "r-page r-transform-origin-100-0";
 		if(index>1){
 			fakeElement.setAttribute("data-"+(d-1),"opacity:0;z-index:-1;");
 		}
-		fakeElement.setAttribute("data-"+d,"opacity:1;z-index:"+(zIndex-4)+";transform: rotate(45deg) rotateX(0deg) skew(0deg);-moz-transform: rotate(45deg) rotateX(0deg) skew(0deg);-webkit-transform: rotate(45deg) rotateX(0deg) skew(0deg);");
-		fakeElement.setAttribute("data-"+(d+ribbon.scrollDown/2),"opacity:1;z-index:"+(zIndex-4)+";transform: rotate(45deg) rotateX(90deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(90deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(90deg) skew(22.5deg);");
-		fakeElement.setAttribute("data-"+(d+ribbon.scrollDown/2+1),"opacity:1;z-index:"+(zIndex-2)+";transform: rotate(45deg) rotateX(90deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(90deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(90deg) skew(22.5deg);");
-		fakeElement.setAttribute("data-"+(d+ribbon.scrollDown),"z-index:"+(zIndex-2)+";transform: rotate(45deg) rotateX(115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(115deg) skew(22.5deg);");
-		fakeElement.setAttribute("data-"+(d+ribbon.scrollDown+1),"z-index:"+(zIndex-5)+";transform: rotate(45deg) rotateX(115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(115deg) skew(22.5deg);");
-		this.innerContainer.appendChild(fakeElement);
+		fakeElement.style.zIndex = zIndex;
+		zIndex -= 1;
+		fakeElementContainer.style.zIndex = zIndex;
+		fakeElement.setAttribute("data-"+d,"opacity:0;transform: rotate(45deg) rotateX(0deg) skew(0deg);-moz-transform: rotate(45deg) rotateX(0deg) skew(0deg);-webkit-transform: rotate(45deg) rotateX(0deg) skew(0deg) translate3d(0,0,0);");
+		fakeElement.setAttribute("data-"+(d+ribbon.scrollDown/2),"opacity:0;transform: rotate(45deg) rotateX(90deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(90deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(90deg) skew(22.5deg) translate3d(0,0,0);");
+		fakeElement.setAttribute("data-"+(d+ribbon.scrollDown/2+1),"opacity:1;transform: rotate(45deg) rotateX(90deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(90deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(90deg) skew(22.5deg) translate3d(0,0,0);");
+		fakeElement.setAttribute("data-"+(d+ribbon.scrollDown),"opacity:1;transform: rotate(45deg) rotateX(115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(115deg) skew(22.5deg) translate3d(0,0,0);");
+		fakeElement.setAttribute("data-"+(d+ribbon.scrollDown+1),"opacity:0;transform: rotate(45deg) rotateX(115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(115deg) skew(22.5deg) translate3d(0,0,0);");
+		fakeElementContainer.appendChild(fakeElement);
+		this.innerContainer.appendChild(fakeElementContainer);
+		zIndex -= 1;
 		
 	} else {
 		var c = (index+1)*(ribbon.scrollDown+ribbon.moveDown)+ribbon.startScroll;
@@ -187,9 +208,9 @@ var elem2 = new RibbonElement('elem2','rgb(238,238,238)','rgb(210,210,210)','Lor
 // C szöveg
 var elem3 = new RibbonElement('elem3','rgb(238,238,238)','rgb(210,210,210)','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in nibh vitae orci finibus finibus. Pellentesque tempus ex nec gravida rutrum. Maecenas consectetur sapien neque, ac eleifend est feugiat eget. Praesent ac sapien varius, facilisis justo eleifend, placerat odio. Aenean at viverra diam. In consectetur vehicula dignissim. Curabitur congue ullamcorper velit et pellentesque. Duis dictum ipsum vitae ex mattis consequat. Cras semper, lectus eu iaculis euismod, quam enim gravida dolor, a tempus velit eros nec sem. Nam at urna iaculis, tincidunt augue quis, placerat tellus.','wireframe & ux','wireframe & ux');
 // D szöveg
-var elem4 = new RibbonElement('elem4','rgb(255,75,50)','rgb(225,70,50)','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in nibh vitae orci finibus finibus. Pellentesque tempus ex nec gravida rutrum. Maecenas consectetur sapien neque, ac eleifend est feugiat eget. Praesent ac sapien varius, facilisis justo eleifend, placerat odio. Aenean at viverra diam. In consectetur vehicula dignissim. Curabitur congue ullamcorper velit et pellentesque. Duis dictum ipsum vitae ex mattis consequat. Cras semper, lectus eu iaculis euismod, quam enim gravida dolor, a tempus velit eros nec sem. Nam at urna iaculis, tincidunt augue quis, placerat tellus.','ui & gfx','ui & gfx');
+var elem4 = new RibbonElement('elem4','rgb(255,75,50)','rgb(193,58,39)','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in nibh vitae orci finibus finibus. Pellentesque tempus ex nec gravida rutrum. Maecenas consectetur sapien neque, ac eleifend est feugiat eget. Praesent ac sapien varius, facilisis justo eleifend, placerat odio. Aenean at viverra diam. In consectetur vehicula dignissim. Curabitur congue ullamcorper velit et pellentesque. Duis dictum ipsum vitae ex mattis consequat. Cras semper, lectus eu iaculis euismod, quam enim gravida dolor, a tempus velit eros nec sem. Nam at urna iaculis, tincidunt augue quis, placerat tellus.','ui & gfx','ui & gfx');
 // E szöveg
-var elem5 = new RibbonElement('elem5','rgb(255,75,50)','rgb(225,70,50)','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in nibh vitae orci finibus finibus. Pellentesque tempus ex nec gravida rutrum. Maecenas consectetur sapien neque, ac eleifend est feugiat eget. Praesent ac sapien varius, facilisis justo eleifend, placerat odio. Aenean at viverra diam. In consectetur vehicula dignissim. Curabitur congue ullamcorper velit et pellentesque. Duis dictum ipsum vitae ex mattis consequat. Cras semper, lectus eu iaculis euismod, quam enim gravida dolor, a tempus velit eros nec sem. Nam at urna iaculis, tincidunt augue quis, placerat tellus.','planE','plan');
+var elem5 = new RibbonElement('elem5','rgb(255,75,50)','rgb(193,58,39)','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in nibh vitae orci finibus finibus. Pellentesque tempus ex nec gravida rutrum. Maecenas consectetur sapien neque, ac eleifend est feugiat eget. Praesent ac sapien varius, facilisis justo eleifend, placerat odio. Aenean at viverra diam. In consectetur vehicula dignissim. Curabitur congue ullamcorper velit et pellentesque. Duis dictum ipsum vitae ex mattis consequat. Cras semper, lectus eu iaculis euismod, quam enim gravida dolor, a tempus velit eros nec sem. Nam at urna iaculis, tincidunt augue quis, placerat tellus.','planE','plan');
 // F szöveg
 var elem6 = new RibbonElement('elem6','rgb(0,26,47)','rgb(0,11,20)','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in nibh vitae orci finibus finibus. Pellentesque tempus ex nec gravida rutrum. Maecenas consectetur sapien neque, ac eleifend est feugiat eget. Praesent ac sapien varius, facilisis justo eleifend, placerat odio. Aenean at viverra diam. In consectetur vehicula dignissim. Curabitur congue ullamcorper velit et pellentesque. Duis dictum ipsum vitae ex mattis consequat. Cras semper, lectus eu iaculis euismod, quam enim gravida dolor, a tempus velit eros nec sem. Nam at urna iaculis, tincidunt augue quis, placerat tellus.','development','development');
 // G szöveg
