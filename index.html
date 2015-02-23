@@ -57,7 +57,7 @@
 					<div id="featured-products" class="inner-section clearfix box">
 						<div class="heading">featured products</div>
 						<div id="display-product">
-							<div id="product-1" class="product clearfix">
+							<div id="product-1" class="product clearfix show-product">
 								<div class="img-holder rounded rounded-blue"><img src="img/product/img_l_trkr.png" /></div>
 								<div class="description">
 									<div class="heading">trkr tracker application</div>
@@ -218,18 +218,17 @@
 								</div>
 							</div>
 						</div>
-						<div id="product-list" class="clearfix box">
-							<div id="left-arrow-product-list" class="arrow-product-list"></div>
-							<div id="right-arrow-product-list" class="arrow-product-list"></div>
-							<div id="product-list-container">
-								<div id="product-list-slider">
-									<div class="product rounded rounded-blue"><img src="img/product/img_s_fontify.png" alt="#product-1"/></div>
-									<div class="product rounded rounded-blue"><img src="img/product/img_s_trkr.png" alt="#product-2"/></div>
-									<div class="product rounded rounded-blue"><img src="img/product/img_s_alriyadh.png" alt="#product-3"/></div>
-									<div class="product rounded rounded-blue"><img src="img/product/img_s_riport.png" alt="#product-4"/></div>
-									<div class="product rounded rounded-blue"><img src="img/product/img_s_oszkar.png" alt="#product-5"/></div>
-									<div class="clear"></div>
-								</div>
+						<div id="product-list" class="clearfix box jcarousel-wrapper">
+							<a id="left-arrow-product-list" class="arrow-product-list jcarousel-control-prev"></a>
+							<a id="right-arrow-product-list" class="arrow-product-list jcarousel-control-next"></a>
+							<div id="product-list-container" class="jcarousel">
+								<ul>
+									<li class="product rounded rounded-blue"><img src="img/product/img_s_fontify.png" alt="#product-1"/></li>
+									<li class="product rounded rounded-blue"><img src="img/product/img_s_trkr.png" alt="#product-2"/></li>
+									<li class="product rounded rounded-blue"><img src="img/product/img_s_alriyadh.png" alt="#product-3"/></li>
+									<li class="product rounded rounded-blue"><img src="img/product/img_s_riport.png" alt="#product-4"/></li>
+									<li class="product rounded rounded-blue"><img src="img/product/img_s_oszkar.png" alt="#product-5"/></li>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -294,35 +293,49 @@
 
 <!-- JS Section -->
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script> 
-	<script type="text/javascript" src="js/jquery.simplr.smoothscroll.js"></script> 
+	<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+	<script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
 	<script type="text/javascript" src="js/skrollr.min.js"></script>
 	<script type="text/javascript">
-	/*$(function () {
-	    $.srSmoothscroll();
-	});*/
 	window.onload = function() {
 		skrollr.init({
 			forceHeight: false
 		});
 	}
 	$(document).ready( function() {
+		// jcarousel
+		$('.jcarousel').jcarousel({
+		    wrap: 'circular'
+		});
+
+        $('.jcarousel-control-prev')
+            .on('jcarouselcontrol:active', function() {
+                $(this).removeClass('inactive');
+            })
+            .on('jcarouselcontrol:inactive', function() {
+                $(this).addClass('inactive');
+            })
+            .jcarouselControl({
+                target: '-=1'
+            });
+
+        $('.jcarousel-control-next')
+            .on('jcarouselcontrol:active', function() {
+                $(this).removeClass('inactive');
+            })
+            .on('jcarouselcontrol:inactive', function() {
+                $(this).addClass('inactive');
+            })
+            .jcarouselControl({
+                target: '+=1'
+            });
+
 		// display product
 		$("#product-list .product img").on("click", function() {
-			if(!$("#display-product").hasClass("show")){
-				$("#display-product").addClass("show");
-				//fix wrappers's min-height values
-				$("#wrapper").css("min-height",(parseInt($("#wrapper").css("min-height"))+630)+"px");
-				$("#inner-wrapper").css("min-height",(parseInt($("#inner-wrapper").css("min-height"))+630)+"px");
-				
-			}
 			$(".show-product").removeClass("show-product");
 			$($(this).attr("alt")).addClass("show-product");
 			
 		} );
-		// Product list slider
-		$("#left-arrow-product-list").click(function(){ slideToLeft(); });
-		$("#right-arrow-product-list").click(function(){ slideToRight(); });
 		
 	});
 	function loadContact() {
@@ -331,24 +344,6 @@
 	        scrollTop: $("#contact").offset().top
 	    }, 500);
 	    return false;
-	}
-	// Product list slider
-	var slider = $("#product-list-slider");
-	var deltaX = 417;
-	var posX = slider.position().left;
-	function slideToLeft(){
-		if(posX >= -2*deltaX && posX < 0){
-			posX += deltaX;
-			slider.animate({"left":posX}, 600);
-		}
-		return false;
-	}
-	function slideToRight(){
-		if(posX <=0 && posX > -2*deltaX){
-			posX -= deltaX;
-			slider.animate({"left":posX}, 600);
-		}
-		return false;
 	}
 	</script>
 </body>

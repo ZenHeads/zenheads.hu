@@ -1,8 +1,8 @@
 #wrapper {
-	min-height: 2730px;
+	min-height: 3480px;
 }
 #inner-wrapper{
-	min-height: 2670px;
+	min-height: 3420px;
 }
 /* featured-products */
 
@@ -16,11 +16,7 @@
 	max-height: 420px;
 	overflow: hidden;
 	width: 100%;
-}
-#product-list > #product-list-container > #product-list-slider {
 	position: relative;
-	width: 2085px;
-	left: 0;
 }
 #product-list-slider > .clear {
 	clear: both;
@@ -56,20 +52,11 @@
 	cursor: pointer;
 }
 #display-product {
-	height: 0;
-	padding: 0;
-	overflow: hidden;
-	position: relative;
-}
-#display-product.show {
 	border-bottom: 2px solid #EEE;
 	height: 524px;
 	padding: 52px 0;
-	transition: height 0.1s ease-out;
-	-webkit-transition: height 0.1s ease-out, padding 0.1s ease-out;
-	-moz-transition: height 0.1s ease-out, padding 0.1s ease-out;
-	-o-transition: height 0.1s ease-out, padding 0.1s ease-out;
-	-ms-transition: height 0.1s ease-out, padding 0.1s ease-out;
+	overflow: hidden;
+	position: relative;
 }
 #display-product .product {
 	width: 100%;
@@ -170,4 +157,13 @@
 
 #our-philosophy .tab > .text {
 	margin-top: 42px;
+}
+
+
+.jcarousel ul {
+    width: 20000em;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
