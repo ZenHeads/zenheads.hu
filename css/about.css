@@ -219,8 +219,8 @@
 }
 #r-inner-container > div{
 	display:none;
-	/*transform-style: preserve-3d;
-	-webkit-transform-style: preserve-3d;
+	transform-style: flat;
+	-webkit-transform-style: flat;
 	/*-webkit-backface-visibility: hidden;*/
 }
 
@@ -291,7 +291,7 @@
 
 /* A */
 #elem1{
-	z-index:35;
+	z-index:75;
 	background: url(../img/icn_start.png) no-repeat center #eee;
 	top: 410px;
 	left: 20px;

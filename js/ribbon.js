@@ -1,4 +1,4 @@
-
+var zIndex = 60;
 
 /* this is an icon holder object: ribbonElement */
 function RibbonElement(id, color, shadowColor, text, title, label){
@@ -19,7 +19,7 @@ function createRibbonElement(index,container,innerContainer){
 	var labelElement = document.createElement('div');
 	var textTitle = document.createElement('div');
 	
-	var zIndex = 30;
+	
 	
 	/* element */
 	element.id = this.id;
@@ -66,6 +66,7 @@ function createRibbonElement(index,container,innerContainer){
 		zIndex -= 1;
 		elementContainer.style.zIndex = zIndex;
 		elementContainer.className = "r-e-container";
+		elementContainer.id = "elem-container-"+index;
 		element.setAttribute("data-"+d,"opacity:0;transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg) translate3d(0,0,0);");
 		element.setAttribute("data-"+(d+ribbon.scrollDown),"opacity:0;transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg) translate3d(0,0,0);");
 		element.setAttribute("data-"+(d+ribbon.scrollDown+1),"opacity:1;transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg) translate3d(0,0,0);");
@@ -77,6 +78,7 @@ function createRibbonElement(index,container,innerContainer){
 		var middleElement = document.createElement('div');
 		var middleElementContainer = document.createElement('div');
 		middleElementContainer.className = "r-e-container";
+		middleElementContainer.id = "middle-container-"+index;
 		middleElement.id = "middle-"+index;
 		middleElement.className = "r-page r-transform-origin-100-100 r-grey-bg";
 		/* add transformation to middle element */
@@ -99,6 +101,7 @@ function createRibbonElement(index,container,innerContainer){
 		var fakeElement = document.createElement('div');
 		var fakeElementContainer = document.createElement('div');
 		fakeElementContainer.className = "r-e-container";
+		fakeElementContainer.id = "fake-container-"+index;
 		fakeElement.id = this.id+"-fake";
 		fakeElement.className = "r-page r-transform-origin-100-0";
 		if(index>1){
