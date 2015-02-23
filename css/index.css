@@ -1,22 +1,52 @@
 #wrapper {
-	min-height: 3130px;
+	min-height: 2730px;
 }
 #inner-wrapper{
-	min-height: 3070px;
+	min-height: 2670px;
 }
 /* featured-products */
 
 #product-list {
-	margin-right: -52px;
+	position: realtive;
+	width: 100%;
+	position: relative;
+}
+#product-list > #product-list-container {
+	height: 420px;
+	max-height: 420px;
+	overflow: hidden;
+	width: 100%;
+}
+#product-list > #product-list-container > #product-list-slider {
+	position: relative;
+	width: 2085px;
+	left: 0;
+}
+#product-list-slider > .clear {
+	clear: both;
+}
+#product-list > .arrow-product-list {
+	width: 30px;
+	height: 30px;
+	position:absolute;
+	top: 50%;
+}
+#product-list > .arrow-product-list:hover {
+	cursor: pointer;
+}
+#left-arrow-product-list {
+	background: url("../img/icn_arrow_left.png") no-repeat center transparent;
+	left: -45px;
+}
+#right-arrow-product-list {
+	background: url("../img/icn_arrow_right.png") no-repeat center transparent;
+	right: -45px;
 }
 #product-list .product {
 	float: left;
 	width: 365px;
 	height: 365px;
 	margin: 52px 52px 0 0;
-}
-#product-list .product:nth-child(3n+4) {
-	clear: both;
 }
 #product-list .product img {
 	width: 100%;
@@ -84,19 +114,27 @@
 #display-product .product .description .text {
 	margin-bottom: 52px;
 }
-#display-product .product .description .thumbnails-holder {
+#display-product .product .description .thumbnails-holder,
+#display-product .product .description .thumbnails-holder-done {
 	position: absolute;
-	bottom: 0;
 	left: 0;
 	right: 0;
 }
-.thumbnails-holder .thumbnail-img-holder {
+#display-product .product .description .thumbnails-holder {
+	bottom: 0;
+}
+#display-product .product .description .thumbnails-holder-done {
+	bottom: 80px;
+}
+.thumbnails-holder .thumbnail-img-holder,
+.thumbnails-holder-done .thumbnail-img-holder {
 	width: 52px;
 	height: 52px;
 	float: left;
 	margin-right: 52px;
 }
-.thumbnails-holder .thumbnail-img-holder > img {
+.thumbnails-holder .thumbnail-img-holder > img,
+.thumbnails-holder-done .thumbnail-img-holder > img {
 	max-width: 100%;
 }
 

@@ -19,7 +19,7 @@
 #work > .heading {
 	border-color: #FAFAFA;
 	position:relative;
-	z-index: 10;
+	z-index: 15;
 }
 #work .inner-container .tab {
 	width: 50%;
