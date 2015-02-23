@@ -41,7 +41,8 @@
 	color: #ff4b32;
 }
 .section > .inner-section > .paragraph {
-	margin-bottom: 52px;
+	max-width: 790px;
+	margin:0 auto 52px;
 }
 .section .paragraph > .title {
 	font-size: 24px;
