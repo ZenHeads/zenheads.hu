@@ -199,6 +199,9 @@
 	margin-left: -720px;
 	z-index:8;
 }
+#work > .inner-container {
+	z-index: 9;
+}
 #r-container {
 	width: 1200px;
 	height: 715px;
@@ -207,7 +210,7 @@
 	left: 50%;
 	margin-left: -600px;
 	/*overflow:hidden;*/
-	z-index:9;
+	z-index:10;
 }
 #r-inner-container{
 	position:relative;
@@ -216,9 +219,12 @@
 	/*background: #58C2DA;*/
 	top: -325px;
 	left: 900px;
+	z-index: 11;
 }
 #r-inner-container > div{
 	display:none;
+}
+#r-inner-container > .r-e-container {
 	transform-style: flat;
 	-webkit-transform-style: flat;
 	/*-webkit-backface-visibility: hidden;*/
