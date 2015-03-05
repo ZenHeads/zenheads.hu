@@ -23,7 +23,7 @@ function createRibbonElement(index,container,innerContainer){
 	
 	/* element */
 	element.id = this.id;
-	element.className = "r-page";
+	element.className = "r-page r-text-function";
 	/* label */
 	labelElement.id = this.id+"-label";
 	labelElement.className = "r-label";
@@ -32,6 +32,7 @@ function createRibbonElement(index,container,innerContainer){
 	elementContainer.appendChild(element);
 	this.innerContainer.appendChild(elementContainer);
 	/* text element */
+	textElement.id = "r-text-"+this.id;
 	textElement.className = "r-text";
 	textTitle.className = "r-text-title";
 	textTitle.innerHTML = this.title;
@@ -105,7 +106,7 @@ function createRibbonElement(index,container,innerContainer){
 		fakeElement.id = this.id+"-fake";
 		fakeElement.className = "r-page r-transform-origin-100-0";
 		if(index>1){
-			fakeElement.setAttribute("data-"+(d-1),"opacity:0;z-index:-1;");
+			fakeElement.setAttribute("data-"+(d-1),"opacity:0;");
 		}
 		fakeElement.style.zIndex = zIndex;
 		zIndex -= 1;
@@ -221,5 +222,5 @@ var elem7 = new RibbonElement('elem7','rgb(0,26,47)','rgb(0,11,20)','Lorem ipsum
 // H szöveg
 var elem8 = new RibbonElement('elem8','rgb(0,26,47)','rgb(0,11,20)','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in nibh vitae orci finibus finibus. Pellentesque tempus ex nec gravida rutrum. Maecenas consectetur sapien neque, ac eleifend est feugiat eget. Praesent ac sapien varius, facilisis justo eleifend, placerat odio. Aenean at viverra diam. In consectetur vehicula dignissim. Curabitur congue ullamcorper velit et pellentesque. Duis dictum ipsum vitae ex mattis consequat. Cras semper, lectus eu iaculis euismod, quam enim gravida dolor, a tempus velit eros nec sem. Nam at urna iaculis, tincidunt augue quis, placerat tellus.','launch','launch');
 
-var ribbon = new Ribbon("r-container", 910, -340, 1145);
+var ribbon = new Ribbon("r-container", 910, -340, 625);
 ribbon.createRibbon([elem1,elem2,elem3,elem4,elem5,elem6,elem7,elem8]);

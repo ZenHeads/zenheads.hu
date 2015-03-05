@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
 <!-- CSS Section -->
 <link href="css/main.css" rel="stylesheet" type="text/css" />
@@ -11,13 +12,13 @@
 	<!-- start of #top-header -->
 	<div id="top-header">
 		<div id="inner-header" class="clearfix box">
-			<div id="site-name">ZenHeads</div>
+			<div id="site-name"><a href="index.html">Zen Heads</a></div>
 			<div id="navbar">
-				<a href="index.html" class="menu-item">works</a>
-				<a href="#" class="menu-item">blog</a>
-				<a href="#" onclick="loadContact();" class="menu-item">contact</a>
+				<a id="navbar-mobile-btn"></a>
+				<a href="index.html" class="menu-item">home</a>
 				<a href="about.html" class="menu-item">about</a>
 				<a href="jobs.html" class="menu-item">jobs</a>
+				<!-- <a href="#" class="menu-item">blog</a> -->
 			</div>
 		</div>
 	</div><!-- end of #top-header -->
@@ -26,26 +27,19 @@
 	<div id="wrapper">
 		
 		<!-- start of #inner-wrapper -->
-		<div id="inner-wrapper" data-start="position:fixed;" data-400="position:relative;" data-smooth-scrolling="off">
+		<div id="inner-wrapper">
 			
 			<!-- start of #header -->
-			<div id="wrapper-header" class="clearfix box" data-start="position:fixed;" data-400="position:static;">
+			<div id="wrapper-header" class="clearfix box">
 				<div id="wrapper-header-container">
-					<div class="content" data-start="top:0px;" data-200="top:-550px;">
+					<div class="content">
 						<div class="inner-content box">
-							<div id="logo" data-start="opacity:1;" data-70="opacity:0;">
+							<div id="logo">
 								<img alt="ZenHeads logo" src="img/logo_zenheads.png"/>
 							</div>
-							<div id="site-heading" class="align-center" data-start="opacity:1;" data-60="opacity:1;" data-120="opacity:0;">we build amazing<br />digital products.</div>
-							<div id="site-text" class="align-center" data-start="opacity:1;" data-120="opacity:1;" data-180="opacity:0;">
-								Involved in the golden age of mobile development since 2008, we are a small but passionate<br />
-								team all about creating great products. Web service, mobile app,<br />
-								you name it - we've got the right person for it.
-							</div>
+							<div id="site-heading" class="align-center">we build amazing<br />digital products</div>
 						</div>
 					</div>
-					<div class="grey-layer" data-start="opacity:1" data-200="opacity:0"></div>
-					<div class="blurred" data-201="opacity:1" data-300="opacity:0"></div>
 				</div>
 			</div><!-- end of #wrapper-header -->
 			
@@ -56,6 +50,14 @@
 				<div class="section lightblue-bg">
 					<div id="jobs" class="inner-section clearfix box">
 						<div class="heading">jobs</div>
+						<div id="submenu-holder">
+							<div id="submenu" class="clearfix" data-start="position:static;border-bottom-width:0px;border-bottom-style:none;" data-60-top="position:fixed;top:60px;left:0px;right:0px;border-bottom-width:2px;border-bottom-style:solid;">
+								<div class="tab box">html developer</div>
+								<div class="tab box">designer</div>	
+								<div class="tab box">mobile developer</div>	
+								<div class="tab box">animation designer</div>						
+							</div>
+						</div>
 						<div class="sub-heading"><span>html developer</span></div>
 						<div class="paragraph">
 							<div class="title">Job Description</div>
@@ -104,12 +106,17 @@
 				<!-- start of .section -->
 				<div class="section grey-bg">
 					<div id="footer" class="inner-section clearfix box">
-						<div class="heading">
-							<a href="#"><img src="img/icn_twitter.png" alt="Twitter" /></a>
-							<a href="#"><img src="img/icn_github.png" alt="GitHub" /></a>
-							<a href="#"><img src="img/icn_facebook.png" alt="Facebook" /></a>
+						<div class="heading clearfix">
+							<div class="mcfx">
+								<div class="tab box">Krisztina krt. 15. 1012 Budapest, Hungary</div>
+								<div class="tab box">LTD Number: 0123456789</div>
+							</div>
+							<div class="mcfx">
+								<div class="tab box">VAT Number: EU&nbsp;123/456/789</div>
+								<div class="tab box">info@zenheads.hu</div>
+							</div>
 						</div>
-						<div class="text align-center">Copyright &copy; ZENHEADS 2014.</div>
+						<div class="text align-center">Copyright &copy; ZEN HEADS 2015.</div>
 					</div>
 				</div><!-- end of .section -->
 				
@@ -123,18 +130,32 @@
 
 <!-- JS Section -->
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script> 
-	<script type="text/javascript" src="js/jquery.simplr.smoothscroll.js"></script> 
 	<script type="text/javascript" src="js/skrollr.min.js"></script>
 	<script type="text/javascript">
-	/*$(function () {
-	    $.srSmoothscroll();
-	});*/
 	window.onload = function() {
 		skrollr.init({
-			forceHeight: false
+			smoothScrolling: false,
+			forceHeight: true,
+			skrollrBody: 'wrapper'
 		});
 	}
+	$(document).ready(function(){
+		// menu
+		$("#navbar-mobile-btn").click(function(){
+			$("#navbar").toggleClass("toggle");
+		});
+		$(document).mouseup(function (e)
+		{
+		    var container = $("#navbar");
+		    var btn = $("#navbar-mobile-btn");
+
+		    if (!container.is(e.target) // if the target of the click isn't the container...
+		        && container.has(e.target).length === 0) // ... nor a descendant of the container
+		    {
+		    	if(container.hasClass("toggle")){ container.removeClass("toggle");}
+		    }
+		});
+	});
 	</script>
 </body>
 </html>	

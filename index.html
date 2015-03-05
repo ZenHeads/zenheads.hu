@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
 <!-- CSS Section -->
 <link href="css/main.css" rel="stylesheet" type="text/css" />
@@ -11,13 +12,13 @@
 	<!-- start of #top-header -->
 	<div id="top-header">
 		<div id="inner-header" class="clearfix box">
-			<div id="site-name">ZenHeads</div>
+			<div id="site-name"><a href="index.html">Zen Heads</a></div>
 			<div id="navbar">
-				<a href="index.html" class="menu-item">works</a>
-				<a href="#" class="menu-item">blog</a>
-				<a href="#" onclick="loadContact();" class="menu-item">contact</a>
+				<a id="navbar-mobile-btn"></a>
+				<a href="index.html" class="menu-item">home</a>
 				<a href="about.html" class="menu-item">about</a>
 				<a href="jobs.html" class="menu-item">jobs</a>
+				<!-- <a href="#" class="menu-item">blog</a> -->
 			</div>
 		</div>
 	</div><!-- end of #top-header -->
@@ -26,20 +27,21 @@
 	<div id="wrapper">
 		
 		<!-- start of #inner-wrapper -->
-		<div id="inner-wrapper" data-start="position:fixed;" data-400="position:relative;" data-smooth-scrolling="off">
+		<div id="inner-wrapper" data-start="padding-top:0px;padding-bottom:340px;" data-340="padding-top:340px;padding-bottom:0px;">
 			
 			<!-- start of #header -->
-			<div id="wrapper-header" class="clearfix box" data-start="position:fixed;" data-400="position:static;">
+			<div id="wrapper-header-holder">
+			<div id="wrapper-header" class="clearfix box">
 				<div id="wrapper-header-container">
 					<div class="content" data-start="top:0px;" data-200="top:-550px;">
 						<div class="inner-content box">
 							<div id="logo" data-start="opacity:1;" data-70="opacity:0;">
 								<img alt="ZenHeads logo" src="img/logo_zenheads.png"/>
 							</div>
-							<div id="site-heading" class="align-center" data-start="opacity:1;" data-60="opacity:1;" data-120="opacity:0;">we build amazing<br />digital products.</div>
+							<div id="site-heading" class="align-center" data-start="opacity:1;" data-60="opacity:1;" data-120="opacity:0;">we build amazing<br />digital products</div>
 							<div id="site-text" class="align-center" data-start="opacity:1;" data-120="opacity:1;" data-180="opacity:0;">
-								Involved in the golden age of mobile development since 2008, we are a small but passionate<br />
-								team all about creating great products. Web service, mobile app,<br />
+								Involved in the golden age of mobile development since 2008, we are a small but passionate <br />
+								team all about creating great products. Web service, mobile app, <br />
 								you name it - we've got the right person for it.
 							</div>
 						</div>
@@ -48,7 +50,7 @@
 					<div class="blurred" data-201="opacity:1" data-300="opacity:0"></div>
 				</div>
 			</div><!-- end of #wrapper-header -->
-			
+			</div>
 			<!-- start of #sections -->
 			<div id="sections">
 			
@@ -64,17 +66,6 @@
 									<div class="text">
 										Involved in the golden age of mobile development since 2008, we are a small but passionate team all about creating great products. Web service, mobile app, you name it - we've got the right person for it.
 										Involved in the golden age of mobile development since 2008, we are a small but passionate team all about creating great products. Web service, mobile app, you name it - we've got the right person for it.
-									</div>
-									<div class="thumbnails-holder-done">
-										<div class="thumbnail-img-holder rounded rounded-small rounded-blue">
-											<img src="img/icn_design_small_orange.png"/>
-										</div>
-										<div class="thumbnail-img-holder rounded rounded-small rounded-blue">
-											<img src="img/icn_mobile_small_orange.png"/>
-										</div>
-										<div class="thumbnail-img-holder rounded rounded-small rounded-blue">
-											<img src="img/icn_server_small_orange.png"/>
-										</div>
 									</div>
 									<div class="thumbnails-holder">
 										<div class="thumbnail-img-holder rounded rounded-small rounded-blue">
@@ -97,17 +88,6 @@
 										Involved in the golden age of mobile development since 2008, we are a small but passionate team all about creating great products. Web service, mobile app, you name it - we've got the right person for it.
 										Involved in the golden age of mobile development since 2008, we are a small but passionate team all about creating great products. Web service, mobile app, you name it - we've got the right person for it.
 									</div>
-									<div class="thumbnails-holder-done">
-										<div class="thumbnail-img-holder rounded rounded-small rounded-blue">
-											<img src="img/icn_design_small_orange.png"/>
-										</div>
-										<div class="thumbnail-img-holder rounded rounded-small rounded-blue">
-											<img src="img/icn_mobile_small_orange.png"/>
-										</div>
-										<div class="thumbnail-img-holder rounded rounded-small rounded-blue">
-											<img src="img/icn_server_small_orange.png"/>
-										</div>
-									</div>
 									<div class="thumbnails-holder">
 										<div class="thumbnail-img-holder rounded rounded-small rounded-blue">
 											<img src="img/icn_design_small.png"/>
@@ -128,17 +108,6 @@
 									<div class="text">
 										Involved in the golden age of mobile development since 2008, we are a small but passionate team all about creating great products. Web service, mobile app, you name it - we've got the right person for it.
 										Involved in the golden age of mobile development since 2008, we are a small but passionate team all about creating great products. Web service, mobile app, you name it - we've got the right person for it.
-									</div>
-									<div class="thumbnails-holder-done">
-										<div class="thumbnail-img-holder rounded rounded-small rounded-blue">
-											<img src="img/icn_design_small_orange.png"/>
-										</div>
-										<div class="thumbnail-img-holder rounded rounded-small rounded-blue">
-											<img src="img/icn_mobile_small_orange.png"/>
-										</div>
-										<div class="thumbnail-img-holder rounded rounded-small rounded-blue">
-											<img src="img/icn_server_small_orange.png"/>
-										</div>
 									</div>
 									<div class="thumbnails-holder">
 										<div class="thumbnail-img-holder rounded rounded-small rounded-blue">
@@ -161,17 +130,6 @@
 										Involved in the golden age of mobile development since 2008, we are a small but passionate team all about creating great products. Web service, mobile app, you name it - we've got the right person for it.
 										Involved in the golden age of mobile development since 2008, we are a small but passionate team all about creating great products. Web service, mobile app, you name it - we've got the right person for it.
 									</div>
-									<div class="thumbnails-holder-done">
-										<div class="thumbnail-img-holder rounded rounded-small rounded-blue">
-											<img src="img/icn_design_small_orange.png"/>
-										</div>
-										<div class="thumbnail-img-holder rounded rounded-small rounded-blue">
-											<img src="img/icn_mobile_small_orange.png"/>
-										</div>
-										<div class="thumbnail-img-holder rounded rounded-small rounded-blue">
-											<img src="img/icn_server_small_orange.png"/>
-										</div>
-									</div>
 									<div class="thumbnails-holder">
 										<div class="thumbnail-img-holder rounded rounded-small rounded-blue">
 											<img src="img/icn_design_small.png"/>
@@ -192,17 +150,6 @@
 									<div class="text">
 										Involved in the golden age of mobile development since 2008, we are a small but passionate team all about creating great products. Web service, mobile app, you name it - we've got the right person for it.
 										Involved in the golden age of mobile development since 2008, we are a small but passionate team all about creating great products. Web service, mobile app, you name it - we've got the right person for it.
-									</div>
-									<div class="thumbnails-holder-done">
-										<div class="thumbnail-img-holder rounded rounded-small rounded-blue">
-											<img src="img/icn_design_small_orange.png"/>
-										</div>
-										<div class="thumbnail-img-holder rounded rounded-small rounded-blue">
-											<img src="img/icn_mobile_small_orange.png"/>
-										</div>
-										<div class="thumbnail-img-holder rounded rounded-small rounded-blue">
-											<img src="img/icn_server_small_orange.png"/>
-										</div>
 									</div>
 									<div class="thumbnails-holder">
 										<div class="thumbnail-img-holder rounded rounded-small rounded-blue">
@@ -239,21 +186,25 @@
 					<div id="our-philosophy" class="inner-section clearfix box">
 						<div class="heading">our philosophy</div>
 						<div class="inner-container box clearfix">
-							<div class="tab">
-								<div id="illu-target" class="img-holder"></div>
-								<div class="text align-center">We can help you lay solid business<br />foundations for your product;<br />whether you're launching fresh,<br />pivoting or re-branding.</div>
+							<div class="inner-row mcfx">
+								<div class="tab box">
+									<div class="img-holder"><img src="img/illu_target.png" /></div>
+									<div class="text align-center">We can help you lay solid business <br />foundations for your product; <br />whether you're launching fresh, <br />pivoting or re-branding.</div>
+								</div>
+								<div class="tab box">
+									<div class="img-holder"><img src="img/illu_magnifingglass.png" /></div>
+									<div class="text align-center">We scrutinize everything from <br />your end-users prespective. <br />UX is not an empty phrase <br />we throw around.</div>
+								</div>
 							</div>
-							<div class="tab">
-								<div id="illu-magnifingglass" class="img-holder"></div>
-								<div class="text align-center">We scrutinize everything from<br />your end-users prespective.<br />UX is not an empty phrase<br />we throw around.</div>
-							</div>
-							<div class="tab">
-								<div id="illu-award" class="img-holder"></div>
-								<div class="text align-center">Every time we design from scratch,<br />it's another chance for us to wow;<br />and we don't beleive in<br />wasted chances!</div>
-							</div>
-							<div class="tab">
-								<div id="illu-chart" class="img-holder"></div>
-								<div class="text align-center">Using cutting edge tools,<br />our development projects are<br />always under control.</div>
+							<div class="inner-row mcfx">
+								<div class="tab box">
+									<div class="img-holder"><img src="img/illu_award.png" /></div>
+									<div class="text align-center">Every time we design from scratch, <br />it's another chance for us to wow; <br />and we don't beleive in <br />wasted chances!</div>
+								</div>
+								<div class="tab box">
+									<div class="img-holder"><img src="img/illu_chart.png" /></div>
+									<div class="text align-center">Using cutting edge tools, <br />our development projects are <br />always under control.</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -263,20 +214,24 @@
 				<div class="section lightblue-bg">
 					<div id="contact" class="inner-section clearfix box">
 						<div class="heading">we know you have questions.</div>
-						<div class="text align-center">You know, we have answers.</div>
-						<div id="contact-button" class="align-center rounded rounded-lightblue">contact us now!</div>
+						<a href="mailto:enquiry@zenheads.com"  target="_top"><div id="contact-button" class="align-center rounded rounded-lightblue">contact us now!</div></a>
 					</div>
 				</div><!-- end of .section -->
 				
 				<!-- start of .section -->
 				<div class="section grey-bg">
 					<div id="footer" class="inner-section clearfix box">
-						<div class="heading">
-							<a href="#"><img src="img/icn_twitter.png" alt="Twitter" /></a>
-							<a href="#"><img src="img/icn_github.png" alt="GitHub" /></a>
-							<a href="#"><img src="img/icn_facebook.png" alt="Facebook" /></a>
+						<div class="heading clearfix">
+							<div class="mcfx">
+								<div class="tab box">Krisztina krt. 15. 1012 Budapest, Hungary</div>
+								<div class="tab box">LTD Number: 0123456789</div>
+							</div>
+							<div class="mcfx">
+								<div class="tab box">VAT Number: EU&nbsp;123/456/789</div>
+								<div class="tab box">info@zenheads.hu</div>
+							</div>
 						</div>
-						<div class="text align-center">Copyright &copy; ZENHEADS 2014.</div>
+						<div class="text align-center">Copyright &copy; ZEN HEADS 2015.</div>
 					</div>
 				</div><!-- end of .section -->
 			
@@ -286,7 +241,6 @@
 	
 	
 		</div><!-- end of #inner-wrapper -->
-	
 	</div><!-- end of #wrapper -->
 
 
@@ -299,10 +253,26 @@
 	<script type="text/javascript">
 	window.onload = function() {
 		skrollr.init({
-			forceHeight: false
+			smoothScrolling: false,
+			forceHeight: true,
+			skrollrBody: 'wrapper'
 		});
 	}
 	$(document).ready( function() {
+		// menu
+		$("#navbar-mobile-btn").click(function(){
+			$("#navbar").toggleClass("toggle");
+		});
+		$(document).mouseup(function (e)
+		{
+		    var container = $("#navbar");
+
+		    if (!container.is(e.target) // if the target of the click isn't the container...
+		        && container.has(e.target).length === 0) // ... nor a descendant of the container
+		    {
+		    	if(container.hasClass("toggle")){ container.removeClass("toggle");}
+		    }
+		});
 		// jcarousel
 		$('.jcarousel').jcarousel({
 		    wrap: 'circular'
@@ -338,13 +308,6 @@
 		} );
 		
 	});
-	function loadContact() {
-		
-		$('html, body').animate({
-	        scrollTop: $("#contact").offset().top
-	    }, 500);
-	    return false;
-	}
 	</script>
 </body>
 </html>

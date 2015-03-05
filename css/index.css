@@ -1,9 +1,8 @@
-#wrapper {
-	min-height: 3480px;
+#wrapper-header-holder{
+	min-height: 685px;
 }
-#inner-wrapper{
-	min-height: 3420px;
-}
+
+
 /* featured-products */
 
 #product-list {
@@ -82,7 +81,8 @@
 	transition: opacity 0.2s ease-in 0.1s;
 }
 #display-product .product .img-holder {
-	width: 782px;
+	max-width: 782px;
+	width: 100%;
 	height: 524px;
 	float: left;
 	margin-right: 52px;
@@ -101,8 +101,7 @@
 #display-product .product .description .text {
 	margin-bottom: 52px;
 }
-#display-product .product .description .thumbnails-holder,
-#display-product .product .description .thumbnails-holder-done {
+#display-product .product .description .thumbnails-holder {
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -110,55 +109,43 @@
 #display-product .product .description .thumbnails-holder {
 	bottom: 0;
 }
-#display-product .product .description .thumbnails-holder-done {
-	bottom: 80px;
-}
-.thumbnails-holder .thumbnail-img-holder,
-.thumbnails-holder-done .thumbnail-img-holder {
+.thumbnails-holder .thumbnail-img-holder {
 	width: 52px;
 	height: 52px;
 	float: left;
 	margin-right: 52px;
 }
-.thumbnails-holder .thumbnail-img-holder > img,
-.thumbnails-holder-done .thumbnail-img-holder > img {
+.thumbnails-holder .thumbnail-img-holder > img {
 	max-width: 100%;
 }
 
 /* our philosophy */
-
-#our-philosophy .inner-container{
-	margin-right: -52px;
+#our-philosophy .inner-row {
+	margin-top: 52px;
+	width: 50%;
 }
 #our-philosophy .tab {
-	width: 261px;
+	width: 50%;
+	text-align: center;
 	float: left;
-	margin: 52px 52px 0 0;
-}
-#our-philosophy .tab:nth-child(4n+5) {
-	clear: both;
+	padding: 0 26px;
 }
 #our-philosophy .tab .img-holder {
-	width: 261px;
-	height: 261px;
+	max-width: 261px;
+	width: 100%;
 }
-#our-philosophy .tab #illu-target {
-	background: url("../img/illu_target.png") no-repeat center;
-}
-#our-philosophy .tab #illu-magnifingglass {
-	background: url("../img/illu_magnifingglass.png") no-repeat center;
-}
-#our-philosophy .tab #illu-award {
-	background: url("../img/illu_award.png") no-repeat center;
-}
-#our-philosophy .tab #illu-chart {
-	background: url("../img/illu_chart.png") no-repeat center;
+#our-philosophy .tab .img-holder > img {
+	max-width: 100%;
 }
 
 #our-philosophy .tab > .text {
 	margin-top: 42px;
 }
 
+#contact .heading {
+	border: none;
+	margin-bottom: 52px;
+}
 
 .jcarousel ul {
     width: 20000em;
@@ -166,4 +153,51 @@
     list-style: none;
     margin: 0;
     padding: 0;
+}
+@media all and (max-width: 1440px){
+	#our-philosophy .inner-row .tab .text > br {
+		display: none;
+	}
+}
+@media all and (max-width: 900px){
+	#our-philosophy .tab {
+		padding: 0 13px;
+	}
+	#site-text > br {
+		display: none;
+	}
+}
+@media all and (max-width: 650px){
+	#our-philosophy .mcfx:before, #our-philosophy .mcfx:after {
+		content: " ";
+		display: table;
+	}
+	#our-philosophy .mcfx, #our-philosophy .mcfx:after {
+		float: none;
+		clear:both;
+	}
+	#our-philosophy .mcfx {
+		margin: 52px auto 0;
+	}
+	#our-philosophy .inner-row {
+		width: 100%;
+	}
+}
+@media all and (max-width: 640px){
+	#display-product .product .img-holder {
+		margin-right: 0;
+		height: auto;
+	}
+	#display-product .product .img-holder > img {
+		max-width: 100%;
+	}
+	#display-product .product .description {
+	    width: 100%;
+	    float: left;
+	    min-height: none;
+	    position: static;
+	    height: auto;
+	    margin-top: 52px;
+	    
+	}
 }

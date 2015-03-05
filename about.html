@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
 <!-- CSS Section -->
 <link href="css/main.css" rel="stylesheet" type="text/css" />
@@ -11,13 +12,13 @@
 	<!-- start of #top-header -->
 	<div id="top-header">
 		<div id="inner-header" class="clearfix box">
-			<div id="site-name">ZenHeads</div>
+			<div id="site-name"><a href="index.html">Zen Heads</a></div>
 			<div id="navbar">
-				<a href="index.html" class="menu-item">works</a>
-				<a href="#" class="menu-item">blog</a>
-				<a href="#contact" class="menu-item">contact</a>
+				<a id="navbar-mobile-btn"></a>
+				<a href="index.html" class="menu-item">home</a>
 				<a href="about.html" class="menu-item">about</a>
 				<a href="jobs.html" class="menu-item">jobs</a>
+				<!-- <a href="#" class="menu-item">blog</a> -->
 			</div>
 		</div>
 	</div><!-- end of #top-header -->
@@ -26,26 +27,19 @@
 	<div id="wrapper">
 		
 		<!-- start of #inner-wrapper -->
-		<div id="inner-wrapper" data-start="position:fixed;" data-400="position:relative;" data-smooth-scrolling="off">
+		<div id="inner-wrapper">
 			
 			<!-- start of #header -->
-			<div id="wrapper-header" class="clearfix box" data-start="position:fixed;" data-400="position:static;">
+			<div id="wrapper-header" class="clearfix box">
 				<div id="wrapper-header-container">
-					<div class="content" data-start="top:0px;" data-200="top:-550px;">
+					<div class="content">
 						<div class="inner-content box">
-							<div id="logo" data-start="opacity:1;" data-70="opacity:0;">
+							<div id="logo">
 								<img alt="ZenHeads logo" src="img/logo_zenheads.png"/>
 							</div>
-							<div id="site-heading" class="align-center" data-start="opacity:1;" data-60="opacity:1;" data-120="opacity:0;">we build amazing digital products.</div>
-							<div id="site-text" class="align-center" data-start="opacity:1;" data-120="opacity:1;" data-180="opacity:0;">
-								Involved in the golden age of mobile development since 2008, we are a small but passionate<br />
-								team all about creating great products. Web service, mobile app,<br />
-								you name it - we've got the right person for it.
-							</div>
+							<div id="site-heading" class="align-center">we build amazing<br /> digital products</div>
 						</div>
 					</div>
-					<div class="grey-layer" data-start="opacity:1" data-200="opacity:0"></div>
-					<div class="blurred" data-201="opacity:1" data-300="opacity:0"></div>
 				</div>
 			</div><!-- end of #wrapper-header -->
 			
@@ -54,7 +48,7 @@
 			
 				<!-- start of .section -->
 				<div class="section lightblue-bg" id="work-container">
-					<div id="work" class="inner-section clearfix box" data-1084="position:absolute;top:0px;" data-1085="position:fixed;top:50px;" data-8924="position:fixed;top:50px;" data-8925="position:absolute;top:7832px;">
+					<div id="work" class="inner-section clearfix box" data-624="position:absolute;top:0px;" data-625="position:fixed;top:50px;" data-8464="position:fixed;top:50px;" data-8465="position:absolute;top:7832px;">
 						<div class="heading">how we work</div>
 						<div class="inner-container box clearfix">
 							<!-- RIBBON -->
@@ -70,35 +64,39 @@
 						<div class="heading">tools we use</div>
 						<div class="sub-heading">We use the best tools in the industry to build you quality product.</div>
 						<div class="inner-container box clearfix">
-							<div class="tab">
-								<div id="icn-editors" class="img-holder"></div>
-								<div class="label">editors</div>
-								<div class="text align-center">XCode,<br />PyCharm,<br />Eclipse</div>
+							<div class="mobile-inner-container box mcfx">
+								<div class="tab box">
+									<div class="img-holder"><img src="img/icn_editors.png"/></div>
+									<div class="label">editors</div>
+									<div class="text align-center">XCode,<br />PyCharm,<br />Eclipse</div>
+								</div>
+								<div class="tab box">
+									<div class="img-holder"><img src="img/icn_languages.png"/></div>
+									<div class="label">languages</div>
+									<div class="text align-center">C++, Python, HTML, JS,<br />CSS, Objective C, C#,<br />Erlang</div>
+								</div>
+								<div class="tab box">
+									<div class="img-holder"><img src="img/icn_analytics.png"/></div>
+									<div class="label">analytics</div>
+									<div class="text align-center">Flurry,<br />Localytics</div>
+								</div>
 							</div>
-							<div class="tab">
-								<div id="icn-languages" class="img-holder"></div>
-								<div class="label">languages</div>
-								<div class="text align-center">C++, Python, HTML, JS,<br />CSS, Objective C, C#,<br />Erlang</div>
-							</div>
-							<div class="tab">
-								<div id="icn-analytics" class="img-holder"></div>
-								<div class="label">analytics</div>
-								<div class="text align-center">Flurry,<br />Localytics</div>
-							</div>
-							<div class="tab">
-								<div id="icn-bug" class="img-holder"></div>
-								<div class="label">bug reporting</div>
-								<div class="text align-center">Crittercism,<br />Xamarin Insights</div>
-							</div>
-							<div class="tab">
-								<div id="icn-devops" class="img-holder"></div>
-								<div class="label">devops</div>
-								<div class="text align-center">Vagrant,<br />Chef,<br />Fabric</div>
-							</div>
-							<div class="tab">
-								<div id="icn-distribution" class="img-holder"></div>
-								<div class="label">distribution</div>
-								<div class="text align-center">Testflight,<br />Apple App Store,<br />Google Play</div>
+							<div class="mobile-inner-container box mcfx">
+								<div class="tab box">
+									<div class="img-holder"><img src="img/icn_bug.png"/></div>
+									<div class="label">bug reporting</div>
+									<div class="text align-center">Crittercism,<br />Xamarin Insights</div>
+								</div>
+								<div class="tab box">
+									<div class="img-holder"><img src="img/icn_devops.png"/></div>
+									<div class="label">devops</div>
+									<div class="text align-center">Vagrant,<br />Chef,<br />Fabric</div>
+								</div>
+								<div class="tab box">
+									<div class="img-holder"><img src="img/icn_distribution.png"/></div>
+									<div class="label">distribution</div>
+									<div class="text align-center">Testflight,<br />Apple App Store,<br />Google Play</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -107,7 +105,7 @@
 				<!-- start of .section -->
 				<div class="section blue-bg">
 					<div id="our-team" class="inner-section clearfix box">
-						<div class="heading">our team</div>
+						<div class="heading">meet the founders</div>
 						<div class="inner-container box clearfix">
 							<div class="tab">
 								<div class="img-holder rounded rounded-blue grey-bg"><img src="img/img_gabor.png" alt="image alt szöveg" /></div>
@@ -128,6 +126,7 @@
 								<div class="img-holder rounded rounded-blue grey-bg"><img src="" alt="image alt szöveg" /></div>
 								<div class="text align-center">Using cutting edge tools,<br />our development projects are<br />always under control.</div>
 							</div>
+							<!-- 
 							<div class="tab">
 								<div class="img-holder rounded rounded-blue grey-bg"><img src="" alt="image alt szöveg" /></div>
 								<div class="text align-center">Every time we design from scratch,<br />it's another chance for us to wow;<br />and we don't beleive in<br />wasted chances!</div>
@@ -135,7 +134,7 @@
 							<div class="tab">
 								<div class="img-holder rounded rounded-blue grey-bg"><img src="" alt="image alt szöveg" /></div>
 								<div class="text align-center">Using cutting edge tools,<br />our development projects are<br />always under control.</div>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div><!-- end of .section -->
@@ -172,20 +171,19 @@
 				
 				<!-- start of .section -->
 				<div id="map" class="section grey-bg">
-					<div id="map-layer"></div>
-					<div class="inner-section clearfix box">
-						<div class="heading">our favourite places</div>
-					</div>
 					<div id="map-container" class="box grey-bg"></div>
-					<div id="map-disable-control"></div>
+					<div id="map-disable-control">
+						<div class="inner-section clearfix box">
+							<div class="heading">meet us</div>
+						</div>
+					</div>
 				</div><!-- end of .section -->
 				
 				<!-- start of .section -->
-				<div class="section lightblue-bg">	
-					<div id="contact" class="inner-section clearfix box lightblue-bg">
+				<div class="section lightblue-bg">
+					<div id="contact" class="inner-section clearfix box">
 						<div class="heading">we know you have questions.</div>
-						<div class="text align-center">You know, we have answers.</div>
-						<div id="contact-button" class="align-center rounded rounded-lightblue">contact us now!</div>
+						<a href="mailto:enquiry@zenheads.com"  target="_top"><div id="contact-button" class="align-center rounded rounded-lightblue">contact us now!</div></a>
 					</div>
 				</div><!-- end of .section -->
 				
@@ -193,19 +191,24 @@
 				<div id="relax" class="section grey-bg">
 					<div id="relax-layer"></div>	
 					<div class="inner-section clearfix box">
-						<div class="heading">relax, we've got it.</div>
+						<div class="heading">relax, we've got it!</div>
 					</div>
 				</div><!-- end of .section -->
 				
 				<!-- start of .section -->
 				<div class="section grey-bg">
 					<div id="footer" class="inner-section clearfix box">
-						<div class="heading">
-							<a href="#"><img src="img/icn_twitter.png" alt="Twitter" /></a>
-							<a href="#"><img src="img/icn_github.png" alt="GitHub" /></a>
-							<a href="#"><img src="img/icn_facebook.png" alt="Facebook" /></a>
+						<div class="heading clearfix">
+							<div class="mcfx">
+								<div class="tab box">Krisztina krt. 15. 1012 Budapest, Hungary</div>
+								<div class="tab box">LTD Number: 0123456789</div>
+							</div>
+							<div class="mcfx">
+								<div class="tab box">VAT Number: EU&nbsp;123/456/789</div>
+								<div class="tab box">info@zenheads.hu</div>
+							</div>
 						</div>
-						<div class="text align-center">Copyright &copy; ZENHEADS 2014.</div>
+						<div class="text align-center">Copyright &copy; ZEN HEADS 2015.</div>
 					</div>
 				</div><!-- end of .section -->
 			
@@ -269,6 +272,20 @@
 		}());
 	}
 	$(document).ready(function(){
+		// menu
+		$("#navbar-mobile-btn").click(function(){
+			$("#navbar").toggleClass("toggle");
+		});
+		$(document).mouseup(function (e)
+		{
+		    var container = $("#navbar");
+
+		    if (!container.is(e.target) // if the target of the click isn't the container...
+		        && container.has(e.target).length === 0) // ... nor a descendant of the container
+		    {
+		    	if(container.hasClass("toggle")){ container.removeClass("toggle");}
+		    }
+		});
 		showMap();
 		$("#map-disable-control").click(function(){
 			$(this).hide();
@@ -282,10 +299,18 @@
 		    	$("#map-disable-control").show();
 		    }
 		});
-	});
-	
-	$(window).scroll(function(){
-		$("#counter").text($(window).scrollTop());
+		// ribbon display text on hover
+		$(".r-text-function").mouseenter(function(){
+			var id = $(this).attr("id");
+			var textId = "#r-text-"+id;
+			if(!$(textId).hasClass("highlight-text")){
+				$(textId).addClass("highlight-text");
+			}
+		});
+		$(".r-text-function").mouseleave(function(){
+			$(".highlight-text").removeClass("highlight-text");
+		});
+		
 	});
 	</script>
 	<script type="text/javascript" src="js/ribbon.js"></script>

@@ -1,11 +1,14 @@
 #wrapper {
-	min-height: 2862px;
+	padding-top: 60px;
 }
-#inner-wrapper{
-	min-height: 2802px;
+#inner-wrapper, #wrapper-header {
+	position: static;
 }
 #jobs {
 	color: #FAFAFA;
+}
+#site-heading {
+	border: none;
 }
 .inner-section > .sub-heading {
 	width: 100%;
@@ -29,9 +32,33 @@
 	bottom: 0px;
 	background: url("../img/icon_hammer.png") no-repeat center center;
 }
-
+#submenu-holder {
+	width: 100%;
+	padding: 30px 0;
+	min-height: 44px;
+	border-bottom: 2px solid;
+}
+#submenu {
+	width: 100%;
+	text-align: center;
+	background-color:#58C2DA;
+	padding: 10px 0;
+	border-bottom-color: inherit;
+	z-index: 450;
+}
+#submenu.pinned {
+	position: fixed;
+	top: 0;
+}
+#submenu > .tab {
+	display: inline-block;
+}
+#submenu > .tab + .tab {
+	margin-left: 30px;
+}
 #jobs-button {
-	width: 366px;
+	max-width: 366px;
+	width: 100%;
 	height: 67px;
 	line-height: 67px;
 	font-size: 24px;
@@ -39,6 +66,11 @@
 	background-color: #FAFAFA;
 	margin: 0 auto;
 	color: #ff4b32;
+}
+#jobs-button:hover {
+	cursor:pointer;
+	color: #FAFAFA;
+	background-color: #ff4b32;
 }
 .section > .inner-section > .paragraph {
 	max-width: 790px;
