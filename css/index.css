@@ -130,6 +130,37 @@
 .thumbnails-holder .thumbnail-img-holder + .thumbnail-img-holder{
 	margin-left: 14.2076%;
 }
+.thumbnails-holder .thumbnail-img-holder .tooltip {
+	position:relative;
+}
+.thumbnails-holder .thumbnail-img-holder .tooltip:hover:after,
+.thumbnails-holder .thumbnail-img-holder .tooltip.hover:after {
+	display: inline-block;
+	padding: 5px 10px;
+	background: #001A2F;
+	color: #FFF;
+	content: attr(alt);
+	position: absolute;
+	top: -40px;
+	left: -40%;
+	width: auto;
+	white-space: nowrap;
+	border-radius: 5px;
+	border: 1px solid #FFF;
+}
+.thumbnails-holder .thumbnail-img-holder .tooltip:hover:before,
+.thumbnails-holder .thumbnail-img-holder .tooltip.hover:before{
+	display: block;
+	content: " ";
+	border: 5px solid #FFF;
+	border-bottom: none;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	position: absolute;
+	top: -5px;
+	left: 50%;
+	margin-left: -2.5px;
+}
 .thumbnails-holder .thumbnail-img-holder > img,
 #display-product .product .img-holder > img {
 	max-width: 100%;
@@ -281,14 +312,15 @@
 	#display-product .product > .product-paging-btn {
 		width: 20px;
 		height: 36px;
+		padding: 0 10px;
 	}
 	#display-product .product .product-left-btn {
 		background-image: url("../img/icn_arrow_left.png");
-		left: -35px;
+		left: -45px;
 	}
 	#display-product .product .product-right-btn {
 		background-image: url("../img/icn_arrow_right.png");
-		right: -35px;
+		right: -45px;
 	}
 }
 @media all and (max-width: 650px){
