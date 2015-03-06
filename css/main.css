@@ -44,6 +44,9 @@ a {
 .clearfix:after {
 	clear: both;
 }
+.btn:hover {
+	cursor: pointer;
+}
 .box {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
