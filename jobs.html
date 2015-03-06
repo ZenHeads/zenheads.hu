@@ -52,6 +52,7 @@
 						<div class="heading">jobs</div>
 						<div id="submenu-holder">
 							<div id="submenu" class="clearfix" data-start="position:static;border-bottom-width:0px;border-bottom-style:none;" data-60-top="position:fixed;top:60px;left:0px;right:0px;border-bottom-width:2px;border-bottom-style:solid;">
+								<a id="submenu-mobile-btn"></a>
 								<div class="tab box">html developer</div>
 								<div class="tab box">designer</div>	
 								<div class="tab box">mobile developer</div>	
@@ -135,7 +136,7 @@
 	window.onload = function() {
 		skrollr.init({
 			smoothScrolling: false,
-			forceHeight: true,
+			forceHeight: false,
 			skrollrBody: 'wrapper'
 		});
 	}
@@ -148,6 +149,21 @@
 		{
 		    var container = $("#navbar");
 		    var btn = $("#navbar-mobile-btn");
+
+		    if (!container.is(e.target) // if the target of the click isn't the container...
+		        && container.has(e.target).length === 0) // ... nor a descendant of the container
+		    {
+		    	if(container.hasClass("toggle")){ container.removeClass("toggle");}
+		    }
+		});
+		
+		// submenu
+		$("#submenu-mobile-btn").click(function(){
+			$("#submenu").toggleClass("toggle");
+		});
+		$(document).mouseup(function (e)
+		{
+		    var container = $("#submenu");
 
 		    if (!container.is(e.target) // if the target of the click isn't the container...
 		        && container.has(e.target).length === 0) // ... nor a descendant of the container

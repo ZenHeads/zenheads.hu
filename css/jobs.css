@@ -46,6 +46,9 @@
 	border-bottom-color: inherit;
 	z-index: 450;
 }
+a#submenu-mobile-btn {
+	display: none;
+}
 #submenu.pinned {
 	position: fixed;
 	top: 0;
@@ -97,4 +100,42 @@
 }
 .section .paragraph > .description > ul > li + li {
 	margin-top: 20px;
+}
+@media all and (max-width: 530px){
+	#submenu-holder {
+		padding: 0;
+	}
+	a#submenu-mobile-btn{
+		display: inline-block;
+		width: 40px;
+		height: 24px;
+		background: url(../img/icn_submenu.png) no-repeat top right transparent;
+		float: right;
+		margin: 0 20px 10px 0;
+	}
+	#submenu {
+		height: 24px;
+		overflow: hidden;
+	}
+	#submenu.toggle {
+		height: auto;
+		text-align: center;
+		padding-bottom: 0;
+	}
+	#submenu.toggle > a#submenu-mobile-btn {
+		opacity: 0.6;
+	}
+	#submenu > div.tab {
+		width: 100%;
+		display: inline-block;
+		padding: 9px 0 10px;
+		border-top: 1px solid #F0F0F0;
+	}
+	#submenu > div.tab + .tab {
+		margin-left: 0;
+	}
+	#submenu.toggle > div.tab:hover {
+		color: #001A2F;
+		cursor: pointer;
+	}
 }
