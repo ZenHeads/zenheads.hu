@@ -166,10 +166,7 @@
 	left: 50%;
 	margin-left: -2.5px;
 }
-.thumbnails-holder .thumbnail-img-holder > img,
-#display-product .product .img-holder > img {
-	max-width: 100%;
-}
+
 #display-product .product .img-holder {
 	position: relative;
 }
@@ -209,12 +206,6 @@
 	left: 50%;
 	right: 0;
 }
-/*#display-product .product .img-holder > img {
-	display: none;
-}
-#display-product .product .img-holder  img:first-child {
-	display: block;
-}*/
 
 /* our philosophy */
 #our-philosophy .inner-row {
@@ -231,9 +222,6 @@
 	max-width: 261px;
 	width: 100%;
 }
-#our-philosophy .tab .img-holder > img {
-	max-width: 100%;
-}
 
 #our-philosophy .tab > .text {
 	margin-top: 42px;
@@ -244,13 +232,7 @@
 	margin-bottom: 52px;
 }
 
-.jcarousel ul {
-    width: 20000em;
-    position: relative;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+
 @media all and (max-width: 1439px){
 	#our-philosophy .inner-row .tab .text > br {
 		display: none;

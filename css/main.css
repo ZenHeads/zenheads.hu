@@ -24,6 +24,9 @@ body {
 a {
 	text-decoration: none;
 }
+div > img {
+	max-width: 100%;
+}
 #wrapper {
 	width:100%;
 	position: relative;
