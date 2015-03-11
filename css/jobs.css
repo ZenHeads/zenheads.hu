@@ -16,7 +16,6 @@
 	font-size: 24px;
 	text-transform: uppercase;
 	margin: 52px 0;
-	line-height: 52px;
 }
 #jobs > .sub-heading > span {
 	display: inline-block;
@@ -31,6 +30,8 @@
 	right: -72px;
 	bottom: 0px;
 	background: url("../img/icon_hammer.png") no-repeat center center;
+	top: 50%;
+	margin-top: -26px;
 }
 #submenu-holder {
 	width: 100%;
@@ -41,17 +42,24 @@
 #submenu {
 	width: 100%;
 	text-align: center;
-	background-color:#58C2DA;
 	padding: 10px 0;
 	border-bottom-color: inherit;
 	z-index: 450;
+	background-color:#58C2DA;
 }
 a#submenu-mobile-btn {
 	display: none;
 }
+#submenu-holder.pinned {
+	border-bottom: none;
+	padding: 0;
+}
 #submenu.pinned {
 	position: fixed;
-	top: 0;
+	top: 60px;
+	left: 0;
+	right: 0;
+	border-bottom: 2px solid;
 }
 #submenu > .tab {
 	display: inline-block;
@@ -101,7 +109,8 @@ a#submenu-mobile-btn {
 .section .paragraph > .description > ul > li + li {
 	margin-top: 20px;
 }
-@media all and (max-width: 530px){
+
+@media all and (max-width: 650px){
 	#submenu-holder {
 		padding: 0;
 	}
@@ -109,18 +118,27 @@ a#submenu-mobile-btn {
 		display: inline-block;
 		width: 40px;
 		height: 24px;
-		background: url(../img/icn_submenu.png) no-repeat top right transparent;
-		float: right;
-		margin: 0 20px 10px 0;
+		background: url("../img/icn_submenu.png") no-repeat scroll center center rgba(255,255,255,0.2);
+		float: left;
+		margin: 0px 0px 10px 15px;
+		padding: 5px;
 	}
 	#submenu {
-		height: 24px;
+		height: 34px;
 		overflow: hidden;
+		background-color: transparent;
+	}
+	#submenu.pinned {
+		top: 0px;
+		line-height: 40px;
+		border-bottom: none;
 	}
 	#submenu.toggle {
 		height: auto;
 		text-align: center;
 		padding-bottom: 0;
+		background-color:#58C2DA;
+		border-bottom: 2px solid;
 	}
 	#submenu.toggle > a#submenu-mobile-btn {
 		opacity: 0.6;
@@ -130,6 +148,7 @@ a#submenu-mobile-btn {
 		display: inline-block;
 		padding: 9px 0 10px;
 		border-top: 1px solid #F0F0F0;
+		line-height: 24px;
 	}
 	#submenu > div.tab + .tab {
 		margin-left: 0;
@@ -137,5 +156,13 @@ a#submenu-mobile-btn {
 	#submenu.toggle > div.tab:hover {
 		color: #001A2F;
 		cursor: pointer;
+	}
+}
+@media all and (max-width: 400px){
+	#jobs > .sub-heading > span {
+		max-width: 190px;
+	}
+	#jobs > .sub-heading > span::after {
+		right: -62px;
 	}
 }

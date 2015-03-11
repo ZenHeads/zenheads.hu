@@ -51,7 +51,7 @@
 					<div id="jobs" class="inner-section clearfix box">
 						<div class="heading">jobs</div>
 						<div id="submenu-holder">
-							<div id="submenu" class="clearfix" data-start="position:static;border-bottom-width:0px;border-bottom-style:none;" data-60-top="position:fixed;top:60px;left:0px;right:0px;border-bottom-width:2px;border-bottom-style:solid;">
+							<div id="submenu" class="clearfix">
 								<a id="submenu-mobile-btn"></a>
 								<div class="tab box">html developer</div>
 								<div class="tab box">designer</div>	
@@ -131,16 +131,48 @@
 
 <!-- JS Section -->
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="js/skrollr.min.js"></script>
 	<script type="text/javascript">
-	window.onload = function() {
-		skrollr.init({
-			smoothScrolling: false,
-			forceHeight: false,
-			skrollrBody: 'wrapper'
-		});
-	}
 	$(document).ready(function(){
+		// menu is not fixed below 650px width
+		$( window ).resize(function() {
+			var topHeader = $("#top-header");
+			if($(window).width()<=650){
+				if(topHeader.hasClass("fixed")){
+					topHeader.removeClass("fixed");
+				}
+				if(!topHeader.hasClass("absolute")){
+					topHeader.addClass("absolute");
+				}
+			}
+			else {
+				if(!topHeader.hasClass("fixed")){
+					topHeader.addClass("fixed");
+				}
+				if(topHeader.hasClass("absolute")){
+					topHeader.removeClass("absolute");
+				}
+			}
+		});
+
+		var submenu = $("#submenu");
+		var submenuHolder = $("#submenu-holder");
+		var submenuOffsetTop = submenu.offset().top;
+		// submenu is pinned if at top
+		$( window ).scroll(function(){
+			var windowScrollTop = $(window).scrollTop();
+			if(windowScrollTop>=submenuOffsetTop){
+				if(!submenu.hasClass("pinned")){
+					submenu.addClass("pinned");
+					submenuHolder.addClass("pinned");
+				}
+			}
+			else {
+				if(submenu.hasClass("pinned")){
+					submenu.removeClass("pinned");
+					submenuHolder.removeClass("pinned")
+				}
+			}
+		});
 		// menu
 		$("#navbar-mobile-btn").click(function(){
 			$("#navbar").toggleClass("toggle");

@@ -315,6 +315,26 @@
 	}
 	$(document).ready( function() {
 		
+		// menu is not fixed below 650px width
+		$( window ).resize(function() {
+			var topHeader = $("#top-header");
+			if($(window).width()<=650){
+				if(topHeader.hasClass("fixed")){
+					topHeader.removeClass("fixed");
+				}
+				if(!topHeader.hasClass("absolute")){
+					topHeader.addClass("absolute");
+				}
+			}
+			else {
+				if(!topHeader.hasClass("fixed")){
+					topHeader.addClass("fixed");
+				}
+				if(topHeader.hasClass("absolute")){
+					topHeader.removeClass("absolute");
+				}
+			}
+		});
 		// menu
 		$("#navbar-mobile-btn").click(function(){
 			$("#navbar").toggleClass("toggle");
@@ -330,16 +350,22 @@
 		    }
 		});
 
+		// preload product images, then hide before display product
+		$("#display-product .product").map( function(){
+			var imageHolder = $(this).find(".img-holder");
+			var images = imageHolder.find("img");
+			images.not($(images.get(0))).hide();
+		});
+		
 		// display product
 		$("#product-list .product img").on("click", function() {
 			var product = $($(this).attr("alt"));
 			var products = $("#display-product .product");
-			
 			if(!$("#display-product").hasClass("show")){
 				$("#display-product").addClass("show");
 			}
-			$(".show-product").removeClass("show-product");
-			product.addClass("show-product");
+			products.not(product).hide();
+			product.fadeIn(1000);
 			fixDocumentHeightForMobile(); // fix document height on mobile after display product
 			
 			//scroll
@@ -387,7 +413,10 @@
 					bulletsHtml += '<span class="bullets-item btn blue-bg'+(i==activeIndex?' active':'')+'"></span>';
 				}
 				bulletsNavbar.html(bulletsHtml);
-				
+				// make area buttons only once
+				if(! imgHolder.has(".area-btn").length){
+					imgHolder.append('<div class="left-area area-btn"></div><dib class="right-area area-btn"></div>');
+				}
 			}
 			
 			// bullets navigation
@@ -403,12 +432,51 @@
 				bullets.removeClass("active");
 				$(this).addClass("active");
 			});
+			// area navigation
+			$(".left-area").on("click", function(){
+				var navbar = $(this).parent(".img-holder").find(".bullets-navbar");
+				var bullets = navbar.find(".bullets-item");
+				var num = bullets.length;
+				var activeBullet = navbar.find(".active");
+				var index = bullets.index(activeBullet);
+				if(num > 0 && index > 0){
+					var imgHolder = navbar.parent(".img-holder");
+					var images = imgHolder.find("img");
+					images.hide();
+					var img = $(images.get(index-1));
+					var bullet = $(bullets.get(index-1));
+					img.show();
+					bullets.removeClass("active");
+					bullet.addClass("active");
+				} else {
+					return false;
+				}
+			});
+			$(".right-area").on("click", function(){
+				var navbar = $(this).parent(".img-holder").find(".bullets-navbar");
+				var bullets = navbar.find(".bullets-item");
+				var num = bullets.length;
+				var activeBullet = navbar.find(".active");
+				var index = bullets.index(activeBullet);
+				if(num > 0 && index < (num-1)){
+					var imgHolder = navbar.parent(".img-holder");
+					var images = imgHolder.find("img");
+					images.hide();
+					var img = $(images.get(index+1));
+					var bullet = $(bullets.get(index+1));
+					img.show();
+					bullets.removeClass("active");
+					bullet.addClass("active");
+				} else {
+					return false;
+				}
+			});
 		}
 		
 		// hide product
 		$(".product-close-btn").on("click", function() {
-			$(".show-product").removeClass("show-product");
 			$("#display-product").removeClass("show");
+			$("#display-product .product").hide();
 			fixDocumentHeightForMobile();
 		});
 		
@@ -419,8 +487,8 @@
 			var index = products.index(product);
 			var nextProduct = products.get(index-1);
 			if(nextProduct != 'undefined'){
-				product.removeClass("show-product");
-				$(nextProduct).addClass("show-product");
+				product.hide();
+				$(nextProduct).fadeIn(1000);
 				checkNavigationButtons(products,$(nextProduct));
 			}
 		});
@@ -432,8 +500,8 @@
 			var index = products.index(product);
 			var nextProduct = products.get(index+1);
 			if(nextProduct != 'undefined'){
-				product.removeClass("show-product");
-				$(nextProduct).addClass("show-product");
+				product.hide();
+				$(nextProduct).fadeIn(1000);
 				checkNavigationButtons(products,$(nextProduct));
 			}
 		});

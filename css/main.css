@@ -19,7 +19,7 @@ body {
 	font-size: 16px;
 	line-height: 24px;
 	color: #001A2F;
-	min-width: 360px;
+	min-width: 320px;
 }
 a {
 	text-decoration: none;
@@ -123,7 +123,6 @@ a {
 /* Top header */
 
 #top-header {
-	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -131,6 +130,12 @@ a {
 	box-shadow: 0 4px 4px -4px #000000;
     background-color: #FFF;
     height:60px;
+}
+#top-header.fixed {
+	position: fixed;
+}
+#top-header.absolute {
+	position: absolute;
 }
 #wrapper-header-container{
 	position: relative;
@@ -339,14 +344,15 @@ a.menu-item, a.menu-item:active, a.menu-item:focus, a.menu-item:visited {
 		display: inline-block;
 		width: 40px;
 		height: 40px;
-		background: url(../img/icn_menu.png) no-repeat top right transparent;
+		background: url(../img/icn_menu.png) no-repeat center center rgba(255,255,255,.3);
 		float: right;
+		padding: 0 5px;
 	}
 	#navbar {
 		height: 40px;
 		overflow: hidden;
 		float: none;
-		position: absolute;
+		position: fixed;
 		top: 10px;
 		right: 20px;
 	}
@@ -355,6 +361,7 @@ a.menu-item, a.menu-item:active, a.menu-item:focus, a.menu-item:visited {
 		left: 40px;
 		text-align: center;
 		box-shadow: 0px 4px 4px -4px #000;
+		background-color: #FFF;
 	}
 	#navbar.toggle > a#navbar-mobile-btn {
 		opacity: 0.6;

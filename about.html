@@ -22,7 +22,8 @@
 			</div>
 		</div>
 	</div><!-- end of #top-header -->
-	
+	<!-- start of #skrollr-body -->
+	<div id="skrollr-body">
 	<!-- start of #wrapper -->
 	<div id="wrapper">
 		
@@ -220,22 +221,26 @@
 		</div><!-- end of #inner-wrapper -->
 	
 	</div><!-- end of #wrapper -->
-
+	</div><!-- end of #skrollr-body -->
 
 <!-- JS Section -->
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script> 
-	<script type="text/javascript" src="js/jquery.simplr.smoothscroll.js"></script> 
 	<script type="text/javascript" src="js/skrollr.min.js"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 	<script type="text/javascript">
-	/*$(function () {
-	    $.srSmoothscroll();
-	});*/
+	var s;
 	window.onload = function() {
-		skrollr.init({
-			forceHeight: false
-		});
+		/*s = skrollr.init({
+			smoothScrolling: false,
+			forceHeight: true
+		});*/
+		fixDocumentHeightForMobile();
+	}
+	// height fix
+	function fixDocumentHeightForMobile(){
+		$("#skrollr-body").height($("#wrapper").outerHeight());
+		//s.refresh(document.body);
 	}
 	//google maps
 	var map = null;
@@ -272,6 +277,26 @@
 		}());
 	}
 	$(document).ready(function(){
+		// menu is not fixed below 650px width
+		$( window ).resize(function() {
+			var topHeader = $("#top-header");
+			if($(window).width()<=650){
+				if(topHeader.hasClass("fixed")){
+					topHeader.removeClass("fixed");
+				}
+				if(!topHeader.hasClass("absolute")){
+					topHeader.addClass("absolute");
+				}
+			}
+			else {
+				if(!topHeader.hasClass("fixed")){
+					topHeader.addClass("fixed");
+				}
+				if(topHeader.hasClass("absolute")){
+					topHeader.removeClass("absolute");
+				}
+			}
+		});
 		// menu
 		$("#navbar-mobile-btn").click(function(){
 			$("#navbar").toggleClass("toggle");
@@ -288,7 +313,10 @@
 		});
 		showMap();
 		$("#map-disable-control").click(function(){
-			$(this).hide();
+			if( $( window ).width() > 650)
+				$(this).hide();
+			else
+				return false;
 		});
 		$(document).click(function(e){
 			var container = $("#map");
