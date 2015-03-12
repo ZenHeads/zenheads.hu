@@ -138,6 +138,8 @@ a#submenu-mobile-btn {
 		text-align: center;
 		padding-bottom: 0;
 		background-color:#58C2DA;
+	}
+	#submenu.pinned.toggle {
 		border-bottom: 2px solid;
 	}
 	#submenu.toggle > a#submenu-mobile-btn {
