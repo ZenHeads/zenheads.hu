@@ -247,7 +247,11 @@
 		window.onload = function() {
 			s = skrollr.init({
 				smoothScrolling: false,
-				forceHeight: true
+				forceHeight: true,
+				/*beforerender: function(data) {
+			        return data.direction == 'down';
+			    }*/ 
+			    // stop the animation when scrollup
 			});
 			fixDocumentHeightForMobile();
 		}
@@ -263,7 +267,7 @@
 		work.setAttribute("data-624","position:absolute;top:0px;");
 		work.setAttribute("data-625","position:fixed;top:50px;");
 		work.setAttribute("data-8464","position:fixed;top:50px;");
-		work.setAttribute("data-8465","position:absolute;top:7832px;");
+		work.setAttribute("data-8465","position:absolute;top:7772px;");
 		
 		$("#work").addClass("desktop");
 		$("#r-container").addClass("desktop");
@@ -371,33 +375,69 @@
 		    }
 		});
 		showMap();
-		$("#map-disable-control").click(function(){
-			if( $( window ).width() > 650)
-				$(this).hide();
-			else
-				return false;
-		});
-		$(document).click(function(e){
-			var container = $("#map");
-
-		    if (!container.is(e.target) // if the target of the click isn't the container...
-		        && container.has(e.target).length === 0) // ... nor a descendant of the container
-		    {
-		    	$("#map-disable-control").show();
-		    }
-		});
-		// ribbon display text on hover
-		$(".r-text-function").mouseenter(function(){
-			var id = $(this).attr("id");
-			var textId = "#r-text-"+id;
-			if(!$(textId).hasClass("highlight-text")){
-				$(textId).addClass("highlight-text");
-			}
-		});
-		$(".r-text-function").mouseleave(function(){
-			$(".highlight-text").removeClass("highlight-text");
-		});
 		
+		if( $( window ).width() >= 1200)
+		{
+			$("#map-disable-control").click(function(){
+				if( $( window ).width() > 650)
+					$(this).hide();
+				else
+					return false;
+			});
+			$(document).click(function(e){
+				var container = $("#map");
+	
+			    if (!container.is(e.target) // if the target of the click isn't the container...
+			        && container.has(e.target).length === 0) // ... nor a descendant of the container
+			    {
+			    	$("#map-disable-control").show();
+			    }
+			});
+			// ribbon display text on hover
+			$(".r-text-function").mouseenter(function(){
+				var id = $(this).attr("id");
+				var textId = "#r-text-"+id;
+				if(!$(textId).hasClass("highlight-text")){
+					$(textId).addClass("highlight-text");
+				}
+			});
+			$(".r-text-function").mouseleave(function(){
+				$(".highlight-text").removeClass("highlight-text");
+			});
+		}
+		else
+		{
+			// make bullets navigation on work's cards
+			var cont = $("#r-container");
+			var rows = cont.find(".r-static-row");
+			var num = rows.length;
+			var index = 0;
+			var row; console.log(num);
+			if(num > 1){
+				row = $(rows.get(0));
+				rows.not(row).hide(); // hide them except the first one
+				
+				// make bullets
+				var bulletsHtml = "";
+				var bulletsNavbar = $('<div id="bullets-navbar"></div>');
+				cont.append(bulletsNavbar);
+				for(var i=0; i< num; i++){
+					bulletsHtml += '<span class="bullets-item btn blue-bg'+(i==0?' active':'')+'"></span>';
+				}
+				bulletsNavbar.html(bulletsHtml);
+				var bullets = bulletsNavbar.find(".bullets-item");
+				// bullets navigation
+				$(".bullets-item").on("click", function(){
+					index = bullets.index($(this));
+					row = $(rows.get(index));
+					rows.not(row).hide();
+					row.fadeIn(800);
+					bullets.removeClass("active");
+					$(this).addClass("active");
+				});
+				
+			}
+		}
 	});
 	</script>
 </body>
