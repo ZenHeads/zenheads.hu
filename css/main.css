@@ -142,7 +142,6 @@ div > img {
 }
 #wrapper-header-container{
 	position: relative;
-	background: url("../img/img_header.png");
 	background-size: cover;
 	width: 100%;
 	height: 685px;
@@ -219,7 +218,6 @@ a.menu-item, a.menu-item:active, a.menu-item:focus, a.menu-item:visited {
 	height: 685px;
 }
 #wrapper-header .grey-layer {
-	background: url(../img/img_header_bg.png);
 	background-size: cover;
 	z-index: 5;
 	opacity: 1;
@@ -276,7 +274,7 @@ a.menu-item, a.menu-item:active, a.menu-item:focus, a.menu-item:visited {
 	top: 0;
 	bottom: 0;
 	opacity: 1;
-	background: url(../img/img_header_blurred.png);
+	background: url(../img/img_header3_bg.jpg);
 	background-size: cover;
 }
 

@@ -4,6 +4,13 @@
 	min-height: 685px;
 }
 
+#wrapper-header .grey-layer {
+    background: url(../img/img_header3_bg_blurred.png);
+}
+
+#wrapper-header-container {
+    background: url("../img/img_header3_bg.jpg");
+}
 
 /* featured-products */
 

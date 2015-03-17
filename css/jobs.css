@@ -4,6 +4,10 @@
 #inner-wrapper, #wrapper-header {
 	position: static;
 }
+#wrapper-header-container {
+	background: url("../img/img_header3_bg.jpg") no-repeat center transparent;
+	background-size: cover;
+}
 #jobs {
 	color: #FAFAFA;
 }
