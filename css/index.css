@@ -4,12 +4,28 @@
 	min-height: 685px;
 }
 
+/* Szürke kép ez látszódik elsőnek */
 #wrapper-header .grey-layer {
-    background: url(../img/img_header3_bg_blurred.png);
+    background: url(../img/img_header1_bg_blur1.png);
 }
-
+/* Blurred kép ez látszódik másodiknak */
+#wrapper-header .blurred {
+	position: absolute;
+	z-index: 2;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	opacity: 1;
+	background-image: url(../img/img_header1_bg_blur2.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	background-size: cover;
+}
+/* Éles kép ez látszódik utolsónak */
 #wrapper-header-container {
-    background: url("../img/img_header3_bg.jpg");
+    background-image: url("../img/img_header1_bg.jpg");
 }
 
 /* featured-products */
