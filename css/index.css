@@ -6,7 +6,11 @@
 
 /* Szürke kép ez látszódik elsőnek */
 #wrapper-header .grey-layer {
-    background: url(../img/img_header1_bg_blur1.png);
+    background-image: url(../img/img_header1_bg_blur1.jpg);
+    background-position: center;
+ background-repeat: no-repeat;
+ background-color: transparent;
+ background-size: cover;
 }
 /* Blurred kép ez látszódik másodiknak */
 #wrapper-header .blurred {
