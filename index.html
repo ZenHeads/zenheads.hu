@@ -25,10 +25,10 @@
 	<!-- start of #skrollr-body -->
 	<div id="skrollr-body">
 	<!-- start of #wrapper -->
-	<div id="wrapper" data-start="position:fixed;top:-400px;margin-top:400px;" data-400="position:static;">
+	<div id="wrapper" data-start="position:fixed;top:0px;" data-400="position:static;">
 		
 		<!-- start of #inner-wrapper -->
-		<div id="inner-wrapper">
+		<div id="inner-wrapper" data-start="position:relative;" data-400="position:static;">
 			
 			<!-- start of #header -->
 			<div id="wrapper-header-holder">
@@ -369,7 +369,10 @@
 			fixDocumentHeightForMobile(); // fix document height on mobile after display product
 			
 			//scroll
-			window.scrollTo(0,product.offset().top-210);
+			
+			$('html,body').animate({
+				scrollTop: product.offset().top-210
+			}, 200);
 			
 			checkNavigationButtons(products,product);
 		});
@@ -410,7 +413,7 @@
 			var bulletsHtml ="";
 			if(num>1){
 				for(var i=0; i< num; i++){
-					bulletsHtml += '<span class="bullets-item btn blue-bg'+(i==activeIndex?' active':'')+'"></span>';
+					bulletsHtml += '<span class="bullets-item btn white-bg'+(i==activeIndex?' active':'')+'"></span>';
 				}
 				bulletsNavbar.html(bulletsHtml);
 				// make area buttons only once

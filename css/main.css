@@ -29,7 +29,6 @@ div > img {
 }
 #wrapper {
 	width:100%;
-	position: relative;
 	padding-top: 61px;
 }
 #inner-wrapper{
@@ -68,6 +67,9 @@ div > img {
 .grey-bg {
 	background-color: #fafafa;
 	color: #001A2F;
+}
+.white-bg {
+	background-color: #FFF;
 }
 .rounded {
 	position: relative;
