@@ -90,8 +90,10 @@
 	margin-top: 52px;
 }
 #partners .tab {
-	width: 45.47%;
+	width: 30%;
 	max-width: 261px;
+	/* 4 elem esetén ez kell
+	width: 45.47%; */
 	float: left;
 	margin-top: 52px;
 }
@@ -108,8 +110,12 @@
 #our-team .tab + .tab{
 	margin-left:  52px;
 }
+/* 4elem esetén ez kell
 #partners .tab + .tab{
 	margin-left: 9.059%;
+}*/
+#partners .tab + .tab{
+	margin-left: 4.5%;
 }
 
 #partners .inner-container .mcfx {
@@ -577,6 +583,26 @@
 	}
 	#our-team .tab + .tab {
 		margin-left: 9.05923%;
+	}
+}
+@media all and (min-width: 1090px){
+	#partners .tab {
+		float: none;
+		display: inline-block;
+	}
+}
+@media all and (max-width: 540px){
+	#partners .tab {
+		width: 45.4704%;
+	}
+	#partners .tab + .tab {
+		margin-left: 9.05923%;
+	}
+	#partners .tab:nth-child(3) {
+		clear: both;
+		margin: 52px auto;
+		float: none;
+		display: inline-block;
 	}
 }
 
