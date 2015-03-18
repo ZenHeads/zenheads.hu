@@ -1,4 +1,6 @@
-
+.skrollr-desktop #wrapper.skrollable-after {
+	margin-top: 400px;
+}
 
 #wrapper-header-holder{
 	min-height: 685px;
