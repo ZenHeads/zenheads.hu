@@ -25,7 +25,7 @@
 	<!-- start of #skrollr-body -->
 	<div id="skrollr-body">
 	<!-- start of #wrapper -->
-	<div id="wrapper" data-start="position:fixed;top:0px;" data-400="position:static;">
+	<div id="wrapper" data-start="position:fixed;top:0px;" data-400="position:relative;top:0px;">
 		
 		<!-- start of #inner-wrapper -->
 		<div id="inner-wrapper">
@@ -369,7 +369,8 @@
 			fixDocumentHeightForMobile(); // fix document height on mobile after display product
 			
 			//scroll
-			s.animateTo(685, {duration: 200});
+			var mtWrapper = $("html").hasClass("skrollr-desktop") ? 400 : 0;
+			s.animateTo(mtWrapper+685, {duration: 200});
 			
 			checkNavigationButtons(products,product);
 		});
