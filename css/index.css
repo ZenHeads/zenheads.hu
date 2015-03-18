@@ -31,12 +31,13 @@
 #wrapper-header-container {
     background-image: url("../img/img_header1_bg.jpg");
 }
-
+/*
 #inner-wrapper {
 	margin-top:400px;
 	top: -400px;
+	position:relative;
 }
-
+*/
 /* featured-products */
 
 #product-list {

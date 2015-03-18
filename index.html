@@ -28,7 +28,7 @@
 	<div id="wrapper" data-start="position:fixed;top:0px;" data-400="position:static;">
 		
 		<!-- start of #inner-wrapper -->
-		<div id="inner-wrapper" data-start="position:relative;" data-400="position:static;">
+		<div id="inner-wrapper">
 			
 			<!-- start of #header -->
 			<div id="wrapper-header-holder">
@@ -369,10 +369,7 @@
 			fixDocumentHeightForMobile(); // fix document height on mobile after display product
 			
 			//scroll
-			
-			$('html,body').animate({
-				scrollTop: product.offset().top-210
-			}, 200);
+			s.animateTo(685, {duration: 200});
 			
 			checkNavigationButtons(products,product);
 		});

@@ -245,7 +245,10 @@
 	window.onload = function() {
 		s = skrollr.init({
 			smoothScrolling: true,
-			forceHeight: true
+			forceHeight: true,
+			beforerender: function(data) {
+		        return data.direction == 'down';
+		    }
 		});
 		//fixDocumentHeightForMobile();
 	}
@@ -272,7 +275,7 @@
 	// H szöveg
 	var elem8 = new RibbonElement('elem8','rgb(0,26,47)','rgb(0,11,20)');
 	
-	var ribbon = new Ribbon("ribbon", 640, -320, 100,100,200);
+	var ribbon = new Ribbon("ribbon", 640, -320, 0,100,200);
 	ribbon.createRibbon([elem1,elem2,elem3,elem4,elem5,elem6,elem7,elem8]);
 	</script>
 </body>

@@ -1,11 +1,8 @@
 /* this is an icon holder object: ribbonElement */
-function RibbonElement(id, color, shadowColor, text, title, label){
+function RibbonElement(id, color, shadowColor){
 	this.id = id;
 	this.color = color;
 	this.shadowColor = shadowColor;
-	this.text = text;
-	this.title = title;
-	this.label = label;
 }
 
 function createRibbonElement(index,container){
@@ -13,9 +10,8 @@ function createRibbonElement(index,container){
 	row.className = "r-static-row";
 	this.container = container;
 	var element = document.createElement('div');
-	var textElement = document.createElement('div');
-	var labelElement = document.createElement('div');
-	var textTitle = document.createElement('div');
+	var textElement = ribbon.texts.get(index);
+	var labelElement = ribbon.labels.get(index);
 	
 	
 	
@@ -25,18 +21,18 @@ function createRibbonElement(index,container){
 	/* label */
 	labelElement.id = this.id+"-label";
 	labelElement.className = "r-static-label";
-	labelElement.innerHTML = this.label; // label element data attributes
+	//labelElement.innerHTML = this.label; // label element data attributes
 	
 	/* text element */
 	textElement.id = "r-static-text-"+this.id;
 	textElement.className = "r-static-text";
-	textTitle.className = "r-text-title";
+	/*textTitle.className = "r-text-title";
 	textTitle.innerHTML = this.title;
 	textElement.appendChild(textTitle);
 	var paragraph = document.createElement('p');
 	paragraph.innerHTML = this.text;
 	textElement.appendChild(paragraph); // text element data attributes
-	
+	*/
 	row.appendChild(textElement);
 	row.appendChild(element);
 	row.appendChild(labelElement);
@@ -56,6 +52,11 @@ function Ribbon(containerId){
 		console.log("DOM element with the given container ID ("+containerId+") is not found!");
 	}
 	this.ribbonElements = [];
+	
+	this.texts			= $(".r-text");
+	this.labels			= $(".r-label");
+	
+	this.container.innerHTML = ""; // clear content
 }
 
 function createRibbon(ribbonElements){
