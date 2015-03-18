@@ -515,6 +515,10 @@
 
 	var centerWidth = 47.4953945;
 	var centerLength = 19.0347467;
+	var centerLength = 19.0347467;
+	var markerLat = 47.4953945;
+	var markerLng = 19.0347;
+
 	var miniZoomLevel = 17;
 	var maxZoomLevel = 11;
 
@@ -530,7 +534,7 @@
 	  map = new google.maps.Map(document.getElementById('map-container'),mapOptions);
 	  
 	  	marker = new google.maps.Marker({
-		  position: new google.maps.LatLng(centerWidth, centerLength), 
+		  position: new google.maps.LatLng(markerLat, markerLng),
 		  map: map
 		});
 	  	infowindow = new google.maps.InfoWindow({
