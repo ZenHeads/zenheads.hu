@@ -102,6 +102,15 @@ function Ribbon(containerId, posLeft, posTop, startScroll, moveDown, scrollDown)
 	this.texts			= $(".r-text");
 	this.labels			= $(".r-label");
 	this.elemContainers	= $(".r-e-container");
+	
+	/* fix height of #work-container */
+	document.getElementById("work-container").style.height = "8860px";
+	var work = document.getElementById("work");
+	work.setAttribute("data-"+(startScroll-1),"position:absolute;top:0px;");
+	work.setAttribute("data-"+startScroll,"position:fixed;top:50px;");
+	//TODO 8269 calculation from elem width/height and elem num
+	work.setAttribute("data-8269","position:fixed;top:50px;");
+	work.setAttribute("data-8270","position:absolute;top:7772px;");
 }
 
 function createRibbon(ribbonElements){

@@ -205,6 +205,9 @@ a.menu-item, a.menu-item:active, a.menu-item:focus, a.menu-item:visited {
 	padding-bottom: 52px;
 	border-bottom: 2px solid;
 }
+#footer.inner-section > .heading {
+	border-color: #CCC;
+}
 
 /* header */
 #wrapper-header {
@@ -256,11 +259,12 @@ a.menu-item, a.menu-item:active, a.menu-item:focus, a.menu-item:visited {
 	line-height: 110px;
 	text-transform: uppercase;
 	padding-bottom: 55px;
-	border-bottom: 2px solid #001A2F;
+	border-bottom: 2px solid #FFF;
 	margin-bottom: 48px;
 }
 #site-text {
 	font-size: 18px;
+	color: #FFF;
 }
 
 /* header animation */
@@ -288,6 +292,7 @@ a.menu-item, a.menu-item:active, a.menu-item:focus, a.menu-item:visited {
 	background-color: #ff4b32;
 	margin: 0 auto;
 	color: #FAFAFA;
+	display: block;
 }
 #contact #contact-button:hover {
 	background-color: #FAFAFA;
