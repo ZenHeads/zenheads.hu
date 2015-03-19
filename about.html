@@ -388,12 +388,12 @@
 				
 				<!-- start of .section -->
 				<div id="map" class="section grey-bg">
+					<div id="map-layer"></div>
 					<div id="map-container" class="box grey-bg"></div>
 					<div id="map-disable-control">
-                        <div class="inner-section clearfix box">
-                            <div class="heading">meet us</div>
-                        </div>
-
+						<div class="inner-section clearfix box">
+							<div class="heading">meet us</div>
+						</div>
 					</div>
 				</div><!-- end of .section -->
 				
@@ -401,7 +401,7 @@
 				<div class="section lightblue-bg">
 					<div id="contact" class="inner-section clearfix box">
 						<div class="heading">we know you have questions.</div>
-						<a href="mailto:enquiry@zenheads.com"  target="_blank"><div id="contact-button" class="align-center rounded rounded-lightblue">contact us now!</div></a>
+						<a href="mailto:enquiry@zenheads.com" target="_blank" id="contact-button" class="align-center rounded rounded-lightblue">contact us now!</a>
 					</div>
 				</div><!-- end of .section -->
 				
@@ -470,19 +470,11 @@
 			$("#skrollr-body").height($("#wrapper").outerHeight());
 			s.refresh(document.body);
 		}
-
-		/* fix height of #work-container */
-		$("#work-container").css("height","8860px");
-		var work = document.getElementById("work");
-		work.setAttribute("data-624","position:absolute;top:0px;");
-		work.setAttribute("data-625","position:fixed;top:50px;");
-		work.setAttribute("data-8464","position:fixed;top:50px;");
-		work.setAttribute("data-8465","position:absolute;top:7772px;");
 		
 		$("#work").addClass("desktop");
 		$("#r-container").addClass("desktop");
 		
-		var ribbon = new Ribbon("r-container", 930, -475, 685);
+		var ribbon = new Ribbon("r-container", 930, -475, 490);
 	}
 	else {
 		$('body').append('<script type=\"text\/javascript\" src=\"js\/ribbon_small.js\"><\/script>');
