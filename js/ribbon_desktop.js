@@ -1,28 +1,52 @@
 
 /* this is an icon holder object: ribbonElement */
-function RibbonElement(id, color, shadowColor){
+function RibbonElement(id, color, shadowColor, middleColor, middleShadowColor){
 	this.id = id;
 	this.color = color;
 	this.shadowColor = shadowColor;
+	this.middleColor = middleColor ? middleColor : color;
+	this.middleShadowColor = middleShadowColor ? middleShadowColor: shadowColor;
+	this.size = ribbon.size;
 }
 
 function createRibbonElement(index){
 	
 	var textElement		= ribbon.texts.get(index);
-	
+	var element			= ribbon.elements.get(index);
 	var elemContainer	= ribbon.elemContainers.get(index);
+	var labelElement	= ribbon.labels.get(index);
 	
-	var ecw = 147;
-	var ech = 80;
+	/* Calculated values from elem's width */
+	labelElement.style.top = "115px";
+	elemContainer.style.height = "158px"; // 110*sqrt(2)+2
+	elemContainer.style.paddingLeft = "158px";
+	element.style.left = "-32px";
+	element.style.bottom = "1px";
+	var ecw = 148;
+	var ech = 81;
+	
+	/* width and height */
+	element.style.width = "110px";
+	element.style.height = "110px";
+
 	elemContainer.style.left = (index*ecw)+'px';
 	elemContainer.style.bottom = (index*ech)+'px';
 	
 	if(index>0){
 		
-		var element			= ribbon.elements.get(index);
 		var middleElement	= ribbon.middleElements.get(index-1);
 		var fakeElement		= ribbon.fakeElements.get(index-1);
-		var labelElement	= ribbon.labels.get(index);
+		
+		/* Calculated values from elem's width */
+		middleElement.style.left = "48px";
+		middleElement.style.top = "-81px";
+		fakeElement.style.left = "50px";
+		fakeElement.style.bottom = "-32px";
+		/* width and height */
+		middleElement.style.width = "110px";
+		middleElement.style.height = "110px";
+		fakeElement.style.width = "110px";
+		fakeElement.style.height = "110px";
 		
 		var a = index*(2*ribbon.scrollDown+ribbon.moveDown)-ribbon.scrollDown+ribbon.startScroll;
 		var b = (index+1)*(2*ribbon.scrollDown+ribbon.moveDown)-ribbon.scrollDown+ribbon.startScroll;
@@ -43,33 +67,36 @@ function createRibbonElement(index){
 		
 		/* element */
 		var d = (index-1)*(2*ribbon.scrollDown+ribbon.moveDown)+ribbon.moveDown+ribbon.startScroll;
-		element.setAttribute("data-"+d,"opacity:0;transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);");
-		element.setAttribute("data-"+(d+ribbon.scrollDown),"opacity:0;transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);");
-		element.setAttribute("data-"+(d+ribbon.scrollDown+1),"opacity:1;transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);");
-		element.setAttribute("data-"+(d+ribbon.scrollDown+2),"opacity:1;transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);");
-		element.setAttribute("data-"+(d+2*ribbon.scrollDown),"opacity:1;transform:rotate(45deg) rotateX(0deg) skew(0deg);-moz-transform:rotate(45deg) rotateX(0deg) skew(0deg);-webkit-transform:rotate(45deg) rotateX(0deg) skew(0deg);");
-
+		element.setAttribute("data-"+d,"opacity:0;background-color:"+this.color+";transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);");
+		element.setAttribute("data-"+(d+ribbon.scrollDown),"opacity:0;background-color:"+this.color+";transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);");
+		element.setAttribute("data-"+(d+ribbon.scrollDown+1),"opacity:1;background-color:"+this.color+";transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);");
+		element.setAttribute("data-"+(d+ribbon.scrollDown+2),"opacity:1;background-color:"+this.color+";transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(-115deg) skew(22.5deg);");
+		element.setAttribute("data-"+(d+2*ribbon.scrollDown),"opacity:1;background-color:"+this.color+";transform:rotate(45deg) rotateX(0deg) skew(0deg);-moz-transform:rotate(45deg) rotateX(0deg) skew(0deg);-webkit-transform:rotate(45deg) rotateX(0deg) skew(0deg);");
+		element.style.backgroundColor = this.color;
 		
 		/* middle element */
 		middleElement.setAttribute("data-"+(d-1),"opacity:0;");
-		middleElement.setAttribute("data-"+d,"opacity:1;background:"+this.shadowColor+";transform:rotate(45deg) rotateX(-180deg) skew(0deg);-moz-transform:rotate(45deg) rotateX(-180deg) skew(0deg);-webkit-transform:rotate(45deg) rotateX(-180deg) skew(0deg);");
-		middleElement.setAttribute("data-"+(d+ribbon.scrollDown/2),"opacity:1;background:"+this.shadowColor+";transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);-moz-transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);-webkit-transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);");
-		middleElement.setAttribute("data-"+(d+ribbon.scrollDown/2+1),"opacity:0;background:"+this.color+";transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);-moz-transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);-webkit-transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);");
-		middleElement.setAttribute("data-"+(d+ribbon.scrollDown-1),"opacity:0;background:"+this.color+";transform: rotate(45deg) rotateX(-65deg) skew(-22.5deg);-moz-transform: rotate(45deg) rotateX(-65deg) skew(-22.5deg);-webkit-transform: rotate(45deg) rotateX(-65deg) skew(-22.5deg);");
-		middleElement.setAttribute("data-"+(d+ribbon.scrollDown),"opacity:1;background:"+this.color+";transform: rotate(45deg) rotateX(-65deg) skew(-22.5deg);-moz-transform: rotate(45deg) rotateX(-65deg) skew(-22.5deg);-webkit-transform: rotate(45deg) rotateX(-65deg) skew(-22.5deg);");
+		middleElement.setAttribute("data-"+d,"opacity:1;background-color:"+this.middleShadowColor+";transform:rotate(45deg) rotateX(-180deg) skew(0deg);-moz-transform:rotate(45deg) rotateX(-180deg) skew(0deg);-webkit-transform:rotate(45deg) rotateX(-180deg) skew(0deg);");
+		middleElement.setAttribute("data-"+(d+ribbon.scrollDown/2),"opacity:1;background-color:"+this.middleShadowColor+";transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);-moz-transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);-webkit-transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);");
+		middleElement.setAttribute("data-"+(d+ribbon.scrollDown/2+1),"opacity:0;background-color:"+this.middleColor+";transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);-moz-transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);-webkit-transform: rotate(45deg) rotateX(-90deg) skew(-22.5deg);");
+		middleElement.setAttribute("data-"+(d+ribbon.scrollDown-1),"opacity:0;background-color:"+this.middleColor+";transform: rotate(45deg) rotateX(-65deg) skew(-22.5deg);-moz-transform: rotate(45deg) rotateX(-65deg) skew(-22.5deg);-webkit-transform: rotate(45deg) rotateX(-65deg) skew(-22.5deg);");
+		middleElement.setAttribute("data-"+(d+ribbon.scrollDown),"opacity:1;background-color:"+this.middleColor+";transform: rotate(45deg) rotateX(-65deg) skew(-22.5deg);-moz-transform: rotate(45deg) rotateX(-65deg) skew(-22.5deg);-webkit-transform: rotate(45deg) rotateX(-65deg) skew(-22.5deg);");
+		middleElement.style.backgroundColor = this.middleColor;
 		
 		/* add fake element */
 		if(index>1){
 			fakeElement.setAttribute("data-"+(d-1),"opacity:0;");
 		}
-		fakeElement.setAttribute("data-"+d,"opacity:0;transform: rotate(45deg) rotateX(0deg) skew(0deg);-moz-transform: rotate(45deg) rotateX(0deg) skew(0deg);-webkit-transform: rotate(45deg) rotateX(0deg) skew(0deg);");
-		fakeElement.setAttribute("data-"+(d+ribbon.scrollDown/2),"opacity:0;transform: rotate(45deg) rotateX(90deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(90deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(90deg) skew(22.5deg);");
-		fakeElement.setAttribute("data-"+(d+ribbon.scrollDown/2+1),"opacity:1;transform: rotate(45deg) rotateX(90deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(90deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(90deg) skew(22.5deg);");
-		fakeElement.setAttribute("data-"+(d+ribbon.scrollDown),"opacity:1;transform: rotate(45deg) rotateX(115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(115deg) skew(22.5deg);");
-		fakeElement.setAttribute("data-"+(d+ribbon.scrollDown+1),"opacity:0;transform: rotate(45deg) rotateX(115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(115deg) skew(22.5deg);");
+		fakeElement.setAttribute("data-"+d,"opacity:0;background-color:"+this.color+";transform: rotate(45deg) rotateX(0deg) skew(0deg);-moz-transform: rotate(45deg) rotateX(0deg) skew(0deg);-webkit-transform: rotate(45deg) rotateX(0deg) skew(0deg);");
+		fakeElement.setAttribute("data-"+(d+ribbon.scrollDown/2),"opacity:0;background-color:"+this.color+";transform: rotate(45deg) rotateX(90deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(90deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(90deg) skew(22.5deg);");
+		fakeElement.setAttribute("data-"+(d+ribbon.scrollDown/2+1),"opacity:1;background-color:"+this.color+";transform: rotate(45deg) rotateX(90deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(90deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(90deg) skew(22.5deg);");
+		fakeElement.setAttribute("data-"+(d+ribbon.scrollDown),"opacity:1;background-color:"+this.color+";transform: rotate(45deg) rotateX(115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(115deg) skew(22.5deg);");
+		fakeElement.setAttribute("data-"+(d+ribbon.scrollDown+1),"opacity:0;background-color:"+this.color+";transform: rotate(45deg) rotateX(115deg) skew(22.5deg);-moz-transform: rotate(45deg) rotateX(115deg) skew(22.5deg);-webkit-transform: rotate(45deg) rotateX(115deg) skew(22.5deg);");
+		fakeElement.style.backgroundColor = this.color;
 		
 	} else {
 		var c = (index+1)*(ribbon.scrollDown+ribbon.moveDown)+ribbon.startScroll;
+		element.setAttribute("data-start","background-color:"+this.color+";");
 		textElement.setAttribute("data-start","opacity:1;");
 		textElement.setAttribute("data-"+(c-50),"opacity:1;");
 		textElement.setAttribute("data-"+c,"opacity:0;");
@@ -82,11 +109,16 @@ RibbonElement.prototype.createRibbonElement = createRibbonElement;
 
 /* Set together the ribbonElements */
 
-function Ribbon(containerId, posLeft, posTop, startScroll, moveDown, scrollDown){
+function Ribbon(containerId, startScroll, size, moveDown, scrollDown){
 	this.container = document.getElementById(containerId);
-	this.posLeft = posLeft ? posLeft : 0;
-	this.posTop = posTop ? posTop : 0;
+	
+	var width = $("#tools").innerWidth(); console.log(width);
+	
+	document.getElementById("work").style.marginLeft = "-"+(width/2)+"px";
+	this.posLeft = 930*width/1440;
+	this.posTop = -475;
 	this.startScroll = startScroll ? startScroll : 0;
+	this.size = size ? size : 110; // elements width and height in px
 	this.moveDown = moveDown ? moveDown : 300;
 	this.scrollDown = scrollDown ? scrollDown : 400;
 	if(this.container === null){

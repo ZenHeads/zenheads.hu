@@ -179,7 +179,7 @@
 .thumbnails-holder .thumbnail-img-holder .tooltip.hover:after {
 	display: inline-block;
 	padding: 5px 10px;
-	background: #001A2F;
+	background-color: #001A2F;
 	color: #FFF;
 	content: attr(alt);
 	position: absolute;
@@ -227,7 +227,7 @@
 }
 #display-product .product .img-holder > .bullets-navbar > .bullets-item.active,
 #display-product .product .img-holder > .bullets-navbar > .bullets-item:hover {
-	background: #FF4B32;
+	background-color: #FF4B32;
 }
 #display-product .product .img-holder > .area-btn {
 	position: absolute;
@@ -282,7 +282,7 @@
 	#display-product .product .heading {
 		position: absolute;
 		top: -130px;
-		background: #001A2F;
+		background-color: #001A2F;
 		font-size: 24px;
 		left: 0px;
 		right: 0;

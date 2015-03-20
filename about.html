@@ -451,30 +451,47 @@
 		$('body').append('<script type=\"text\/javascript\" src=\"js\/skrollr.min.js\"><\/script>');
 		$('body').append('<script type=\"text\/javascript\" src=\"js\/ribbon_desktop.js\"><\/script>');
 		var s;
+		var animatedElements = $("#r-inner-container, #r-inner-container .r-page, #r-inner-container .r-label");
 		window.onload = function() {
 			s = skrollr.init({
 				smoothScrolling: false,
 				forceHeight: true,
-				/*beforerender: function(data) {
-			    	if(data.curTop > 685 && data.curTop < 6000){
-			    		return data.direction == 'down';
-			    	}
+				beforerender: function(data) {
+					if($("#work").hasClass("skrollable-after") && !$("#r-inner-container").hasClass("animationDone")){
+						$("#r-inner-container").addClass("animationDone");
+						
+						//TODO remove all data attributes from ribbon elements
+						var e;
+						animatedElements.map(function(i){
+							e = $(this);
+							$.each($(this).data(), function(i){
+								e.removeAttr("data-" + i);
+								e.removeClass("skrollable skrollable-after");
+							});
+						});
+						$("#r-inner-container").css({"top":$("#r-inner-container").css("top"),"left":$("#r-inner-container").css("left")});
+						s.refresh();
+						return;
+					}
 			        return true;
-			    }*/
+			    }
 			    // stop the animation when scrollup
 			});
-			fixDocumentHeightForMobile();
+			
+			fixDocumentHeight();
 		}
+		
 		// height fix
-		function fixDocumentHeightForMobile(){
+		function fixDocumentHeight(){
 			$("#skrollr-body").height($("#wrapper").outerHeight());
 			s.refresh(document.body);
 		}
 		
+		
 		$("#work").addClass("desktop");
 		$("#r-container").addClass("desktop");
 		
-		var ribbon = new Ribbon("r-container", 930, -475, 490);
+		var ribbon = new Ribbon("r-container", 490, 110);
 	}
 	else {
 		$('body').append('<script type=\"text\/javascript\" src=\"js\/ribbon_small.js\"><\/script>');
@@ -491,7 +508,7 @@
 	// B szöveg
 	var elem2 = new RibbonElement('elem2','rgb(238,238,238)','rgb(210,210,210)');
 	// C szöveg
-	var elem3 = new RibbonElement('elem3','rgb(238,238,238)','rgb(210,210,210)');
+	var elem3 = new RibbonElement('elem3','rgb(255,75,50)','rgb(193,58,39)','rgb(238,238,238)','rgb(210,210,210)');
 	// D szöveg
 	var elem4 = new RibbonElement('elem4','rgb(255,75,50)','rgb(193,58,39)');
 	// E szöveg
