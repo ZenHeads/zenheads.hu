@@ -390,12 +390,12 @@
 				bulletsNavbar.html(bulletsHtml);
 				// make area buttons only once
 				if(! imgHolder.has(".area-btn").length){
-					imgHolder.append('<div class="left-area area-btn"></div><dib class="right-area area-btn"></div>');
+					imgHolder.append('<div class="left-area area-btn"></div><div class="right-area area-btn"></div>');
 				}
 			}
 			
 			// bullets navigation
-			$(".bullets-item").on("click", function(){
+			$(".bullets-item").off().on("click", function(){
 				var navbar = $(this).parent(".bullets-navbar");
 				var bullets = navbar.find(".bullets-item");
 				var index = bullets.index($(this));
@@ -408,7 +408,7 @@
 				$(this).addClass("active");
 			});
 			// area navigation
-			$(".left-area").on("click", function(){
+			$(".left-area").off().on("click", function(){
 				var navbar = $(this).parent(".img-holder").find(".bullets-navbar");
 				var bullets = navbar.find(".bullets-item");
 				var num = bullets.length;
@@ -427,7 +427,7 @@
 					return false;
 				}
 			});
-			$(".right-area").on("click", function(){
+			$(".right-area").off().on("click", function(){
 				var navbar = $(this).parent(".img-holder").find(".bullets-navbar");
 				var bullets = navbar.find(".bullets-item");
 				var num = bullets.length;
@@ -449,14 +449,14 @@
 		}
 		
 		// hide product
-		$(".product-close-btn").on("click", function() {
+		$(".product-close-btn").off().on("click", function() {
 			$("#display-product").removeClass("show");
 			$("#display-product .product").hide();
 			fixDocumentHeightForMobile();
 		});
 		
 		// paging left
-		$(".product-left-btn").not(".disabled").on("click",function(){
+		$(".product-left-btn").not(".disabled").off().on("click",function(){
 			var product = $(this).parent(".product");
 			var products = $("#display-product .product");
 			var index = products.index(product);
@@ -469,7 +469,7 @@
 		});
 		
 		// paging right
-		$(".product-right-btn").not(".disabled").on("click",function(){
+		$(".product-right-btn").not(".disabled").off().on("click",function(){
 			var product = $(this).parent(".product");
 			var products = $("#display-product .product");
 			var index = products.index(product);
