@@ -455,27 +455,7 @@
 		window.onload = function() {
 			s = skrollr.init({
 				smoothScrolling: false,
-				forceHeight: true,
-				beforerender: function(data) {
-					if($("#work").hasClass("skrollable-after") && !$("#r-inner-container").hasClass("animationDone")){
-						$("#r-inner-container").addClass("animationDone");
-						
-						//TODO remove all data attributes from ribbon elements
-						var e;
-						animatedElements.map(function(i){
-							e = $(this);
-							$.each($(this).data(), function(i){
-								e.removeAttr("data-" + i);
-								e.removeClass("skrollable skrollable-after");
-							});
-						});
-						$("#r-inner-container").css({"top":$("#r-inner-container").css("top"),"left":$("#r-inner-container").css("left")});
-						s.refresh();
-						return;
-					}
-			        return true;
-			    }
-			    // stop the animation when scrollup
+				forceHeight: true
 			});
 			
 			fixDocumentHeight();
@@ -486,7 +466,6 @@
 			$("#skrollr-body").height($("#wrapper").outerHeight());
 			s.refresh(document.body);
 		}
-		
 		
 		$("#work").addClass("desktop");
 		$("#r-container").addClass("desktop");
