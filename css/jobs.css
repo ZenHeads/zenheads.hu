@@ -22,7 +22,7 @@
 	text-align: center;
 	font-size: 24px;
 	text-transform: uppercase;
-	margin: 52px 0;
+	margin-bottom: 52px;
 }
 #jobs > .job + .job {
 	margin-top: 50px;
@@ -100,6 +100,8 @@ a#submenu-mobile-btn {
 .section > .inner-section > .job > .paragraph {
 	max-width: 790px;
 	margin:0 auto 52px;
+	border-top: 2px solid;
+	padding-top: 52px;
 }
 .section .paragraph > .title {
 	font-size: 24px;
@@ -115,14 +117,15 @@ a#submenu-mobile-btn {
 	margin-top: 20px;
 }
 .section .paragraph > .description > ul {
-	padding-left: 20px;
+	/*padding-left: 20px;*/
+	padding: 10px 0 10px 20px;
 }
 .section .paragraph > .description > ul > li {
 	line-height: 30px;
 }
-.section .paragraph > .description > ul > li + li {
+/*.section .paragraph > .description > ul > li + li {
 	margin-top: 20px;
-}
+}*/
 
 @media all and (max-width: 650px){
 	#submenu-holder {

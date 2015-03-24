@@ -188,6 +188,9 @@ a.menu-item, a.menu-item:active, a.menu-item:focus, a.menu-item:visited {
 	outline: none;
 	margin-right: 10px;
 }
+a.menu-item.current {
+	font-weight: bold;
+}
 .section {
 	width: 100%;
 }

@@ -15,7 +15,7 @@
 			<div id="site-name"><a href="index.html">Zen Heads</a></div>
 			<div id="navbar">
 				<a id="navbar-mobile-btn"></a>
-				<a href="index.html" class="menu-item">home</a>
+				<a href="index.html" class="menu-item current">home</a>
 				<a href="about.html" class="menu-item">about</a>
 				<a href="jobs.html" class="menu-item">jobs</a>
 				<!-- <a href="#" class="menu-item">blog</a> -->
@@ -331,6 +331,9 @@
 			var imageHolder = $(this).find(".img-holder");
 			var images = imageHolder.find("img");
 			images.not($(images.get(0))).hide();
+			
+			// make navigation buttons on products
+			makeBulletsNavigationOnProductImage($(this));
 		});
 		
 		// display product
@@ -347,30 +350,7 @@
 			//scroll
 			var mtWrapper = $("html").hasClass("skrollr-desktop") ? 400 : 0;
 			s.animateTo(mtWrapper+685, {duration: 200});
-			
-			checkNavigationButtons(products,product);
 		});
-		
-		function checkNavigationButtons(products,product){
-			var index = products.index(product);
-			var leftBtn = product.find(".product-left-btn");
-			var rightBtn = product.find(".product-right-btn");
-			if(index==0){
-				leftBtn.addClass("disabled");
-			} else {
-				if(leftBtn.hasClass("disabled")){
-					leftBtn.removeClass("disabled");
-				}
-			}
-			if(index==products.length-1){
-				rightBtn.addClass("disabled");
-			} else {
-				if(rightBtn.hasClass("disabled")){
-					rightBtn.removeClass("disabled");
-				}
-			}
-			makeBulletsNavigationOnProductImage(product);
-		}
 		
 		function makeBulletsNavigationOnProductImage(product){
 			var imgHolder = product.find(".img-holder");
@@ -416,10 +396,11 @@
 				var num = bullets.length;
 				var activeBullet = navbar.find(".active");
 				var index = bullets.index(activeBullet);
-				if(num > 0 && index > 0){
+				if(num > 0 && index >= 0){
 					var imgHolder = navbar.parent(".img-holder");
 					var images = imgHolder.find("img");
 					images.hide();
+					if(index==0) index = num;
 					var img = $(images.get(index-1));
 					var bullet = $(bullets.get(index-1));
 					img.show();
@@ -435,10 +416,11 @@
 				var num = bullets.length;
 				var activeBullet = navbar.find(".active");
 				var index = bullets.index(activeBullet);
-				if(num > 0 && index < (num-1)){
+				if(num > 0 && index < num){
 					var imgHolder = navbar.parent(".img-holder");
 					var images = imgHolder.find("img");
 					images.hide();
+					if(index==(num-1)) index = -1;
 					var img = $(images.get(index+1));
 					var bullet = $(bullets.get(index+1));
 					img.show();
@@ -461,7 +443,9 @@
 		$(".product-left-btn").not(".disabled").off().on("click",function(){
 			var product = $(this).parent(".product");
 			var products = $("#display-product .product");
+			var num = products.length;
 			var index = products.index(product);
+			if(index==0) index=num;
 			var nextProduct = products.get(index-1);
 			if(nextProduct != 'undefined'){
 				product.hide();
@@ -474,7 +458,9 @@
 		$(".product-right-btn").not(".disabled").off().on("click",function(){
 			var product = $(this).parent(".product");
 			var products = $("#display-product .product");
+			var num = products.length;
 			var index = products.index(product);
+			if(index==(num-1)) index=-1;
 			var nextProduct = products.get(index+1);
 			if(nextProduct != 'undefined'){
 				product.hide();
