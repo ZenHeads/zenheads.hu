@@ -60,7 +60,7 @@
 					<div id="featured-products" class="inner-section clearfix box">
 						<div class="heading">featured products</div>
 						<div id="display-product">
-							<div id="product-1" class="product clearfix">
+							<div id="oszkar" class="product clearfix">
 								<span class="product-left-btn product-paging-btn btn"></span>
 								<span class="product-right-btn product-paging-btn btn"></span>
 								<div class="img-holder rounded rounded-blue">
@@ -90,7 +90,7 @@
 									</div>
 								</div>
 							</div>
-							<div id="product-2" class="product clearfix">
+							<div id="trkr" class="product clearfix">
 								<span class="product-left-btn product-paging-btn btn"></span>
 								<span class="product-right-btn product-paging-btn btn"></span>
 								<div class="img-holder rounded rounded-blue">
@@ -126,7 +126,7 @@
 									</div>
 								</div>
 							</div>
-							<div id="product-3" class="product clearfix">
+							<div id="alriyahd" class="product clearfix">
 								<span class="product-left-btn product-paging-btn btn"></span>
 								<span class="product-right-btn product-paging-btn btn"></span>
 								<div class="img-holder rounded rounded-blue">
@@ -160,7 +160,7 @@
 									</div>
 								</div>
 							</div>
-							<div id="product-4" class="product clearfix">
+							<div id="riport" class="product clearfix">
 								<span class="product-left-btn product-paging-btn btn"></span>
 								<span class="product-right-btn product-paging-btn btn"></span>
 								<div class="img-holder rounded rounded-blue">
@@ -198,10 +198,10 @@
 						</div>
 						<div id="product-list" class="clearfix box">
 							<ul class="clearfix">
-								<li class="product rounded rounded-blue hover-title" data-title="Oszkar"><img src="img/product/Oszkar/list.png" alt="#product-1"/></li>
-								<li class="product rounded rounded-blue hover-title" data-title="trkr"><img src="img/product/trkr/list.png" alt="#product-2"/></li>
-								<li class="product rounded rounded-blue hover-title" data-title="Alriyadh"><img src="img/product/Alriyadh/list2.jpg" alt="#product-3"/></li>
-								<li class="product rounded rounded-blue hover-title" data-title="Riport"><img src="img/product/riport/list.png" alt="#product-4"/></li>
+								<li class="product rounded rounded-blue hover-title" data-title="Oszkar"><img src="img/product/Oszkar/list.png" alt="#oszkar"/></li>
+								<li class="product rounded rounded-blue hover-title" data-title="trkr"><img src="img/product/trkr/list.png" alt="#trkr"/></li>
+								<li class="product rounded rounded-blue hover-title" data-title="Alriyadh"><img src="img/product/Alriyadh/list2.jpg" alt="#alriyahd"/></li>
+								<li class="product rounded rounded-blue hover-title" data-title="Riport"><img src="img/product/riport/list.png" alt="#riport"/></li>
 							</ul>
 						</div>
 					</div>
@@ -275,7 +275,7 @@
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
 	<script type="text/javascript" src="js/skrollr.min.js"></script>
-	<script type="text/javascript">
+	<script type="text/javascript">	
 	var s;
 	window.onload = function() {
 		s = skrollr.init({
@@ -283,6 +283,20 @@
 			forceHeight: true
 		});
 		fixDocumentHeightForMobile();
+		
+		// if product is given in url
+		if(window.location.href.indexOf('#')!=-1){
+			var anchor = window.location.href.slice(window.location.href.indexOf('#') + 1);
+			var products = [];
+			$("#featured-products > #display-product > .product").map(function(){
+				products.push($(this).attr("id")); // get all product's id
+			});
+			// check is given product is exists
+			if($.inArray(anchor,products)>-1){
+				// product is exists
+				displayProduct($("#"+anchor));
+			}
+		}
 	}
 	// height fix
 	function fixDocumentHeightForMobile(){
@@ -313,6 +327,20 @@
 				imgHolder.append('<div class="left-area area-btn"></div><div class="right-area area-btn"></div>');
 			}
 		}
+	}
+	// display product
+	function displayProduct(product){
+		var products = $("#display-product .product");
+		if(!$("#display-product").hasClass("show")){
+			$("#display-product").addClass("show");
+		}
+		products.not(product).hide();
+		product.fadeIn(1000);
+		fixDocumentHeightForMobile(); // fix document height on mobile after display product
+		
+		//scroll
+		var mtWrapper = $("html").hasClass("skrollr-desktop") ? 400 : 0;
+		s.animateTo(mtWrapper+685, {duration: 200});
 	}
 	// hover-over title on product list items
 	function showTitle(d) {
@@ -373,17 +401,7 @@
 		// display product
 		$("#product-list .product img").on("click", function() {
 			var product = $($(this).attr("alt"));
-			var products = $("#display-product .product");
-			if(!$("#display-product").hasClass("show")){
-				$("#display-product").addClass("show");
-			}
-			products.not(product).hide();
-			product.fadeIn(1000);
-			fixDocumentHeightForMobile(); // fix document height on mobile after display product
-			
-			//scroll
-			var mtWrapper = $("html").hasClass("skrollr-desktop") ? 400 : 0;
-			s.animateTo(mtWrapper+685, {duration: 200});
+			displayProduct(product);
 		});
 		
 		// bullets navigation
