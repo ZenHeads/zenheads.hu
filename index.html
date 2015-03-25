@@ -60,7 +60,7 @@
 					<div id="featured-products" class="inner-section clearfix box">
 						<div class="heading">featured products</div>
 						<div id="display-product">
-							<div id="oszkar" class="product clearfix">
+							<div id="oszkar-product" class="product clearfix">
 								<span class="product-left-btn product-paging-btn btn"></span>
 								<span class="product-right-btn product-paging-btn btn"></span>
 								<div class="img-holder rounded rounded-blue">
@@ -90,7 +90,7 @@
 									</div>
 								</div>
 							</div>
-							<div id="trkr" class="product clearfix">
+							<div id="trkr-product" class="product clearfix">
 								<span class="product-left-btn product-paging-btn btn"></span>
 								<span class="product-right-btn product-paging-btn btn"></span>
 								<div class="img-holder rounded rounded-blue">
@@ -126,7 +126,7 @@
 									</div>
 								</div>
 							</div>
-							<div id="alriyahd" class="product clearfix">
+							<div id="alriyahd-product" class="product clearfix">
 								<span class="product-left-btn product-paging-btn btn"></span>
 								<span class="product-right-btn product-paging-btn btn"></span>
 								<div class="img-holder rounded rounded-blue">
@@ -160,7 +160,7 @@
 									</div>
 								</div>
 							</div>
-							<div id="riport" class="product clearfix">
+							<div id="riport-product" class="product clearfix">
 								<span class="product-left-btn product-paging-btn btn"></span>
 								<span class="product-right-btn product-paging-btn btn"></span>
 								<div class="img-holder rounded rounded-blue">
@@ -286,7 +286,7 @@
 		
 		// if product is given in url
 		if(window.location.href.indexOf('#')!=-1){
-			var anchor = window.location.href.slice(window.location.href.indexOf('#') + 1);
+			var anchor = window.location.href.slice(window.location.href.indexOf('#') + 1)+'-product';
 			var products = [];
 			$("#featured-products > #display-product > .product").map(function(){
 				products.push($(this).attr("id")); // get all product's id
