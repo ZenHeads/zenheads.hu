@@ -107,7 +107,7 @@
 	top: -8px;
 	background-image: url("../img/icn_close.png");
 }
-#display-product .product > .product-paging-btn {
+#display-product .product .product-paging-btn {
 	position: absolute;
 	top: 50%;
 	width: 10px;
@@ -117,14 +117,14 @@
 	background-position: center;
 	background-size: contain;
 }
-#display-product .product > .product-paging-btn.disabled {
+#display-product .product .product-paging-btn.disabled {
 	display: none;
 }
-#display-product .product .product-left-btn {
+#display-product .product .product-prev-btn {
 	background-image: url("../img/icn_arrow_left.png");
 	left: -30px;
 }
-#display-product .product .product-right-btn {
+#display-product .product .product-next-btn {
 	background-image: url("../img/icn_arrow_right.png");
 	right: -30px;
 }
@@ -230,14 +230,18 @@
 	display: inline-block;
 	width: 20px;
 	height: 20px;
-	border-radius: 50%;
+	background-color:transparent;
+	background-position: center center;
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-image: url('../img/icn_bullet.png');
 }
 #display-product .product .img-holder > .bullets-navbar > .bullets-item + .bullets-item {
 	margin-left: 30px;
 }
 #display-product .product .img-holder > .bullets-navbar > .bullets-item.active,
 #display-product .product .img-holder > .bullets-navbar > .bullets-item:hover {
-	background-color: #FF4B32;
+	background-image: url('../img/icn_bullet_hover.png');
 }
 #display-product .product .img-holder > .area-btn {
 	position: absolute;
@@ -361,11 +365,11 @@
 		height: 36px;
 		padding: 0 10px;
 	}
-	#display-product .product .product-left-btn {
+	#display-product .product .product-prev-btn {
 		background-image: url("../img/icn_arrow_left.png");
 		left: -42px;
 	}
-	#display-product .product .product-right-btn {
+	#display-product .product .product-next-btn {
 		background-image: url("../img/icn_arrow_right.png");
 		right: -42px;
 	}
@@ -407,11 +411,11 @@
 	}
 }
 @media all and (max-width: 360px) {
-	#display-product .product .product-left-btn {
+	#display-product .product .product-prev-btn {
 		left: -40px;
 		padding-left: 5px;
 	}
-	#display-product .product .product-right-btn {
+	#display-product .product .product-next-btn {
 		right: -40px;
 		padding-right: 5px;
 	}

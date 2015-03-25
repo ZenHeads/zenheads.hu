@@ -61,8 +61,8 @@
 						<div class="heading">featured products</div>
 						<div id="display-product">
 							<div id="oszkar-product" class="product clearfix">
-								<span class="product-left-btn product-paging-btn btn"></span>
-								<span class="product-right-btn product-paging-btn btn"></span>
+								<a href="#riport"><span class="product-prev-btn product-paging-btn btn"></span></a>
+								<a href="#trkr"><span class="product-next-btn product-paging-btn btn"></span></a>
 								<div class="img-holder rounded rounded-blue">
 									<img src="img/product/Oszkar/1.jpg" />
 									<img src="img/product/Oszkar/2.jpg" />
@@ -91,8 +91,8 @@
 								</div>
 							</div>
 							<div id="trkr-product" class="product clearfix">
-								<span class="product-left-btn product-paging-btn btn"></span>
-								<span class="product-right-btn product-paging-btn btn"></span>
+								<a href="#oszkar"><span class="product-prev-btn product-paging-btn btn"></span></a>
+								<a href="#alriyahd"><span class="product-next-btn product-paging-btn btn"></span></a>
 								<div class="img-holder rounded rounded-blue">
 									<img src="img/product/trkr/1.jpg" />
 									<img src="img/product/trkr/2.jpg" />
@@ -127,8 +127,8 @@
 								</div>
 							</div>
 							<div id="alriyahd-product" class="product clearfix">
-								<span class="product-left-btn product-paging-btn btn"></span>
-								<span class="product-right-btn product-paging-btn btn"></span>
+								<a href="#trkr"><span class="product-prev-btn product-paging-btn btn"></span></a>
+								<a href="#riport"><span class="product-next-btn product-paging-btn btn"></span></a>
 								<div class="img-holder rounded rounded-blue">
 									<img src="img/product/Alriyadh/1.jpg" />
 									<img src="img/product/Alriyadh/2.jpg" />
@@ -161,8 +161,8 @@
 								</div>
 							</div>
 							<div id="riport-product" class="product clearfix">
-								<span class="product-left-btn product-paging-btn btn"></span>
-								<span class="product-right-btn product-paging-btn btn"></span>
+								<a href="#alriyahd"><span class="product-prev-btn product-paging-btn btn"></span></a>
+								<a href="#oszkar"><span class="product-next-btn product-paging-btn btn"></span></a>
 								<div class="img-holder rounded rounded-blue">
 									<img src="img/product/riport/1.png" />
 									<img src="img/product/riport/2.png" />
@@ -191,17 +191,17 @@
 										<div class="tooltip" alt="Mobile App Development"><img src="img/icn_mobile_small.png"/></div>
 									</div>
 									<div class="thumbnail-img-holder rounded rounded-small rounded-blue">
-										<div class="tooltip" alt="Backend Development"><img src="img/icn_server_small.png"/></div>
+										<div class="tooltip hover-dev-title" alt="Backend Development"><img src="img/icn_server_small.png"/></div>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div id="product-list" class="clearfix box">
 							<ul class="clearfix">
-								<li class="product rounded rounded-blue hover-title" data-title="Oszkar"><img src="img/product/Oszkar/list.png" alt="#oszkar"/></li>
-								<li class="product rounded rounded-blue hover-title" data-title="trkr"><img src="img/product/trkr/list.png" alt="#trkr"/></li>
-								<li class="product rounded rounded-blue hover-title" data-title="Alriyadh"><img src="img/product/Alriyadh/list2.jpg" alt="#alriyahd"/></li>
-								<li class="product rounded rounded-blue hover-title" data-title="Riport"><img src="img/product/riport/list.png" alt="#riport"/></li>
+								<li class="product rounded rounded-blue hover-title" data-title="Oszkar"><a href="#oszkar"><img src="img/product/Oszkar/list.png" alt="#oszkar"/></a></li>
+								<li class="product rounded rounded-blue hover-title" data-title="trkr"><a href="#trkr"><img src="img/product/trkr/list.png" alt="#trkr"/></a></li>
+								<li class="product rounded rounded-blue hover-title" data-title="Alriyadh"><a href="#alriyahd"><img src="img/product/Alriyadh/list2.jpg" alt="#alriyahd"/></a></li>
+								<li class="product rounded rounded-blue hover-title" data-title="Riport"><a href="#riport"><img src="img/product/riport/list.png" alt="#riport"/></a></li>
 							</ul>
 						</div>
 					</div>
@@ -400,7 +400,7 @@
 		
 		// display product
 		$("#product-list .product img").on("click", function() {
-			var product = $($(this).attr("alt"));
+			var product = $($(this).attr("alt")+"-product");
 			displayProduct(product);
 		});
 		
@@ -467,8 +467,8 @@
 		});
 		
 		// paging left
-		$(".product-left-btn").not(".disabled").off().on("click",function(){
-			var product = $(this).parent(".product");
+		$(".product-prev-btn").not(".disabled").off().on("click",function(){
+			var product = $(this).parents(".product");
 			var products = $("#display-product .product");
 			var num = products.length;
 			var index = products.index(product);
@@ -477,13 +477,12 @@
 			if(nextProduct != 'undefined'){
 				product.hide();
 				$(nextProduct).fadeIn(1000);
-				checkNavigationButtons(products,$(nextProduct));
 			}
 		});
 		
 		// paging right
-		$(".product-right-btn").not(".disabled").off().on("click",function(){
-			var product = $(this).parent(".product");
+		$(".product-next-btn").not(".disabled").off().on("click",function(){
+			var product = $(this).parents(".product");
 			var products = $("#display-product .product");
 			var num = products.length;
 			var index = products.index(product);
@@ -492,7 +491,6 @@
 			if(nextProduct != 'undefined'){
 				product.hide();
 				$(nextProduct).fadeIn(1000);
-				checkNavigationButtons(products,$(nextProduct));
 			}
 		});
 		
