@@ -55,6 +55,16 @@
 	width: 30.41666%;
 	margin: 4.3333% 4.3333% 0 0;
 }
+#product-list .product.hover-title.hovered {
+	position: relative;
+}
+#product-list .product.hover-title > span.hover-over-title {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -1.5em;
+	text-align: center;
+}
 #product-list .product:nth-child(3n){
 	margin-right: 0;
 }
