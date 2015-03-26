@@ -150,7 +150,7 @@
 #map-layer {
 	width: 100%;
 	height: 200px;
-	background-image: linear-gradient(#001A2F, transparent);
+	background-image: linear-gradient(#DDDDDD, transparent);
 	position: absolute;
 	top: 0px;
 	left: 0;
