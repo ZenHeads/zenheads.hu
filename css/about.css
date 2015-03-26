@@ -251,11 +251,11 @@
 	display: inline-block;
 	width: 15px;
 	height: 15px;
-	border-radius: 50%;
+	background: url('../img/bullet_darkblue.png') no-repeat center center transparent;
 }
 #r-container.small > #bullets-navbar > .bullets-item.active,
 #r-container.small > #bullets-navbar > .bullets-item:hover {
-	background-color: #FF4B32;
+	background-image: url('../img/bullet_orange.png');
 	cursor: pointer;
 }
 #r-container.small > #bullets-navbar > .bullets-item + .bullets-item {
@@ -385,6 +385,9 @@
 	color: #FAFAFA;
 	font-size: 16px;
 	letter-spacing: 1px;
+}
+.r-static-text > p {
+	min-height: 11em;
 }
 .r-text-title {
 	font-size:16px;
