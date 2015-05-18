@@ -147,15 +147,17 @@
 	padding-bottom: 52px;
 }
 #display-product .product .thumbnails-holder .btn-holder {
-	margin-bottom: 40px;
 	text-align: center;
+	margin-bottom: 20px;
 }
 #display-product .product .thumbnails-holder .btn-holder > a {
 	display: inline-block;
 	max-width: 157px;
 	width: 42%;
+	float: left;
+	margin-bottom: 20px;
 }
-#display-product .product .thumbnails-holder .btn-holder > a.googleplay-btn {
+#display-product .product .thumbnails-holder .btn-holder > a:nth-child(2n) {
 	margin-left: 14%;
 }
 #display-product .product .thumbnails-holder .btn-holder > a > img {
@@ -193,6 +195,7 @@ a.color-inherit, a.color-inherit:visited {
 	top: 57px;
 	left: -26px;
 	background-color: #001A2F;
+	z-index: 300;
 }
 .thumbnails-holder .thumbnail-img-holder .tooltip > .hover-over-tooltip > .hover-over-inner {
 	padding: 5px 10px;
