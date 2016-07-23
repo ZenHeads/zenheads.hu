@@ -108,6 +108,9 @@ a#submenu-mobile-btn {
 	line-height: 30px;
 	margin-bottom: 40px;
 }
+.description > .sub-tittle {
+    color: #FAFAFA;
+}
 .section .paragraph > .description {
 	color: #001A2F;
 	font-size: 18px;
