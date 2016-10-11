@@ -57,10 +57,10 @@ var map = null;
 var markers = new Array();
 var infowindows = new Array();
 
-var markerLat = 47.4953945;
-var markerLng = 19.0347467;
-var centerWidth= 47.4964431;
-var centerLength= 19.0347712;
+var markerLat = 47.510577;
+var markerLng = 19.080176;
+var centerWidth= 47.511606;
+var centerLength= 19.080165;
 
 var miniZoomLevel = 17;
 var maxZoomLevel = 11;
@@ -81,7 +81,7 @@ function showMap() {
 	  map: map
 	});
   	infowindow = new google.maps.InfoWindow({
-	  content: '<div id="maps1"><h1>Zen Heads Kft.</h1>1016 Budapest<br/>Krisztina krt. 99.</div>'
+	  content: '<div id="maps1"><h1>Zen Heads Kft.</h1>1071 Budapest<br/>Városligeti fasor 47-49</div>'
   	});
   	google.maps.event.addListener(marker, 'click', function(innerKey) {
 	  return function() {
