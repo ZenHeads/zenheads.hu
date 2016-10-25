@@ -136,7 +136,7 @@ $(document).ready( function() {
 	
 	// display product
 	$("#product-list .product img").on("click", function() {
-		var product = $($(this).attr("alt")+"-product");
+		var product = $($(this).data("product")+"-product");
 		displayProduct(product);
 	});
 	

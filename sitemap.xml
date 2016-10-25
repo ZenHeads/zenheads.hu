@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<url>
+  <loc>http://zenheads.hu/</loc>
+  <priority>1.0</priority>
+</url>
+<url>
+  <loc>http://zenheads.hu/#oszkar</loc>
+  <image:image>
+     <image:loc>http://zenheads.hu/img/product/Oszkar/Oszkar_1.jpg</image:loc>
+  </image:image>
+</url>
+<url>
+  <loc>http://zenheads.hu/#trkr</loc>
+  <image:image>
+     <image:loc>http://zenheads.hu/img/product/trkr/trkr_1.jpg</image:loc>
+  </image:image>
+</url>
+<url>
+  <loc>http://zenheads.hu/#alriyahd</loc>
+  <image:image>
+     <image:loc>http://zenheads.hu/img/product/Alriyadh/Alriyadh_1.jpg</image:loc>
+  </image:image>
+</url>
+<url>
+  <loc>http://zenheads.hu/#riport</loc>
+  <image:image>
+     <image:loc>http://zenheads.hu/img/product/riport/riport_1.jpg</image:loc>
+  </image:image>
+</url>
+<url>
+  <loc>http://zenheads.hu/#classport</loc>
+  <image:image>
+     <image:loc>http://zenheads.hu/img/product/cp/classport_1.jpg</image:loc>
+  </image:image>
+</url>
+<url>
+  <loc>http://zenheads.hu/#greenwave</loc>
+  <image:image>
+     <image:loc>http://zenheads.hu/img/product/gw/greenwave_1.jpg</image:loc>
+  </image:image>
+</url>
+<url>
+  <loc>http://zenheads.hu/#shovroom</loc>
+  <image:image>
+     <image:loc>http://zenheads.hu/img/product/shv/ShoVRoom_1.jpg</image:loc>
+  </image:image>
+</url>
+<url>
+  <loc>http://zenheads.hu/about.html</loc>
+</url>
+<url>
+  <loc>http://zenheads.hu/about.html#tools</loc>
+</url>
+<url>
+  <loc>http://zenheads.hu/jobs.html</loc>
+</url>
+</urlset>
