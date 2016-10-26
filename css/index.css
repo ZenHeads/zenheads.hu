@@ -65,7 +65,7 @@
 	bottom: -1.5em;
 	text-align: center;
 }
-#product-list .product:nth-child(3n){
+#product-list .product:nth-child(2n+1){
 	margin-right: 0;
 }
 #product-list .product img {
@@ -360,7 +360,7 @@ a.color-inherit, a.color-inherit:visited {
 	#product-list .product:nth-child(2n){
 		margin-right: 0;
 	}
-	#product-list .product:nth-child(3n){
+	#product-list .product:nth-child(2n+1){
 		margin-right: 6.65%;
 	}
 }
