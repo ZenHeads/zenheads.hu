@@ -65,7 +65,7 @@
 	bottom: -1.5em;
 	text-align: center;
 }
-#product-list .product:nth-child(2n+1){
+#product-list .product:nth-child(3n){
 	margin-right: 0;
 }
 #product-list .product img {
