@@ -1,0 +1,114 @@
+{
+  "nodes": [
+    {
+      "id": "n0",
+      "label": "Node 0",
+      "x": 0,
+      "y": 0,
+      "size": 3,
+      "color": "#e20b0b",
+      "attributes": [
+        {"key": "attr_1", "value": "attribute 1"},
+        {"key": "attr_2", "value": "attribute 2"},
+        {"key": "attr_3", "value": "attribute 3"},
+        {"key": "attr_4", "value": "attribute 4"}
+      ]
+    },
+    {
+      "id": "n1",
+      "label": "Node 1",
+      "x": 3,
+      "y": 1,
+      "size": 2,
+      "color": "#e20b0b",
+      "attributes": [
+        {"key": "attr_1", "value": "attribute 1"},
+        {"key": "attr_2", "value": "attribute 2"},
+        {"key": "attr_3", "value": "attribute 3"},
+        {"key": "attr_4", "value": null}
+      ]
+    },
+    {
+      "id": "n2",
+      "label": "Node 2",
+      "x": 1,
+      "y": 3,
+      "size": 1,
+      "color": "#e20b0b",
+      "attributes": [
+        {"key": "attr_1", "value": "attribute 1"},
+        {"key": "attr_2", "value": "attribute 2"},
+        {"key": "attr_3", "value": "attribute 3"},
+        {"key": "attr_4", "value": "attribute 4"}
+      ]
+    },
+    {
+      "id": "n3",
+      "label": "Node 3",
+      "x": 1,
+      "y": 4,
+      "size": 1,
+      "color": "#0ba024",
+      "attributes": [
+        {"key": "attr_1", "value": "attribute 1"},
+        {"key": "attr_2", "value": "attribute 2"},
+        {"key": "attr_3", "value": "attribute 3"},
+        {"key": "attr_4", "value": null}
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "source": "n0",
+      "target": "n1",
+      "size": 1,
+      "color": "#e20b0b",
+      "attributes": [
+        {"key": "attr_1", "value": "attribute 1"},
+        {"key": "attr_2", "value": "attribute 2"},
+        {"key": "attr_3", "value": "attribute 3"},
+        {"key": "attr_4", "value": null}
+      ]
+    },
+    {
+      "id": "e1",
+      "source": "n1",
+      "target": "n2",
+      "size": 1,
+      "color": "#e20b0b",
+      "attributes": [
+        {"key": "attr_1", "value": "attribute 1"},
+        {"key": "attr_2", "value": "attribute 2"},
+        {"key": "attr_3", "value": "attribute 3"},
+        {"key": "attr_4", "value": null}
+      ]
+    },
+    {
+      "id": "e2",
+      "source": "n2",
+      "target": "n0",
+      "size": 1,
+      "color": "#e20b0b",
+      "attributes": [
+        {"key": "attr_1", "value": "attribute 1"},
+        {"key": "attr_2", "value": "attribute 2"},
+        {"key": "attr_3", "value": "attribute 3"},
+        {"key": "attr_4", "value": null}
+      ]
+    },
+    {
+      "id": "e3",
+      "source": "n0",
+      "target": "n3",
+      "size": 1,
+      "color": "#e20b0b",
+      "attributes": [
+        {"key": "attr_1", "value": "attribute 1"},
+        {"key": "attr_2", "value": "attribute 2"},
+        {"key": "attr_3", "value": "attribute 3"},
+        {"key": "attr_4", "value": null}
+      ]
+    }
+  ]
+}

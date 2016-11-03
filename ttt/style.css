@@ -1,0 +1,156 @@
+@CHARSET "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-size: 14px;
+  overflow: auto;
+}
+.clearfix:before, .clearfix:after {
+  display: table;
+  content: '';
+}
+.clearfix, .clearfix:after {
+  clear: both;
+}
+.pull-left {
+  float: left;
+}
+#wrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  min-height: 400px;
+  min-width: 960px;
+  background: grey;
+}
+.sidebar {
+  width: 30%;
+  height: 100%;
+  background-color: #bcc6d6;
+  padding: 30px;
+  overflow: auto;
+  position: relative;
+  padding-top: 85px;
+}
+.sidebar .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 30px;
+  border-bottom: 1px solid #f7f7f7;
+}
+.sidebar .tab {
+  display: none;
+}
+.sidebar-nav {
+  display: inline;
+  list-style: none;
+}
+.sidebar-nav li {
+  display: inline-block;
+  padding: 0 5px;
+}
+.sidebar-nav li a {
+  display: inline-block;
+  padding: 3px 5px;
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 4px;
+}
+.sidebar-nav li a:hover {
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+.container {
+  background-color: white;
+  width: 70%;
+  height: 100%;
+  padding: 30px;
+}
+#container {
+  width: 100%;
+  height: 100%;
+}
+#form {
+  width: 100%;
+  padding: 15px;
+}
+.form-row {
+  width: 100%;
+  padding: 5px 0;
+}
+.form-row + .form-row {
+  margin-top: 5px;
+}
+.btn {
+  padding: 3px 6px;
+  display: inline-block;
+  border-radius: 4px;
+}
+.submit {
+  border: 1px solid #082047;
+  background-color: #1250b5;
+  color: #fff;
+}
+.submit:hover {
+  background-color: #082047;
+  cursor: pointer;
+}
+.form-row input[type="text"],
+.form-row input[type="number"],
+.form-row select {
+  width: 100%;
+  border:1px solid gray;
+  border-radius: 4px;
+  height: 30px;
+}
+.form-row input[type="text"],
+.form-row input[type="number"] {
+  padding: 3px 4px;
+}
+.form-row input[type="text"]:focus,
+.form-row input[type="number"]:focus,
+.form-row select:focus {
+  border-color: #082047;
+}
+.color-sample {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  border-color: 1px solid #eee;
+}
+.color-sample.red {
+  background-color: #e20b0b;
+}
+.color-sample.green {
+  background-color: #0ba024;
+}
+.color-sample.blue {
+  background-color: #1250b5;
+}
+table {
+  width: 100%;
+  text-align: left;
+  font-size: 12px;
+  border-collapse: collapse;
+  margin: 10px 0;
+}
+table thead tr th {
+  border-bottom: 1px solid #666;
+}
+table tbody tr td {
+  padding: 5px 0;
+}

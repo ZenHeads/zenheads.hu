@@ -1,0 +1,211 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script src="js/sigma/sigma.min.js"></script>
+  <script src="js/sigma/plugins/sigma.parsers.json.min.js"></script>
+  <script src="js/functions.js"></script>
+</head>
+<body>
+<div id="wrapper" class="clearfix">
+  <div class="sidebar pull-left">
+    <div class="header">
+      <h1>Title text</h1>
+      <ul class="sidebar-nav">
+        <li><a href="javascript:newNode();">Add new Node</a></li>
+        <li><a href="javascript:newConnection();">Add new Connection</a></li>
+      </ul>
+    </div>
+    <div id="info-tab" class="tab">
+      <p>Click on nodes to edit there attributes.</p>
+      <p>Right Click on nodes to remove them. It also removes each edge that is bound to them.</p>
+      <p>Right Click on edges to remove them.</p>
+    </div>
+    <div id="edit-node-tab" class="tab">
+      <form id="node-edit-form" novalidate autocomplete="off">
+        <input type="hidden" name="node_id" />
+        <div class="form-row">
+          <div class="label">Name</div>
+          <input type="text" name="label" />
+        </div>
+        <div class="form-row">
+          <div class="label">Coord X</div>
+          <input type="number" name="coord_x" step="1"/>
+        </div>
+        <div class="form-row">
+          <div class="label">Coord Y</div>
+          <input type="number" name="coord_y" step="1"/>
+        </div>
+        <div class="form-row">
+          <div class="label">Attr 1</div>
+          <input type="text" name="attr_1" />
+        </div>
+        <div class="form-row">
+          <div class="label">Attr 2</div>
+          <input type="text" name="attr_2" />
+        </div>
+        <div class="form-row">
+          <div class="label">Attr 3</div>
+          <input type="text" name="attr_3" />
+        </div>
+        <div class="form-row">
+          <div class="label">Attr 4</div>
+          <input type="text" name="attr_4" />
+        </div>
+        <div class="form-row">
+          <div class="label">Level (set size & color)</div>
+          <table>
+            <thead>
+              <tr><th>Level</th><th>Size</th><th>Color</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Level 1</td><td>3</td><td><span class="color-sample red"></span></td></tr>
+              <tr><td>Level 2</td><td>2</td><td><span class="color-sample green"></span></td></tr>
+              <tr><td>Level 3</td><td>1</td><td><span class="color-sample blue"></span></td></tr>
+            </tbody>
+          </table>
+          <select name="level">
+            <option value="3">Level 1</option>
+            <option value="2">Level 2</option>
+            <option value="1">Level 3</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <input type="button" value="Update" class="submit btn" onclick="updateNodeData();" />
+        </div>
+      </form>
+    </div>
+    <div id="edit-edge-tab" class="tab">
+      <form id="edge-edit-form" novalidate autocomplete="off">
+        <input type="hidden" name="edge_id" />
+        <div class="form-row">
+          <div class="label">Source</div>
+          <span id="edge-source-name-info"></span>
+        </div>
+        <div class="form-row">
+          <div class="label">Target</div>
+          <span id="edge-target-name-info"></span>
+        </div>
+        <div class="form-row">
+          <div class="label">Attr 1</div>
+          <input type="text" name="attr_1" />
+        </div>
+        <div class="form-row">
+          <div class="label">Attr 2</div>
+          <input type="text" name="attr_2" />
+        </div>
+        <div class="form-row">
+          <div class="label">Attr 3</div>
+          <input type="text" name="attr_3" />
+        </div>
+        <div class="form-row">
+          <div class="label">Attr 4</div>
+          <input type="text" name="attr_4" />
+        </div>
+        <div class="form-row">
+          <input type="button" value="Update" class="submit btn" onclick="updateEdgeData();" />
+        </div>
+      </form>
+    </div>
+    <div id="new-node-tab" class="tab">
+      <div class="info">
+        <p>Enter node attributes and add new node to graph</p>
+      </div>
+      <form id="node-new-form" novalidate autocomplete="off">
+        <div class="form-row">
+          <div class="label">Name</div>
+          <input type="text" name="label" />
+        </div>
+        <div class="form-row">
+          <div class="label">Coord X</div>
+          <input type="number" name="coord_x" step="1"/>
+        </div>
+        <div class="form-row">
+          <div class="label">Coord Y</div>
+          <input type="number" name="coord_y" step="1"/>
+        </div>
+        <div class="form-row">
+          <div class="label">Attr 1</div>
+          <input type="text" name="attr_1" />
+        </div>
+        <div class="form-row">
+          <div class="label">Attr 2</div>
+          <input type="text" name="attr_2" />
+        </div>
+        <div class="form-row">
+          <div class="label">Attr 3</div>
+          <input type="text" name="attr_3" />
+        </div>
+        <div class="form-row">
+          <div class="label">Attr 4</div>
+          <input type="text" name="attr_4" />
+        </div>
+        <div class="form-row">
+          <div class="label">Level (set size & color)</div>
+          <table>
+            <thead>
+              <tr><th>Level</th><th>Size</th><th>Color</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Level 1</td><td>3</td><td><span class="color-sample red"></span></td></tr>
+              <tr><td>Level 2</td><td>2</td><td><span class="color-sample green"></span></td></tr>
+              <tr><td>Level 3</td><td>1</td><td><span class="color-sample blue"></span></td></tr>
+            </tbody>
+          </table>
+          <select name="level">
+            <option value="3">Level 1</option>
+            <option value="2">Level 2</option>
+            <option value="1">Level 3</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <input type="button" value="Add" class="submit btn" onclick="AddNewNode();" />
+        </div>
+      </form>
+    </div>
+    
+    <div id="new-edge-tab" class="tab">
+      <div class="info">
+        <p>Select source and target to connect them</p>
+      </div>
+      <form id="new-edge-form" novalidate autocomplete="off">
+        <div class="form-row">
+          <div class="label">Source</div>
+          <select name="source_node"></select>
+        </div>
+        <div class="form-row">
+          <div class="label">Target</div>
+          <select name="target_node"></select>
+        </div>
+        <div class="form-row">
+          <div class="label">Attr 1</div>
+          <input type="text" name="attr_1" />
+        </div>
+        <div class="form-row">
+          <div class="label">Attr 2</div>
+          <input type="text" name="attr_2" />
+        </div>
+        <div class="form-row">
+          <div class="label">Attr 3</div>
+          <input type="text" name="attr_3" />
+        </div>
+        <div class="form-row">
+          <div class="label">Attr 4</div>
+          <input type="text" name="attr_4" />
+        </div>
+        <div class="form-row">
+          <input type="button" value="Connect them" class="submit btn" onclick="AddNewEdge();" />
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <div class="container pull-left">
+    <div id="container"></div>
+  </div>
+</div>
+
+<script>
+changeTab('info-tab');
+</script>
+</body>
+</html>
