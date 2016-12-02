@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb">
+<head>
+  <meta charset="utf-8">
+
+  <title>2020 Life Vision</title>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+          integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+          crossorigin="anonymous"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/d3.v3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.css">
+
+  <script src="assets/js/script.js"></script>
+</head>
+
+<body>
+  <div id="main-wrapper" class="container">
+    <div id="header" class="container-fluid">
+      <div class="row">
+        <div id="title" class="col-xs-12">2020 Life Vision</div>
+      </div>
+    </div>
+    <div id="intro" class="container-fluid">
+      <h3>Welcome to Day 2 of the 20/20 Life Vision Challenge!</h3>
+      <p>
+      If you still haven’t completed your Day 1 Assignment (The Rocking Chair) of the 20/20 Life Vision Challenge, go back and do so before  proceeding. If you did, I am sure that it prompted some 
+      deep reflection on your life path. Today, we are continuing to meditate, moving now to a more specific and immediate area of your life, life categories.
+      </p>
+      <p>
+      What if you could wake up next week and spend your time doing whatever you really want to do? Think about your life right now, and what typical weekdays and weekends are like.
+      How would you break down your life, in terms of categories; and then, estimate how much time you spend on each area in a given week – 168 hours? 
+      What specifically would you like to do more of? Less of? Who would you like to spend more time with? Less time with? Where would you like to spend more time, and less time?
+      Imagine that next week, anything is possible.
+      </p>
+      <p class="text-center">
+        <img src="assets/img/video.jpg" />
+      </p>
+      <p>
+      I am a proponent of having people create their own Life Categories, and using whatever naming conventions they prefer; however, in the end, it all really maps to the same core activities. Sleep is 
+      sleep, work is work, etc. As for me, I break my life, at this current era, down into 7 main categories and 40 or so sub-areas within those 7 categories. I call those sub-areas “bugs”, which is where 
+      the concept for Timebug was born. You can use my Life Categories (listed below, with an example of the weekly time allocation) or something that better fits how you think about and manage your life.
+      </p>
+    </div>
+    
+    <div class="container-fluid">
+      <h4>More (or Less) Time & Energy</h4>
+      <h5>How Do I (Want To) Spend My Time? [Weekly View]</h5>
+    </div>
+    
+    <div class="row">
+      <div class="col-xs-9">
+        <form id="day2-form" autocomplete="off" novalidate>
+          <!-- /End of ROW template -->
+          <div class="form-group">
+            <div class="row">
+              <div class="col-xs-4 col-xs-offset-1">Life Category</div>
+              <div class="col-xs-2">Now<br>Hrs / Wk</div>
+              <div class="col-xs-2">Ideal<br>Hrs / Wk</div>
+            </div>
+          </div>
+          <div id="rows">
+            <!-- render ROWS array -->
+          </div>
+          <!-- ROW tempalte -->
+          <div class="form-group">
+            <div class="row">
+              <div class="col-xs-4 col-xs-offset-1">
+                <div class="dropdown">
+                  <select class="selectpicker" title="Choose one of the following...">
+                    <option>Life Area</option>
+                    <option>Core Work</option>
+                    <option>Special Projects</option>
+                    <option>Skills &amp; Education</option>
+                    <option>Personal Life</option>
+                    <option>Basic Needs</option>
+                    <option>Health &amp; Wellness</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-xs-2">
+                <input type="text" name="input-now-1" class="now form-control hours" onkeyup="addRowByEnter(event, this);" />
+              </div>
+              <div class="col-xs-2">
+                <input type="text" name="input-ideal-1" class="ideal form-control hours" onkeyup="addRowByEnter(event, this);" />
+              </div>
+              <div class="col-xs-1">
+                <button type="button" class="btn btn-default" onclick="addRow(this);"><span class="glyphicon glyphicon-plus text-primary"></span></button>
+              </div>
+            </div>
+          </div>
+          <!-- /End of ROW template -->
+        </form>
+      </div>
+      <div class="col-xs-3">
+        <div class="row">
+          <div class="container-fluid">
+            <span class="weekly-hours text-center now">
+              Now: 168 / <span id="weekly-total-now">0</span>
+            </span>
+          </div>
+          <div id="chart-now" class="chart"></div>
+        </div>
+        
+        <div class="row">
+          <div class="container-fluid">
+            <span class="weekly-hours text-center total">
+              Ideal: 168 / <span id="weekly-total-ideal">0</span>
+            </span>
+          </div>
+          <div id="chart-ideal" class="chart"></div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="section-3a" class="container-fluid">
+      <p>3. a) Write down at least 3 things you want to do less of in general.</p>
+      <div id="3a-2" class="nlf-row">
+        I would like to do less of <span class="nlform"><span class="answer" contenteditable="true" onkeydown="showNextRow(event, this, '#3a-2');" onclick="this.focus();"></span>.
+        <span class="helper">Hit enter to continue</span></span>
+      </div>
+      <div id="3a-2" class="nlf-row hidden-row">
+        Also, I would like to do less of <span class="nlform"><span class="answer" contenteditable="true" onkeydown="showNextRow(event, this, '#3a-3');" onclick="this.focus();"></span>.
+        <span class="helper">Hit enter to continue</span></span>
+      </div>
+      <div id="3a-3" class="nlf-row hidden-row">
+        Also, I would like to do less of <span class="nlform"><span class="answer" contenteditable="true" onkeydown="showNextRow(event, this, '#3a-done');" onclick="this.focus();"></span>.
+        <span class="helper">Hit enter to continue</span></span>
+      </div>
+      <div id="3a-done" class="hidden-row">
+        <button class="btn btn-primary" type="button" onclick="this.style.display='none';document.getElementById('section-3b').style.display='block';">Done</button>
+      </div>
+    </div>
+
+    <div id="section-3b" class="container-fluid">
+      <p>3. b) Write down at least 3 things that you to do more of.</p>
+      <div id="3b-1" class="nlf-row">
+        I'd love to do more <span class="nlform"><span class="answer" contenteditable="true" onkeydown="showNextRow(event, this, '#3b-2');" onclick="this.focus();"></span>.
+        <span class="helper">Hit enter to continue</span></span>
+      </div>
+      <div id="3b-2" class="nlf-row hidden-row">
+        Also, I want to do more <span class="nlform"><span class="answer" contenteditable="true" onkeydown="showNextRow(event, this, '#3b-3');" onclick="this.focus();"></span>.
+        <span class="helper">Hit enter to continue</span></span>
+      </div>
+      <div id="3b-3" class="nlf-row hidden-row">
+        Also, I want to do more <span class="nlform"><span class="answer" contenteditable="true" onkeydown="showNextRow(event, this, '#3b-done');" onclick="this.focus();"></span>.
+        <span class="helper">Hit enter to continue</span></span>
+      </div>
+      <div id="3b-done" class="hidden-row">
+        <button class="btn btn-primary" type="button" onclick="alert('Finish and go next step')">Done</button>
+      </div>
+    </div>
+    
+  </div>
+  
+
+  <script>
+
+  function showNextRow(e, element, next_row_id) {
+    if(e.keyCode == 13) {
+      e.preventDefault();
+      //e.stopPropagation();
+      var text = element.innerHTML.trim();
+      if(text != '' && next_row_id != null){
+        $(next_row_id+'.hidden-row').fadeIn(200);
+      }
+      $(element).blur();
+    }
+  }
+
+  var rows = [];
+  function getRow(select, input_now, input_ideal, index) {
+    var numRows = rows.length+1;
+    return '<div class="form-group">\
+					    <div class="row">\
+					    <div class="col-xs-1"><span class="legend"></span></div>\
+					    <div class="col-xs-4">\
+					      <div class="dropdown">\
+					        <select class="selectpicker" title="Choose one of the following..." name="select-'+numRows+'">\
+					          <option '+(select=='Life Area'?'selected':'')+'>Life Area</option>\
+                    <option '+(select=='Core Work'?'selected':'')+'>Core Work</option>\
+                    <option '+(select=='Special Projects'?'selected':'')+'>Special Projects</option>\
+                    <option '+(select=='Skills & Education'?'selected':'')+'>Skills &amp; Education</option>\
+                    <option '+(select=='Personal Life'?'selected':'')+'>Personal Life</option>\
+                    <option '+(select=='Basic Needs'?'selected':'')+'>Basic Needs</option>\
+                    <option '+(select=='Health & Wellness'?'selected':'')+'>Health &amp; Wellness</option>\
+					        </select>\
+					      </div>\
+					    </div>\
+					    <div class="col-xs-2">\
+					      <input type="text" name="input-now-'+numRows+'" class="now form-control input-field hours" value="'+input_now+'"/>\
+					    </div>\
+              <div class="col-xs-2">\
+                <input type="text" name="input-ideal-'+numRows+'" class="ideal form-control input-field hours" value="'+input_ideal+'"/>\
+              </div>\
+					    <div class="col-xs-1">\
+					      <button type="button" class="btn btn-default" onclick="removeRow(this, '+index+');"><span class="glyphicon glyphicon-remove text-danger"></span></button>\
+					    </div>\
+					  </div>\
+					</div>';
+  }
+  function removeRow(element, index) {
+    var el = $(element).parents('.form-group');
+    el.remove();
+    if(rows.length==1) {
+      rows = [];
+    } else {
+      rows.splice(index,1);
+    }
+    updatePieCharts(rows);
+  }
+  
+  function renderRows() {
+    var rowsDOM = $('#rows'),
+        rowsHTML = '';
+    // clear it
+    rows.map(function(row, index) {
+      rowsHTML += getRow(row.select, row.input_now, row.input_ideal, index);
+    });
+    rowsDOM.html(rowsHTML);
+    $('.selectpicker').selectpicker('refresh');
+    if(rows.length > 0) {
+      $('#rows').addClass('filled');
+    } else {
+      $('#rows').removeClass('filled');
+    }
+  }
+  
+  function addRow(element) {
+    var el = $(element).parents('.form-group');
+    
+    var select = el.find('select');
+    var input_now = el.find('input[type="text"].now');
+    var input_ideal = el.find('input[type="text"].ideal');
+
+    rows.push({
+      select: select.val(),
+      input_now: input_now.val(),
+      input_ideal: input_ideal.val()
+    });
+    renderRows();
+    select.val('').selectpicker('refresh');
+    input_now.val('');
+    input_ideal.val('');
+    updatePieCharts(rows);
+  }
+  
+  function addRowByEnter(e, element) {
+    if(e.keyCode == 13) {
+      addRow(element);
+    }
+  }
+  
+  $(document).ready(function() {
+    $('.selectpicker').selectpicker();
+    updatePieCharts();
+    
+    $(document).on('keyup', '.input-field', function() {
+      console.log('update');
+      var rowsDOM = $('#rows .form-group');
+      rowsDOM.map(function(index, row) {
+        var select = $(row).find('select'),
+            input_now = $(row).find('input.now'),
+            input_ideal = $(row).find('input.ideal');
+        rows[index] = {
+          select: select.val(),
+          input_now: input_now.val(),
+          input_ideal: input_ideal.val()
+        };
+      });
+      updatePieCharts();
+    });
+  });
+  </script>
+</body>
+</html>

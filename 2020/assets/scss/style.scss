@@ -1,0 +1,113 @@
+@import "bootstrap";
+
+#main-wrapper {
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+#title {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: right;
+}
+#header {
+  height: 40px;
+  margin-bottom: 20px;
+}
+#rows {
+  &.filled {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 30px;
+  }
+
+  .legend {
+    display: inline-block;
+    width: 0;
+    border-style: solid;
+    border-left-width: 2px;
+    height: 30px;
+  }
+  
+}
+.weekly-hours {
+  display: inline-block;
+  width: 200px;
+  font-size: 18px;
+}
+.hours {
+  max-width: 60px;
+}
+
+/* overwrite original */
+.bootstrap-select {
+  width: 100% !important;
+}
+
+#section-3a {
+  margin-bottom: 40px;
+}
+#section-3b,.hidden-row {
+  display: none;
+}
+#section-3a, #section-3b {
+  & > p {
+    margin-bottom: 20px;
+  }
+}
+.nlf-row {
+  .nlform {
+    display: inline-block;
+    position: relative;
+
+    .helper {
+      position: absolute;
+      font-size: 70%;
+      color: #b0b0b0;
+      display: none;
+      white-space: nowrap;
+      z-index: 1000;
+      background: #fff;
+      padding: 1px 3px;
+      border: 1px solid #bbb;
+      border-radius: 2px;
+      margin-top: 2px;
+      &:before {
+        display: block;
+        content: '';
+        width: 0;
+        border-top: none;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+        border-bottom: 3px solid #BBB;
+        left: 1px;
+        position: absolute;
+        top:-3px;
+      }
+    }
+
+    .answer {
+      font-weight: bold;
+      color: #5078b7;
+      transition: color 0.3s;
+      border-bottom: 1px dotted;
+      outline: none;
+      text-rendering: optimizeLegibility;
+
+      &:empty::before {
+        content: 'Enter your answer';
+        display: inline-block;
+      }
+      &:empty:focus::before {
+        content: 'Start typing';
+      }
+      
+      &:hover {
+        cursor: pointer;
+        color: #2c4670;
+      }
+      &:focus + .helper {
+        display: block;
+      }
+    }
+  }
+}
