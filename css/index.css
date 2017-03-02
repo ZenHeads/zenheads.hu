@@ -1,37 +1,21 @@
-.skrollr-desktop #wrapper.skrollable-after #wrapper-header-holder {
-	margin-top: 400px;
-}
-
-#wrapper-header-holder{
-	min-height: 685px;
-}
-
-/* Szürke kép ez látszódik elsőnek */
-#wrapper-header .grey-layer {
-    background-image: url(../img/img_header1_bg_blur1.jpg);
-    background-position: center;
- background-repeat: no-repeat;
- background-color: transparent;
- background-size: cover;
-}
-/* Blurred kép ez látszódik másodiknak */
-#wrapper-header .blurred {
-	position: absolute;
-	z-index: 2;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	opacity: 1;
-	background-image: url(../img/img_header1_bg_blur2.jpg);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-color: transparent;
-	background-size: cover;
+#site-heading {
+  color: #fff;
 }
 /* Éles kép ez látszódik utolsónak */
-#wrapper-header-container {
-    background-image: url("../img/img_header1_bg.jpg");
+#wrapper-header {
+    background-color: rgba(79, 79, 79, 1);
+}
+#header-background {
+  background-image: url("../img/img_landing_header.jpg");
+  background-position: top center;
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0px;
+  z-index: 2;
+  opacity: 0.1;
 }
 /*
 #inner-wrapper {

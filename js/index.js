@@ -1,11 +1,5 @@
 var s;
 window.onload = function() {
-	s = skrollr.init({
-		smoothScrolling: false,
-		forceHeight: true
-	});
-	fixDocumentHeightForMobile();
-	
 	// if product is given in url
 	if(window.location.href.indexOf('#')!=-1){
 		var anchor = window.location.href.slice(window.location.href.indexOf('#') + 1)+'-product';
@@ -20,11 +14,7 @@ window.onload = function() {
 		}
 	}
 };
-// height fix
-function fixDocumentHeightForMobile(){
-	$("#skrollr-body").height($("#wrapper").outerHeight());
-	s.refresh(document.body);
-}
+
 // create navigation buttons on products
 function makeBulletsNavigationOnProductImage(product){
 	var imgHolder = product.find(".img-holder");
@@ -58,11 +48,12 @@ function displayProduct(product){
 	}
 	products.not(product).hide();
 	product.fadeIn(1000);
-	fixDocumentHeightForMobile(); // fix document height on mobile after display product
 	
 	//scroll
-	var mtWrapper = $("html").hasClass("skrollr-desktop") ? 400 : 0;
-	s.animateTo(mtWrapper+685, {duration: 200});
+	var mtWrapper = $("#featured-products").offset().top;
+	//s.animateTo(mtWrapper+685, {duration: 200});
+	// TODO scroll animate
+	$("html, body").stop().animate({scrollTop: mtWrapper}, '200');
 }
 // hover-over title on product list items
 function showTitle(d) {
@@ -199,7 +190,6 @@ $(document).ready( function() {
 	$(".product-close-btn").off().on("click", function() {
 		$("#display-product").removeClass("show");
 		$("#display-product .product").hide();
-		fixDocumentHeightForMobile();
 	});
 	
 	// paging left
