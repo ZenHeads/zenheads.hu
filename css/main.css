@@ -57,12 +57,14 @@ div > img {
 	text-align: center;
 }
 .blue-bg {
-	background-color: #001A2F;
+	//background-color: #001A2F;
+	background-color: #5BC1D9;
 	color: #FAFAFA;
 }
 .lightblue-bg {
 	background-color: #58C2DA;
-	color: #001A2F;
+	//color: #001A2F;
+	color: #ffffff;
 }
 .grey-bg {
 	background-color: #fafafa;
@@ -105,12 +107,16 @@ div > img {
 	border-bottom-color: #fafafa;
 }
 .rounded-blue:before {
-	border-top-color: #001A2F;
-	border-left-color: #001A2F;
+	//border-top-color: #001A2F;
+	//border-left-color: #001A2F;
+	border-top-color: #5BC1D9;
+  border-left-color: #5BC1D9;
 }
 .rounded-blue:after {
-	border-right-color: #001A2F;
-	border-bottom-color: #001A2F;
+	//border-right-color: #001A2F;
+	//border-bottom-color: #001A2F;
+	border-bottom-color: #5BC1D9;
+  border-right-color: #5BC1D9;
 }
 .rounded-lightblue:before {
 	border-top-color: #58c2da;
