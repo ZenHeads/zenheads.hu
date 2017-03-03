@@ -58,7 +58,7 @@ div > img {
 }
 .blue-bg {
 	//background-color: #001A2F;
-	background-color: #5BC1D9;
+	background-color: #58c2da;
 	color: #FAFAFA;
 }
 .lightblue-bg {
@@ -109,14 +109,14 @@ div > img {
 .rounded-blue:before {
 	//border-top-color: #001A2F;
 	//border-left-color: #001A2F;
-	border-top-color: #5BC1D9;
-  border-left-color: #5BC1D9;
+	border-top-color: #58c2da;
+  border-left-color: #58c2da;
 }
 .rounded-blue:after {
 	//border-right-color: #001A2F;
 	//border-bottom-color: #001A2F;
-	border-bottom-color: #5BC1D9;
-  border-right-color: #5BC1D9;
+	border-bottom-color: #58c2da;
+  border-right-color: #58c2da;
 }
 .rounded-lightblue:before {
 	border-top-color: #58c2da;

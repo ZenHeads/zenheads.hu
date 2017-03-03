@@ -178,7 +178,7 @@ a.color-inherit, a.color-inherit:visited {
 	position: absolute;
 	top: 57px;
 	left: -26px;
-	background-color: #001A2F;
+	background-color: #58c2da;
 	z-index: 300;
 }
 .thumbnails-holder .thumbnail-img-holder .tooltip > .hover-over-tooltip > .hover-over-inner {
@@ -191,7 +191,7 @@ a.color-inherit, a.color-inherit:visited {
 	content: "";
 	width: 14px;
 	height: 7px;
-	background: url('../img/hover_top.png') no-repeat center top transparent;
+	background: url('../img/hover_top_lb.png') no-repeat center top transparent;
 	position: absolute;
 	display: block;
 	left: 50%;
@@ -210,13 +210,13 @@ a.color-inherit, a.color-inherit:visited {
 	background-color: transparent;
 }
 .thumbnails-holder .thumbnail-img-holder .tooltip > .hover-over-tooltip:before {
-	background-image: url('../img/hover_corner_topleft.png');
+	background-image: url('../img/hover_corner_topleft_lb.png');
 	background-position: left top;
 	top: 0;
 	left: 0;
 }
 .thumbnails-holder .thumbnail-img-holder .tooltip > .hover-over-tooltip:after {
-	background-image: url('../img/hover_corner_rightdown.png');
+	background-image: url('../img/hover_corner_rightdown_lb.png');
 	background-position: right bottom;
 	bottom: 0;
 	right: 0;
