@@ -428,3 +428,85 @@ a.color-inherit, a.color-inherit:visited {
 		padding-right: 5px;
 	}
 }
+
+#tools .tab .label, #partners .tab .label {
+	font-weight: bold;
+}
+
+/* partners, team */
+
+#partners .inner-container,
+#our-team .inner-container{
+	text-align: center;
+}
+#our-team .tab,
+#partners .tab {
+	max-width: 261px;
+  margin-top: 52px;
+  padding: 0 3%;
+  float: left;
+  width: 33.3333%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+#partners .tab:nth-child(4n+5),
+#our-team .tab:nth-child(4n+5) {
+	clear: both;
+}
+#partners .tab .img-holder,
+#our-team .tab .img-holder {
+	width: 100%;
+	height: auto;
+	margin-bottom: 42px;
+}
+
+/* 4elem esetén ez kell
+#partners .tab + .tab{
+	margin-left: 9.059%;
+}*/
+
+
+#partners .inner-container .mcfx {
+	width: 50%;
+	padding-right: 26px;
+}
+#partners .inner-container .mcfx + .mcfx {
+	padding-left: 26px;
+	padding-right: 0;
+}
+.inner-container > .centered {
+	display: inline-block;
+}
+
+
+@media all and (max-width: 980px){
+	#partners .inner-container > .centered {
+		width: auto;
+	}
+	#partners .inner-container .mcfx {
+		width: 100%;
+		padding: 0;
+		float: none;
+	}
+	#partners .inner-container .mcfx + .mcfx {
+		padding: 0;
+	}
+	#relax {
+		background-position: 20% center;
+	}
+}
+
+@media all and (max-width: 800px){
+	#tools .mcfx {
+		width: 100%;
+	}
+}
+@media all and (max-width: 718px){
+	#our-team .centered {
+		width: 100%;
+	}
+	#our-team .tab {
+		margin-top: 26px;
+	}
+}
+
