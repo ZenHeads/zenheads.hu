@@ -309,7 +309,7 @@ a.menu-item.current {
 }
 
 /* footer */
-
+/*old footer: jobs*/
 #footer .heading {
 	font-size: 16px;
 	text-transform: none;
@@ -327,10 +327,76 @@ a.menu-item.current {
 #footer .text {
 	margin-top: 52px;
 }
+/* new footer: index, about */
+#footer ul.heading {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 52px 0;
+}
+#footer ul.heading li {
+  display: inline;
+}
+#footer ul.heading li > span {
+  display: inline-block;
+}
+#footer ul.heading li.stretch {
+  display: none;
+}
 
 /******************************
 *******   RESPONSIVE   ********
 *******************************/
+@media all and (max-width: 899px) {
+  #footer ul.heading li {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  #footer ul.heading li.tab + .tab {
+    margin-top: 10px;
+  }
+}
+@media all and (min-width: 900px) and (max-width: 1149px) {
+  #footer ul.heading {
+    text-align: center;
+  }
+  #footer ul.heading li.tab {
+    display: inline-block;
+    width: 50%;
+    float: left;
+    vertical-align: top;
+  }
+  #footer ul.heading li.tab > span {
+    text-align: center;
+  }
+  #footer ul.heading li.tab:nth-child(1) {
+    text-align: left;
+  }
+  #footer ul.heading li.tab:nth-child(2) {
+    text-align: right;
+  }
+  #footer ul.heading li.tab:nth-child(3) {
+    margin-top: 10px;
+    float: none;
+    display: inline-block;
+    width: 100%;
+  }
+}
+@media all and (min-width: 1150px) {
+  #footer ul.heading {
+    text-align: justify;
+  }
+  #footer ul.heading li {
+    display: inline;
+  }
+  #footer ul.heading li > span {
+    text-align: left;
+  }
+  #footer ul.heading li.stretch {
+    display: inline-block;
+    width: 100%;
+  }
+}
 @media all and (max-width: 900px){
 	#footer .heading .mcfx .tab {
 		width: 100%;
