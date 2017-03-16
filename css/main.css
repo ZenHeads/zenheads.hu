@@ -461,15 +461,12 @@ a.menu-item.current {
 	.inner-section {
 		padding: 72px 10% 82px;
 	}
-	#site-heading {
-		font-size: 7.5vw;
-		line-height: 1.2em;
-	}
 	
 }
 @media all and (min-width: 1280px) {
 	#site-heading {
-	   font-size: 5.5vw;
+	   font-size: 4.5vw;
+	   line-height: 1.2em;
 	}
 }
 @media all and (max-width: 1100px) {

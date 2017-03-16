@@ -100,8 +100,10 @@ a#submenu-mobile-btn {
 .section > .inner-section > .job > .paragraph {
 	max-width: 790px;
 	margin:0 auto 52px;
-	border-top: 2px solid;
 	padding-top: 52px;
+}
+.section > .inner-section > .job:first-child > .paragraph {
+  border-top: 2px solid;
 }
 .section .paragraph > .title {
 	font-size: 24px;
