@@ -1,44 +1,52 @@
-/* szöveg animáció */
+/* szöveg animáció  ~ 5sec up, 0.3sec anim */
 @-webkit-keyframes fade-in
 {
   0% {opacity:1}
+  33.314% { opacity: 1}
   33.333% { opacity: 0}
-  66.666% { opacity: 0}
+  99.981% { opacity: 0}
+  100% { opacity: 1}
+}
+@keyframes fade-in
+{
+  0% {opacity:1}
+  33.314% { opacity: 1}
+  33.333% { opacity: 0}
+  99.981% { opacity: 0}
   100% { opacity: 1}
 }
 @-webkit-keyframes fade-in2
 {
   0% {opacity:0}
+  33.314% { opacity: 0}
   33.333% { opacity: 1}
-  66.666% { opacity: 0 }
+  66.647% { opacity: 1}
+  66.666% { opacity: 0}
+  100% { opacity: 0}
+}
+@keyframes fade-in2
+{
+  0% {opacity:0}
+  33.314% { opacity: 0}
+  33.333% { opacity: 1}
+  66.647% { opacity: 1}
+  66.666% { opacity: 0}
   100% { opacity: 0}
 }
 @-webkit-keyframes fade-in3
 {
   0% {opacity:0}
-  33.333% { opacity: 0}
+  66.647% { opacity: 0}
   66.666% { opacity: 1}
-  100% { opacity: 0}
-}
-@keyframes fade-in
-{
-  0% {opacity:1}
-  33.333% { opacity: 0}
-  66.666% { opacity: 0}
-  100% { opacity: 1}
-}
-@keyframes fade-in2
-{
-  0% {opacity:0}
-  33.333% { opacity: 1}
-  66.666% { opacity: 0 }
+  99.981% { opacity: 1}
   100% { opacity: 0}
 }
 @keyframes fade-in3
 {
   0% {opacity:0}
-  33.333% { opacity: 0}
+  66.647% { opacity: 0}
   66.666% { opacity: 1}
+  99.981% { opacity: 1}
   100% { opacity: 0}
 }
 #site-heading {
@@ -50,10 +58,10 @@
   top: 0;
   left: 0;
   right: 0;
-  -webkit-animation-duration: 12s; /* Safari 4.0 - 8.0 */
-          animation-duration: 12s;
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
+  -webkit-animation-duration: 24s; /* Safari 4.0 - 8.0 */
+          animation-duration: 24s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
   -webkit-animation-timing-function: ease; /* Safari 4.0 - 8.0 */
           animation-timing-function: ease;
   -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
