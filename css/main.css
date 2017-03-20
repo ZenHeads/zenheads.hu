@@ -263,9 +263,8 @@ a.menu-item.current {
 	color: #FF4B34;
 	font-family: din;
 	font-weight: bold;
-	font-size: 80px;
-	font-size: 5.5vw; /* %of the viewpoert size */
-	line-height: 110px;
+	font-size: 42px;
+	line-height: 1.1em;
 	text-transform: uppercase;
 	padding-bottom: 55px;
 	margin-bottom: 48px;
@@ -465,13 +464,7 @@ a.menu-item.current {
 }
 @media all and (min-width: 1280px) {
 	#site-heading {
-	   font-size: 4.5vw;
-	   line-height: 1.2em;
-	}
-}
-@media all and (max-width: 1100px) {
-	#site-heading {
-	    line-height: 1.4em;
+	   font-size: 60px;
 	}
 }
 @media all and (max-width: 660px){
@@ -488,9 +481,8 @@ a.menu-item.current {
 @media all and (max-width: 490px){
 	#site-heading {
 		font-size: 28px;
-		font-size: 5vh;
 	}
 	#site-text {
-	    line-height: 1.1em;
+	  line-height: 1.1em;
 	}
 }

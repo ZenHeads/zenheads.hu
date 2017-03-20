@@ -85,6 +85,7 @@
 #site-heading .fading-text > span {
   /*opacity:0;*/
   display: inline-block;
+  width: 100%;
 }
 #site-heading .fading-text .ft-answer {
   font-size: 80%;
@@ -423,10 +424,10 @@ a.color-inherit, a.color-inherit:visited {
 #relax .heading {
   position: relative;
   z-index: 5;
-  font-size: 5.5vw;
+  font-size: 42px;
   color: #FF4B34;
   border: none;
-  line-height: 1em;
+  line-height: 1.1em;
 }
 
 #contact .heading {
@@ -438,6 +439,11 @@ a.color-inherit, a.color-inherit:visited {
 	#our-philosophy .inner-row .tab .text > br {
 		display: none;
 	}
+}
+@media all and (min-width: 1280px) {
+  #relax .heading { /*site-heading in main*/
+    font-size: 60px;
+  }
 }
 @media all and (min-width: 998px) {
   #our-team .tab,
